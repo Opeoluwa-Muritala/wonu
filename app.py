@@ -1,64 +1,138 @@
-from flask import Flask, render_template, request, redirect, flash, url_for, session, jsonify, abort
-from flask_wtf import FlaskForm
-from flask_wtf.csrf import CSRFProtect
+from flask import Flask, render_template, request, redirect, url_for, session, jsonify, abort
 from flask_cors import CORS
 import os
-
+import json
+from functools import wraps
 
 app = Flask(__name__)
 CORS(app)
-app.secret_key = os.getenv('SECRET_KEY')
+app.secret_key = os.getenv('SECRET_KEY', 'default_secret_key')
 
-PROJECTS = [
-    {
-        "id": "p05",
-        "number": "05",
-        "title": "SNP Website Redesign",
-        "category": "Website Design",
-        "overview": "A redesign concept focused on showcasing spaces...",
-        "deliverables": ["Homepage layout", "Team section", "Responsive behavior"],
-        # NEW: Background Image URL
-        "image": "https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=1600&q=80"
-    },
-    {
-        "id": "p04",
-        "number": "04",
-        "title": "JobID",
-        "category": "Product Design",
-        "overview": "A comprehensive case study regarding job identification...",
-        "deliverables": ["User Research", "Wireframing", "UI Design"],
-        # NEW: Background Image URL
-        "image": "https://images.unsplash.com/photo-1545239351-1141bd82e8a6?auto=format&fit=crop&w=1600&q=80"
-    }
-]
+DATA_FILE = 'content.json'
+
+# --- 1. Load/Save Logic ---
+def load_content():
+    if not os.path.exists(DATA_FILE):
+        # Default Content Structure
+        return {
+            "site": { "brand": "Nabena preye", "badgeYear": "2026" },
+            "social": {
+                "linkedin": "#",
+                "behance": "#",
+                "email": "nabenapreye@gmail.com",
+                "resumeUrl": "#" 
+            },
+            "hero": {
+                "firstName": "Preye", "lastName": "Nabena",
+                "subtitle": "Hey! I'm a UI/UX designer..."
+            },
+            "resume": { "title": "Resume", "summary": "Download below." },
+            "projects": []
+        }
+    try:
+        with open(DATA_FILE, 'r') as f:
+            return json.load(f)
+    except:
+        return {}
+
+def save_content(data):
+    with open(DATA_FILE, 'w') as f:
+        json.dump(data, f, indent=2)
+
+# --- 2. Context Processor (MAKES DATA AVAILABLE EVERYWHERE) ---
+@app.context_processor
+def inject_content():
+    # This runs before every template render
+    content = load_content()
+    return dict(content=content)
+
+# --- 3. Auth Decorator ---
+def login_required(f):
+    @wraps(f)
+    def decorated_function(*args, **kwargs):
+        if not session.get('logged_in'):
+            return redirect(url_for('login_view'))
+        return f(*args, **kwargs)
+    return decorated_function
+
+# --- 4. Routes ---
 
 @app.route('/', methods=['GET'])
 def home_view():
-    return render_template('index.html', projects=PROJECTS)
-@app.route('/projects', methods=['GET'])
-def project_view():
-    return render_template('projects.html', projects=PROJECTS)
-@app.route('/about', methods=['GET'])
-def about_view():
-    return render_template('about.html')
+    content = load_content()
+    # pass projects explicitly for the loop
+    return render_template('index.html', projects=content.get('projects', []))
 
-@app.route('/contact', methods=['GET'])
-def contact_view():
-    return render_template('contact.html')
-
-@app.route('/resume', methods=['GET'])
-def resume_view():
-    return render_template('resume.html')
-
-@app.route('/project/<projectid>', methods=['GET', 'POST'])
+@app.route('/project/<projectid>', methods=['GET'])
 def project_view_id(projectid):
-    project = next((p for p in PROJECTS if p['id'] == projectid), None)
-    
-    if project is None:
-        abort(404) 
-
+    content = load_content()
+    projects = content.get('projects', [])
+    project = next((p for p in projects if p['id'] == projectid), None)
+    if project is None: abort(404)
     return render_template('project-view.html', project=project)
 
+# --- Admin & API ---
+
+@app.route('/admin', methods=['GET'])
+def login_view():
+    return render_template('admin-login.html')
+
+@app.route('/dashboard', methods=['GET'])
+@login_required
+def dashboard_view():
+    return render_template('admin-edit.html')
+
+@app.route('/api/login', methods=['POST'])
+def api_login():
+    req = request.json
+    if req.get('username') == 'admin' and req.get('password') == 'password':
+        session['logged_in'] = True
+        return jsonify({"success": True})
+    return jsonify({"error": "Invalid"}), 401
+
+@app.route('/api/content', methods=['GET', 'POST'])
+@login_required
+def handle_content():
+    if request.method == 'POST':
+        save_content(request.json)
+        return jsonify({"success": True})
+    return jsonify(load_content())
+
+@app.route('/api/project/add', methods=['POST'])
+@login_required
+def add_project():
+    content = load_content()
+    req = request.json
+    projects = content.get('projects', [])
+
+    count = len(projects) + 1
+    new_id = f"p{count:02d}"
+    new_number = f"{count:02d}"
+
+    new_proj = {
+        "id": new_id,
+        "number": new_number,
+        "category": req.get('category', 'New Category'),
+        "title": req.get('title', 'New Project'),
+        "overview": req.get('overview', 'Description...'),
+        "image": req.get('image', ''),
+        "deliverables": ["UI Design", "UX Research"] 
+    }
+    
+    projects.insert(0, new_proj)
+    content['projects'] = projects
+    save_content(content)
+    return jsonify({"success": True})
+
+# --- Static Pages ---
+@app.route('/projects')
+def project_view(): return render_template('projects.html', projects=load_content().get('projects', []))
+@app.route('/about')
+def about_view(): return render_template('about.html')
+@app.route('/contact')
+def contact_view(): return render_template('contact.html')
+@app.route('/resume')
+def resume_view(): return render_template('resume.html')
 
 if __name__ == '__main__':
-    app.run(host = '0.0.0.0', port = 5000, debug=True)
+    app.run(host='0.0.0.0', port=5000, debug=True)

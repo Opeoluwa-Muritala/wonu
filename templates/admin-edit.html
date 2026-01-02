@@ -1,80 +1,169 @@
 <!doctype html>
-<html>
+<html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Edit Content</title>
+  <title>Edit Portfolio</title>
+  <link rel="stylesheet" href="{{url_for('static', filename = 'styles.css')}}" />
+  <style>
+    body { padding: 40px 0; min-height:100vh; }
+    .container { max-width: 800px; margin: 0 auto; padding: 0 20px; }
+    .edit-section { background: #101015; padding: 30px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.1); margin-bottom: 30px; }
+    .edit-section.new-project { border: 1px solid rgba(100, 255, 100, 0.3); }
+    h2 { color: var(--gold); font-size: 18px; margin: 0 0 20px 0; text-transform:uppercase; letter-spacing:1px; }
+    label { display:block; color:#888; font-size:12px; margin-bottom:6px; margin-top:16px; }
+    input, textarea { width: 100%; padding: 12px; background: #050505; border: 1px solid rgba(255,255,255,0.15); color: #fff; border-radius: 8px; outline:none; }
+    input:focus, textarea:focus { border-color: var(--gold); }
+    .header-row { display:flex; justify-content:space-between; align-items:center; margin-bottom:30px; }
+    .btn { padding: 12px 32px; border-radius: 50px; border:none; font-weight:700; cursor:pointer; }
+    .save-btn { background: var(--gold); color: #000; }
+    .add-btn { background: #222; color: #fff; border: 1px solid #444; width: 100%; margin-top: 20px; }
+    .grid-2 { display:grid; grid-template-columns: 1fr 1fr; gap:20px; }
+  </style>
 </head>
-<body>
+<body class="dark">
+<div class="container">
+  
+  <div class="header-row">
+    <h1>Dashboard</h1>
+    <button class="btn save-btn" onclick="saveAll()">Save Global Changes</button>
+  </div>
 
-<h2>Edit Content</h2>
+  <div class="edit-section new-project">
+    <h2 style="color: #8f8;">+ Add New Project</h2>
+    <div class="grid-2">
+      <div><label>Title</label><input id="newTitle"></div>
+      <div><label>Category</label><input id="newCategory"></div>
+    </div>
+    <label>Image Link</label><input id="newImage">
+    <label>Overview</label><textarea id="newOverview"></textarea>
+    <button class="btn add-btn" onclick="addProject()">Create Project</button>
+  </div>
 
-<input id="brand">
-<input id="first">
-<input id="last">
-<input id="subtitle">
-<input id="year">
+  <div class="edit-section">
+    <h2>Links & Contact</h2>
+    <div class="grid-2">
+        <div><label>LinkedIn URL</label><input id="linkedin"></div>
+        <div><label>Behance URL</label><input id="behance"></div>
+    </div>
+    <div class="grid-2">
+        <div><label>Email Address</label><input id="email"></div>
+        <div><label>Resume Link (URL or /static/file.pdf)</label><input id="resumeUrl"></div>
+    </div>
+  </div>
 
-<input id="resumeTitleInput">
-<textarea id="resumeSummaryInput"></textarea>
+  <div class="edit-section">
+    <h2>Site Identity</h2>
+    <div class="grid-2">
+      <div><label>Brand Name</label><input id="brand"></div>
+      <div><label>Badge Year</label><input id="year"></div>
+    </div>
+  </div>
 
-<input id="jobidTitle">
-<textarea id="jobidDesc"></textarea>
+  <div class="edit-section">
+    <h2>Hero Section</h2>
+    <div class="grid-2">
+      <div><label>First Name</label><input id="first"></div>
+      <div><label>Last Name</label><input id="last"></div>
+    </div>
+    <label>Subtitle</label><textarea id="subtitle"></textarea>
+  </div>
 
-<input id="snpTitle">
-<textarea id="snpDesc"></textarea>
+  <div id="projectsList"></div>
 
-<button onclick="save()">Save</button>
+</div>
 
 <script>
-let content;
+let fullData;
 
-fetch("http://localhost:5000/api/content", { credentials: "include" })
+fetch("/api/content", { credentials: "include" })
   .then(res => res.json())
   .then(data => {
-    content = data;
-
-    brand.value = data.site.brand;
-    year.value = data.site.badgeYear;
-
-    first.value = data.hero.firstName;
-    last.value = data.hero.lastName;
-    subtitle.value = data.hero.subtitle;
-
-    resumeTitleInput.value = data.resume.title;
-    resumeSummaryInput.value = data.resume.summary;
-
-    jobidTitle.value = data.projects.jobid.title;
-    jobidDesc.value = data.projects.jobid.description;
-
-    snpTitle.value = data.projects.snp.title;
-    snpDesc.value = data.projects.snp.description;
+    fullData = data;
+    renderFields();
+    renderProjects();
   });
 
-function save() {
-  content.site.brand = brand.value;
-  content.site.badgeYear = year.value;
+function renderFields() {
+    brand.value = fullData.site.brand || "";
+    year.value = fullData.site.badgeYear || "";
+    first.value = fullData.hero.firstName || "";
+    last.value = fullData.hero.lastName || "";
+    subtitle.value = fullData.hero.subtitle || "";
+    
+    // Socials
+    linkedin.value = fullData.social?.linkedin || "";
+    behance.value = fullData.social?.behance || "";
+    email.value = fullData.social?.email || "";
+    resumeUrl.value = fullData.social?.resumeUrl || "";
+}
 
-  content.hero.firstName = first.value;
-  content.hero.lastName = last.value;
-  content.hero.subtitle = subtitle.value;
+function renderProjects() {
+    const list = document.getElementById('projectsList');
+    list.innerHTML = '';
+    (fullData.projects || []).forEach((proj, index) => {
+        const html = `
+        <div class="edit-section">
+            <h2>Project ${proj.number}</h2>
+            <div class="grid-2">
+                <div><label>Title</label><input class="p-title" data-idx="${index}" value="${proj.title}"></div>
+                <div><label>Category</label><input class="p-cat" data-idx="${index}" value="${proj.category}"></div>
+            </div>
+            <label>Image Link</label><input class="p-img" data-idx="${index}" value="${proj.image}">
+            <label>Overview</label><textarea class="p-desc" data-idx="${index}">${proj.overview}</textarea>
+        </div>`;
+        list.insertAdjacentHTML('beforeend', html);
+    });
+}
 
-  content.resume.title = resumeTitleInput.value;
-  content.resume.summary = resumeSummaryInput.value;
+function addProject() {
+    const payload = {
+        title: document.getElementById('newTitle').value,
+        category: document.getElementById('newCategory').value,
+        image: document.getElementById('newImage').value,
+        overview: document.getElementById('newOverview').value
+    };
+    if(!payload.title) return alert("Enter title");
 
-  content.projects.jobid.title = jobidTitle.value;
-  content.projects.jobid.description = jobidDesc.value;
+    fetch("/api/project/add", {
+        method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(payload)
+    }).then(() => location.reload());
+}
 
-  content.projects.snp.title = snpTitle.value;
-  content.projects.snp.description = snpDesc.value;
+function saveAll() {
+    const btn = document.querySelector('.save-btn');
+    btn.innerText = "Saving...";
 
-  fetch("http://localhost:5000/api/content", {
-    method: "POST",
-    credentials: "include",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(content)
-  }).then(() => alert("Saved"));
+    // Update Data Object
+    fullData.site.brand = brand.value;
+    fullData.site.badgeYear = year.value;
+    fullData.hero.firstName = first.value;
+    fullData.hero.lastName = last.value;
+    fullData.hero.subtitle = subtitle.value;
+    
+    // Update Socials
+    if(!fullData.social) fullData.social = {};
+    fullData.social.linkedin = linkedin.value;
+    fullData.social.behance = behance.value;
+    fullData.social.email = email.value;
+    fullData.social.resumeUrl = resumeUrl.value;
+
+    // Update Projects
+    const titles = document.querySelectorAll('.p-title');
+    const cats = document.querySelectorAll('.p-cat');
+    const imgs = document.querySelectorAll('.p-img');
+    const descs = document.querySelectorAll('.p-desc');
+
+    fullData.projects.forEach((proj, i) => {
+        if(titles[i]) proj.title = titles[i].value;
+        if(cats[i]) proj.category = cats[i].value;
+        if(imgs[i]) proj.image = imgs[i].value;
+        if(descs[i]) proj.overview = descs[i].value;
+    });
+
+    fetch("/api/content", {
+        method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(fullData)
+    }).then(() => { alert("Saved!"); btn.innerText = "Save Global Changes"; });
 }
 </script>
-
 </body>
 </html>

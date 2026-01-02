@@ -1,0 +1,41 @@
+{
+    "site": {
+      "brand": "Nabena preye",
+      "badgeYear": "2026"
+    },
+    "hero": {
+      "firstName": "Preye",
+      "lastName": "Nabena",
+      "subtitle": "Hey! I'm a UI/UX designer passionate about designing meaningful products."
+    },
+    "resume": {
+      "title": "Resume",
+      "summary": "Download my resume below."
+    },
+    "projects": [
+      {
+        "id": "p05",
+        "number": "05",
+        "category": "Website Design",
+        "title": "SNP Website Redesign",
+        "overview": "A redesign concept focused on showcasing spaces and experiences with a clean, modern layout and bold typography.",
+        "image": "https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=1600&q=80",
+        "deliverables": ["Homepage layout", "Team section", "Responsive behavior"]
+      },
+      {
+        "id": "p04",
+        "number": "04",
+        "category": "Product Design",
+        "title": "JobID Case Study",
+        "overview": "A comprehensive case study regarding job identification and tracking systems for enterprise users.",
+        "image": "https://images.unsplash.com/photo-1545239351-1141bd82e8a6?auto=format&fit=crop&w=1600&q=80",
+        "deliverables": ["User Research", "Wireframing", "UI Design"]
+      }
+    ],
+    "social": {
+        "linkedin": "#",
+        "behance": "#",
+        "email": "nabenapreye@gmail.com",
+        "resumeUrl": "/static/resume.pdf"
+    }
+  }
