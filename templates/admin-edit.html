@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Edit Content</title>
+</head>
+<body>
+
+<h2>Edit Content</h2>
+
+<input id="brand">
+<input id="first">
+<input id="last">
+<input id="subtitle">
+<input id="year">
+
+<input id="resumeTitleInput">
+<textarea id="resumeSummaryInput"></textarea>
+
+<input id="jobidTitle">
+<textarea id="jobidDesc"></textarea>
+
+<input id="snpTitle">
+<textarea id="snpDesc"></textarea>
+
+<button onclick="save()">Save</button>
+
+<script>
+let content;
+
+fetch("http://localhost:5000/api/content", { credentials: "include" })
+  .then(res => res.json())
+  .then(data => {
+    content = data;
+
+    brand.value = data.site.brand;
+    year.value = data.site.badgeYear;
+
+    first.value = data.hero.firstName;
+    last.value = data.hero.lastName;
+    subtitle.value = data.hero.subtitle;
+
+    resumeTitleInput.value = data.resume.title;
+    resumeSummaryInput.value = data.resume.summary;
+
+    jobidTitle.value = data.projects.jobid.title;
+    jobidDesc.value = data.projects.jobid.description;
+
+    snpTitle.value = data.projects.snp.title;
+    snpDesc.value = data.projects.snp.description;
+  });
+
+function save() {
+  content.site.brand = brand.value;
+  content.site.badgeYear = year.value;
+
+  content.hero.firstName = first.value;
+  content.hero.lastName = last.value;
+  content.hero.subtitle = subtitle.value;
+
+  content.resume.title = resumeTitleInput.value;
+  content.resume.summary = resumeSummaryInput.value;
+
+  content.projects.jobid.title = jobidTitle.value;
+  content.projects.jobid.description = jobidDesc.value;
+
+  content.projects.snp.title = snpTitle.value;
+  content.projects.snp.description = snpDesc.value;
+
+  fetch("http://localhost:5000/api/content", {
+    method: "POST",
+    credentials: "include",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(content)
+  }).then(() => alert("Saved"));
+}
+</script>
+
+</body>
+</html>

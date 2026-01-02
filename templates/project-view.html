@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block title %}{{ project.title }}{% endblock %}
+
+{# This injects "dark" into the <body> class in base.html #}
+{% block body_class %}dark{% endblock %}
+
+{% block content %}
+<main class="article">
+  <div class="wrap">
+    <h1>{{ project.title }}</h1>
+    <div class="shot" aria-label="{{ project.title }} hero placeholder"></div>
+
+    <h2>Overview</h2>
+    <p>{{ project.overview }}</p>
+
+    <h2>Deliverables</h2>
+    <ul>
+      {% for item in project.deliverables %}
+        <li>{{ item }}</li>
+      {% endfor %}
+    </ul>
+  </div>
+</main>
+{% endblock %}

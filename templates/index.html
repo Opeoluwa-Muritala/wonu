@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block title %}Portfolio — Preye Nabena{% endblock %}
+
+{% block content %}
+  
+<div class="main-scroller">
+
+  <section class="hero sticky-section" style="z-index: 1;">
+    <div class="container stack">
+      <div class="kicker">
+        <span class="tiny">portfolio</span>
+      </div>
+
+      <div class="heroTitle" aria-label="Preye Nabena">
+        <span class="fill">Preye</span>
+        <span class="stroke">Nabena</span>
+        <span class="badgeYear">2026</span>
+      </div>
+
+      <p class="subtitle">
+        Hey! I'm a UI/UX designer passionate about<br/>
+        designing meaningful products.
+      </p>
+
+      <div class="scrollHint" aria-hidden="true"><span>↓</span></div>
+    </div>
+  </section>
+
+  {% for project in projects %}
+  <article class="project-slide sticky-section" style="z-index: {{ loop.index + 1 }};">
+    
+    <div class="glass-edge"></div>
+
+    <img src="{{ project.image }}" class="slide-bg-image" alt="{{ project.title }}">
+    <div class="slide-overlay"></div>
+
+    <div class="slide-content">
+      <span class="slide-number">{{ project.number }} — {{ project.category }}</span>
+      <h2 class="slide-title">{{ project.title }}</h2>
+      <p class="slide-desc">{{ project.overview }}</p>
+      <a href="{{ url_for('project_view_id', projectid=project.id) }}" class="slide-btn">View Case Study</a>
+    </div>
+  </article>
+  {% endfor %}
+
+</div>
+
+{% endblock %}

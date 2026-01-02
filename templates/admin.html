@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Admin Login</title>
+</head>
+<body>
+
+<input id="username" placeholder="Username">
+<input id="password" type="password" placeholder="Password">
+<button onclick="login()">Login</button>
+
+<script>
+function login() {
+  fetch("http://localhost:5000/api/login", {
+    method: "POST",
+    credentials: "include",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      username: username.value,
+      password: password.value
+    })
+  })
+  .then(res => {
+    if (!res.ok) throw new Error();
+    location.href = "admin-edit.html";
+  })
+  .catch(() => alert("Login failed"));
+}
+</script>
+
+</body>
+</html>

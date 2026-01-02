@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block title %}Projects — Preye Nabena{% endblock %}
+
+{# Leave body_class empty for light mode, or add a class if needed #}
+{% block body_class %}{% endblock %}
+
+{% block content %}
+
+  
+<main class="page">
+  <div class="container">
+    <h1 class="pageTitle">Resume</h1>
+    <p class="rich" style="max-width:800px;">
+    </p>
+
+    <div class="hr"></div>
+
+    <div class="projectCard" style="max-width:840px; margin:0 auto;">
+      <div class="meta">
+        <div class="pTitle" style="font-size:28px;">Download Resume</div>
+        <div class="pSub" style="margin-top:8px;">
+         CLick Here To View My Resume
+        </div>
+        <a class="pLink" style="margin-top:18px;" href="#" onclick="alert('Replace this link with your resume URL'); return false;">open resume</a>
+      </div>
+      <div class="pThumb" style="height:220px; opacity:.6;" aria-hidden="true"></div>
+    </div>
+  </div>
+</main>
+
+
+ {% endblock %}

@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>{% block title %}Nabena Preye{% endblock %}</title>
+  <link rel="preconnect" href="https://images.unsplash.com" />
+  <link rel="stylesheet" href="{{url_for('static', filename = 'styles.css')}}" />
+</head>
+<body class="{% block body_class %}{% endblock %}">
+  
+  <div class="nav">
+    <div class="container inner">
+      <a class="brand" href="{{url_for('home_view')}}">Nabena preye</a>
+      <div class="menu">
+        <a href="{{url_for('project_view')}}" >Projects</a>
+        <a href="{{url_for('about_view')}}" >Get to know me</a>
+        <a href="{{url_for('contact_view')}}">Contact</a>
+        <a href="{{url_for('resume_view')}}">Resume</a>
+      </div>
+    </div>
+  </div>
+
+  {% block content %}
+  {% endblock %}
+
+  <div class="footer">
+    <div class="container">
+      <div class="footerLine"></div>
+      <div class="footerInner">
+        <a href="#" aria-label="LinkedIn">in</a>
+        <a href="#" aria-label="Behance">Bē</a>
+        <a href="mailto:nabenapreye@gmail.com">nabenapreye@gmail.com</a>
+      </div>
+    </div>
+  </div>
+  
+  <button class="toTop hidden" aria-label="Back to top"></button>
+  <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>

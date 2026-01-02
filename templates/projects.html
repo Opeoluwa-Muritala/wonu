@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block title %}Projects — Preye Nabena{% endblock %}
+
+{# Leave body_class empty for light mode, or add a class if needed #}
+{% block body_class %}{% endblock %}
+
+{% block content %}
+<div class="rings"><div class="ring-lines"></div></div>
+
+<main class="page">
+  <div class="container">
+    <h1 class="pageTitle" style="margin-top:18px;">Projects</h1>
+    <p class="rich" style="max-width:780px;">
+      A quick gallery of projects. Click into a case study to see details.
+    </p>
+
+    <div class="hr"></div>
+
+    <div class="projectsGrid" id="projects-container">
+      {% for project in projects %}
+      <a class="projectCard {{ 'alt' if loop.index % 2 == 0 else '' }}" 
+         id="{{ project.id }}" 
+         href="{{ url_for('project_view_id', projectid=project.id) }}">
+        <div class="meta">
+          <div class="pNo">{{ project.number }}</div>
+          <div class="pTitle">{{ project.title }}</div>
+          <div class="pSub">{{ project.category }}</div>
+          <span class="pLink">view project</span>
+        </div>
+        <div class="pThumb" role="img" aria-label="{{ project.title }} preview"></div>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</main>
+{% endblock %}
