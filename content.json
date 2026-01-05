@@ -1,41 +1,76 @@
 {
-    "site": {
-      "brand": "Nabena preye",
-      "badgeYear": "2026"
+  "site": {
+    "brand": "Wonuola Ogundana",
+    "badgeYear": "2026"
+  },
+  "hero": {
+    "firstName": "Wonuola",
+    "lastName": "Ogundana Oyinkansola",
+    "subtitle": "A UI/UX designer who enjoys turning messy ideas into clear, thoughtful, and meaningful digital experiences. Currently designing products at Arca Payments and leading design at Datafrik."
+  },
+  "resume": {
+    "title": "Resume",
+    "summary": "I studied Computer Science, where logic meets creativity and empathy does the heavy lifting. I specialize in fintech, education, and travel products."
+  },
+  "projects": [
+    {
+      "id": "p01",
+      "number": "01",
+      "category": "EdTech / Learning",
+      "title": "Datafrik",
+      "overview": "Shaping learning experiences and designing responsive landing pages to bridge the gap in data education.",
+      "image": "https://www.figma.com/design/aGcr2ZOrnIDvMuNllhZeQI/DatAfrik-v2-Responsive-Landing-Page-Design-2?node-id=5721-31721",
+      "deliverables": [
+        "Responsive Landing Page",
+        "Learning Experience Design",
+        "Visual Systems"
+      ]
     },
-    "hero": {
-      "firstName": "Preye",
-      "lastName": "Nabena",
-      "subtitle": "Hey! I'm a UI/UX designer passionate about designing meaningful products."
+    {
+      "id": "p02",
+      "number": "02",
+      "category": "Fintech / Dashboard",
+      "title": "AV Card",
+      "overview": "A user-centric dashboard designed for managing virtual cards and financial transactions with clarity.",
+      "image": "https://www.figma.com/design/zpTBOdnshQOHQt4vsuONeK/AV-card-user-dashboard?node-id=570-4377",
+      "deliverables": [
+        "User Dashboard",
+        "Transaction Flows",
+        "UI Components"
+      ]
     },
-    "resume": {
-      "title": "Resume",
-      "summary": "Download my resume below."
+    {
+      "id": "p03",
+      "number": "03",
+      "category": "Travel / Booking",
+      "title": "Airxplora",
+      "overview": "Simplifying complex travel workflows to help users feel confident while exploring and booking.",
+      "image": "https://www.figma.com/design/xQWoxWR0RXyjBzDiTSJmvd/Airxplora?node-id=1135-3313",
+      "deliverables": [
+        "User Interface Design",
+        "Workflow Optimization",
+        "Mobile Experience"
+      ]
     },
-    "projects": [
-      {
-        "id": "p05",
-        "number": "05",
-        "category": "Website Design",
-        "title": "SNP Website Redesign",
-        "overview": "A redesign concept focused on showcasing spaces and experiences with a clean, modern layout and bold typography.",
-        "image": "https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=1600&q=80",
-        "deliverables": ["Homepage layout", "Team section", "Responsive behavior"]
-      },
-      {
-        "id": "p04",
-        "number": "04",
-        "category": "Product Design",
-        "title": "JobID Case Study",
-        "overview": "A comprehensive case study regarding job identification and tracking systems for enterprise users.",
-        "image": "https://images.unsplash.com/photo-1545239351-1141bd82e8a6?auto=format&fit=crop&w=1600&q=80",
-        "deliverables": ["User Research", "Wireframing", "UI Design"]
-      }
-    ],
-    "social": {
-        "linkedin": "#",
-        "behance": "#",
-        "email": "nabenapreye@gmail.com",
-        "resumeUrl": "/static/resume.pdf"
+    {
+      "id": "p04",
+      "number": "04",
+      "category": "Fintech / Admin Tool",
+      "title": "Arcabill",
+      "overview": "An admin dashboard and billing system designed to simplify complex payment workflows at Arca Payments.",
+      "image": "https://www.figma.com/design/kG8rYIIUpKYjtt3L5h3te1/Arca-bill-admin-dashboard?node-id=32-89",
+      "deliverables": [
+        "Admin Dashboard",
+        "Billing Logic Interface",
+        "Internal Tools Design"
+      ]
     }
+  ],
+  "social": {
+    "linkedin": "#",
+    "behance": "#",
+    "email": "Wonuolaogundana@gmail.com",
+    "resumeUrl": "https://drive.google.com/file/d/1HLB3k1tlE0Q_y916alXVDHMYnXvonGEt/view?usp=drive_link"
   }
+}
+
