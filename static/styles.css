@@ -137,13 +137,17 @@ a:hover{opacity:.9}
   color:var(--gold);
   text-shadow: 0 10px 40px rgba(208,162,75,.08);
 }
-.heroTitle .stroke{
-  font-family:var(--serif);
-  color:transparent;
-  -webkit-text-stroke: 1.4px rgba(208,162,75,.55);
-  text-stroke: 1.4px rgba(208,162,75,.55);
-  font-weight:700;
-  letter-spacing:-.5px;
+.heroTitle .stroke {
+  font-family: var(--font); 
+  
+  -webkit-text-stroke: 1.4px #8f34eb;
+  text-stroke: 1.4px #8f34eb;
+  
+  color: transparent;
+  
+  font-weight: 400; 
+  font-style: italic;
+  letter-spacing: -0.5px;
 }
 .badgeYear{
   font-size:14px;
