@@ -1,34 +1,22 @@
 {% extends "base.html" %}
 
-{% block title %}Projects — Preye Nabena{% endblock %}
-
-{# Leave body_class empty for light mode, or add a class if needed #}
-{% block body_class %}{% endblock %}
+{% block title %}About — {{ content.site.brand }}{% endblock %}
 
 {% block content %}
-
-  
 <main class="page">
   <div class="container">
     <h1 class="pageTitle">Get to know me</h1>
 
     <div class="rich" style="max-width:980px;">
-      <p>
-        Outside of work, I try to maintain a social life. I consider myself a homebody, so it’s really tough leaving my house
-        but when I do, I always have a good time. I enjoy binge-watching shows on Netflix. My fave show of all time is
-        The Big Bang Theory — Bazinga! 🤡
-      </p>
+      <p>{{ content.hero.subtitle }}</p>
+      <p style="margin-top: 20px;">{{ content.resume.summary }}</p>
     </div>
 
-    <div class="imageRow" aria-label="Photo gallery">
-      <div class="img one" title="Photo 1"></div>
-      <div class="img two" title="Photo 2"></div>
-      <div class="img three" title="Photo 3"></div>
+    <div class="imageRow">
+      <div class="img one"></div>
+      <div class="img two"></div>
+      <div class="img three"></div>
     </div>
   </div>
 </main>
-
- 
-
-
-{%  endblock %}
+{% endblock %}

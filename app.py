@@ -13,27 +13,29 @@ DATA_FILE = 'content.json'
 # --- 1. Load/Save Logic ---
 def load_content():
     if not os.path.exists(DATA_FILE):
-        # Default Content Structure
+        # Default Structure matching your provided JSON
         return {
-            "site": { "brand": "Nabena preye", "badgeYear": "2026" },
+            "site": { "brand": "Wonuola Ogundana", "badgeYear": "2026" },
+            "hero": {
+                "firstName": "Wonuola", 
+                "lastName": "Ogundana Oyinkansola",
+                "subtitle": "A UI/UX designer..."
+            },
             "social": {
+                "email": "Wonuolaogundana@gmail.com",
                 "linkedin": "#",
                 "behance": "#",
-                "email": "nabenapreye@gmail.com",
                 "resumeUrl": "#" 
             },
-            "hero": {
-                "firstName": "Preye", "lastName": "Nabena",
-                "subtitle": "Hey! I'm a UI/UX designer..."
-            },
-            "resume": { "title": "Resume", "summary": "Download below." },
             "projects": []
         }
     try:
         with open(DATA_FILE, 'r') as f:
             return json.load(f)
-    except:
+    except Exception:
         return {}
+
+
 
 def save_content(data):
     with open(DATA_FILE, 'w') as f:
