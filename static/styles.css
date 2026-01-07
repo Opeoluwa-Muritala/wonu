@@ -4,7 +4,7 @@
   --bg:#050505;
   --fg:#f3f3f3;
   --muted:#cfcfcf;
-  --gold:#8f34eb;
+  --gold:#f5f090;
   --gold2:#8f34eb;
   --card:#101015;
   --line:rgba(255,255,255,.12);
@@ -140,8 +140,8 @@ a:hover{opacity:.9}
 .heroTitle .stroke {
   font-family: var(--font); 
   
-  -webkit-text-stroke: 1.4px #8f34eb;
-  text-stroke: 1.4px #8f34eb;
+  -webkit-text-stroke: 1.4px var(--gold);
+  text-stroke: 1.4px var(--gold);
   
   color: transparent;
   
@@ -171,10 +171,10 @@ a:hover{opacity:.9}
 }
 .scrollHint span{
   width:18px; height:18px;
-  border:1px solid rgba(208,162,75,.5);
+  border:2px solid var(--gold);
   border-radius:999px;
-  display:grid; place-items:center;
-  font-size:14px;
+  display:flex; justify-content:center;
+  font-size:25px;
   transform: translateY(0);
   animation: float 1.8s ease-in-out infinite;
 }
@@ -395,7 +395,7 @@ a:hover{opacity:.9}
 .article p, .article li{
   font-size:16px;
   line-height:1.9;
-  color: rgba(0,0,0,.78);
+  color: var(--fg);
 }
 .article ul{padding-left:18px}
 .article .shot{
@@ -406,8 +406,7 @@ a:hover{opacity:.9}
   box-shadow: 0 18px 60px rgba(0,0,0,.12);
   background:
     linear-gradient(90deg, rgba(208,162,75,.4), rgba(208,162,75,0) 55%),
-    radial-gradient(circle at 70% 30%, rgba(0,0,0,.10), rgba(0,0,0,0) 55%),
-    url("https://images.unsplash.com/photo-1559028012-481c04fa702d?auto=format&fit=crop&w=1400&q=60");
+    radial-gradient(circle at 70% 30%, rgba(0,0,0,.10), rgba(0,0,0,0) 55%);
   background-size:cover;
   background-position:center;
   margin: 22px 0;
