@@ -892,6 +892,20 @@ a:hover{opacity:.9}
   transform: translateY(0);
 }
 
+/* ================= GRAY BACKGROUND SECTIONS ================= */
+.background-gray {
+  background:rgba(52, 86, 155, 0.37);        /* Figma-like neutral gray */
+  padding: 30px;              /* inner spacing */
+  margin: 40px -106px;        /* break out of container padding */
+}
+
+/* Remove extra top spacing caused by content-block */
+.background-gray.content-block {
+  margin-top: 0;
+}
+
+
+
 /* ================= RESPONSIVE ================= */
 @media (max-width: 980px) {
   .case-study.p02 .case-container { padding: 54px 22px; }
