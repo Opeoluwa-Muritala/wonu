@@ -1,250 +1,460 @@
 {% extends "base.html" %}
-{% block title %}{{ project.title }} — {{ content.site.brand }}{% endblock %}
-
 {% block content %}
-<main class="article">
-  <div class="wrap" style="max-width: 1080px;">
 
-    {# --- CONDITIONAL: CHECK IF PROJECT IS AV CARD (p02) --- #}
-    {% if project.id == 'p02' %}
+<section class="case-study p02">
+  <div class="case-container">
 
-    <div style="margin-bottom: 60px;">
-      <h1 style="margin-bottom: 16px; font-size: 56px; line-height: 1;">{{ project.title }}</h1>
-      <p style="font-size: 32px; color: #fff; margin: 0; font-weight: 700; line-height: 1.2;">
-        Smarter virtual cards for online payments
+    <!-- ================= HERO ================= -->
+    <header class="case-hero reveal">
+      <h1>AV Card</h1>
+      <p class="subtitle">Smarter virtual cards for online payments</p>
+
+      <div class="meta">
+        <div class = "info">
+          <span>Role</span>
+          UI/UX Design
+        </div>
+        <div class = "info">
+          <span>Year</span>
+          Feb 2025 – August 2025
+        </div>
+      </div>
+    </header>
+
+    <!-- ================= AV CARD PLATFORM (PURPLE PLACEHOLDER) ================= -->
+    <section class="content-block reveal">
+      <h2>AV Card Platform</h2>
+      <div class="mockup-placeholder">
+        <div class="mockup-overlay"></div>
+      </div>
+    </section>
+
+    <!-- ================= OVERVIEW ================= -->
+    <section class="content-block reveal">
+      <h2>Overview</h2>
+      <p>
+        Avcard is a virtual card product that allows users to instantly create, fund, and manage digital cards
+        for online payments, subscriptions, and global transactions. The platform focuses on speed, security,
+        and user control—eliminating common issues like card limits and payment failures.
       </p>
-      
-      <div style="margin-top: 32px; display: flex; gap: 80px; color: rgba(255,255,255,0.7); font-size: 16px; border-top: 1px solid rgba(255,255,255,0.15); padding-top: 24px;">
-        <div>
-            <span style="display:block; font-size: 14px; margin-bottom: 6px; color: #888;">Role</span>
-            UI/UX design
-        </div>
-        <div>
-            <span style="display:block; font-size: 14px; margin-bottom: 6px; color: #888;">Year</span>
-            Feb 2025 – August 2025
-        </div>
-      </div>
-    </div>
+    </section>
 
-    <div class="shot hero-shot" 
-         aria-label="AV Card Mobile Hero"
-         style="background-image: url('{{ project.image }}'); height: 600px; background-size: cover; background-position: center; border-radius: 24px; margin-bottom: 80px;">
-    </div>
+    <!-- ================= WHAT WASN'T WORKING ================= -->
+    <section class="content-block reveal">
+      <h2>What Wasn’t Working?</h2>
 
-    <div class="content-block" style="margin-bottom: 80px;">
-      <h2 style="font-size: 32px; margin-bottom: 24px;">Overview</h2>
-      <p style="font-size: 18px; line-height: 1.8; color: #ccc; max-width: 900px; margin-bottom: 60px;">
-        Avcard is a virtual card product that allows users to instantly create, fund, and manage digital cards for online payments, subscriptions, and global transactions. The platform focuses on speed, security, and user control, eliminating common issues like card limits and payment failures.
+      <ol class="problem-list">
+        <li>
+          <strong>Frequent Card Declines for Online Payments</strong>
+          <p>
+            Users experienced failed transactions when paying for international services, subscriptions,
+            and online purchases—leading to frustration and loss of trust.
+          </p>
+        </li>
+
+        <li>
+          <strong>Limited Control Over Spending</strong>
+          <p>
+            Fixed card limits, unclear balances, and poor transaction visibility made spending management difficult.
+          </p>
+        </li>
+
+        <li>
+          <strong>Complex Card Setup and Activation</strong>
+          <p>
+            Existing solutions required too many steps before users could create, fund, and use cards.
+          </p>
+        </li>
+
+        <li>
+          <strong>Low Trust in Card Security</strong>
+          <p>
+            Unclear PIN flows and limited transparency caused hesitation around online card usage.
+          </p>
+        </li>
+      </ol>
+    </section>
+
+    <!-- ================= HOW WE SOLVED IT ================= -->
+    <section class="content-block reveal">
+      <h2>How We Solved It</h2>
+      <p>
+        Avcard was designed to give users full control over their online payments through fast virtual card
+        creation, flexible spending controls, and secure transaction flows. By simplifying onboarding,
+        improving transparency, and prioritizing security, the product removes common payment pain points.
+      </p>
+    </section>
+
+      <!-- ================= KEY SOLUTIONS IMPLEMENTED ================= -->
+      <section class="content-block reveal">
+        <h2>Key Solutions Implemented</h2>
+  
+        <ol class="solution-list">
+          <li>
+            <strong>Instant Virtual Card Creation</strong>
+            <p>Users can create new virtual cards in seconds without complex verification steps.</p>
+          </li>
+          <li>
+            <strong>Custom Card Controls</strong>
+            <p>Each card can be named, funded individually, and assigned spending limits.</p>
+          </li>
+          <li>
+            <strong>Clear Activation & Status Feedback</strong>
+            <p>Users are clearly informed when a card is created, inactive, activated, or funded.</p>
+          </li>
+          <li>
+            <strong>Secure PIN-Based Transactions</strong>
+            <p>Every transaction requires a 4-digit PIN, increasing user confidence.</p>
+          </li>
+          <li>
+            <strong>Tier-Based Access with Clear Value</strong>
+            <p>Account tiers are clearly communicated with features available at each level.</p>
+          </li>
+          <li>
+            <strong>Transparent Transaction History</strong>
+            <p>Users can view transaction details in a clean, organized layout.</p>
+          </li>
+        </ol>
+      </section>
+  
+
+    <!-- ================= TARGET USERS ================= -->
+    <section class="content-block reveal">
+      <h2>Target Users</h2>
+      <p>
+        Freelancers, remote workers, online shoppers, and small business owners who frequently make online and
+        international payments and need a reliable, flexible alternative to traditional bank cards.
+      </p>
+    </section>
+
+    <!-- ================= USER RESEARCH ================= -->
+    <section class="content-block reveal">
+      <h2>User Research</h2>
+      <p>
+        Insights were gathered from users based on their experiences with online payments, subscription services,
+        and existing virtual or physical card solutions. This helped uncover common frustrations around card declines,
+        spending limits, and unclear transaction flows.
       </p>
 
-      <h2 style="font-size: 32px; margin-bottom: 30px;">What Wasn't Working?</h2>
-      
-      <div style="margin-bottom: 30px;">
-        <h3 style="font-size: 20px; color: #fff; margin-bottom: 10px;">1. Frequent Card Declines for Online Payments</h3>
-        <p style="color: #bbb; line-height: 1.7; font-size: 16px; margin: 0;">Users often experience failed transactions when trying to pay for international services, subscriptions, or online purchases. This creates frustration and a lack of trust in digital payment platforms.</p>
-      </div>
+      <h3>Pain Points</h3>
+      <ul class="bullets">
+        <li>Frequent card declines when paying for international services or subscriptions.</li>
+        <li>Limited control over spending and card limits across different use cases.</li>
+        <li>Confusion around card activation, funding, and transaction status.</li>
+        <li>Concerns about security when entering card details online.</li>
+        <li>Difficulty managing multiple cards for different purposes.</li>
+      </ul>
+    </section>
 
-      <div style="margin-bottom: 30px;">
-        <h3 style="font-size: 20px; color: #fff; margin-bottom: 10px;">2. Limited Control Over Spending</h3>
-        <p style="color: #bbb; line-height: 1.7; font-size: 16px; margin: 0;">Most users struggle to manage how much they spend online due to fixed card limits, unclear balances, and poor transaction visibility.</p>
-      </div>
+     
+  
+    <!-- ================= RESEARCH & DESIGN PROCESS (PURPLE PLACEHOLDER CARD) ================= -->
+    <section class="content-block reveal">
+      <h2>Research And Design Process</h2>
 
-      <div style="margin-bottom: 30px;">
-        <h3 style="font-size: 20px; color: #fff; margin-bottom: 10px;">3. Complex Card Setup and Activation Flows</h3>
-        <p style="color: #bbb; line-height: 1.7; font-size: 16px; margin: 0;">Existing virtual card solutions often require too many steps before a user can successfully create, fund, and use a card, leading to drop-offs during onboarding.</p>
-      </div>
-
-      <div style="margin-bottom: 30px;">
-        <h3 style="font-size: 20px; color: #fff; margin-bottom: 10px;">4. Low Trust in Card Security</h3>
-        <p style="color: #bbb; line-height: 1.7; font-size: 16px; margin: 0;">Users are cautious about online payments due to fraud risks, unclear PIN flows, and limited transparency around how their card details are protected.</p>
-      </div>
-    </div>
-
-    <div style="margin-bottom: 80px;">
-      <h2 style="font-size: 32px; margin-bottom: 24px;">How We Solved It</h2>
-      <p style="font-size: 18px; line-height: 1.8; color: #ccc; max-width: 900px; margin-bottom: 40px;">
-        Avcard was designed to give users full control over their online payments through fast virtual card creation, flexible spending controls, and secure transaction flows. By simplifying onboarding, improving transparency, and prioritizing security, the product removes common pain points associated with online payments and card failures.
-      </p>
-
-      <h3 style="color: var(--gold); font-size: 22px; margin-bottom: 30px;">🔹 Key Solutions Implemented</h3>
-
-      <div style="display: grid; gap: 30px;">
-         <div>
-            <strong style="display:block; font-size: 18px; color: #fff; margin-bottom: 6px;">1. Instant Virtual Card Creation</strong>
-            <p style="color: #bbb; margin:0; line-height: 1.6;">Users can create new virtual cards in seconds without complex verification steps, reducing friction and helping them get started quickly.</p>
-         </div>
-         <div>
-            <strong style="display:block; font-size: 18px; color: #fff; margin-bottom: 6px;">2. Custom Card Controls</strong>
-            <p style="color: #bbb; margin:0; line-height: 1.6;">Each card can be named, funded individually, and assigned spending limits, allowing users to manage subscriptions, one-time purchases, and business expenses with ease.</p>
-         </div>
-         <div>
-            <strong style="display:block; font-size: 18px; color: #fff; margin-bottom: 6px;">3. Clear Activation & Status Feedback</strong>
-            <p style="color: #bbb; margin:0; line-height: 1.6;">Users are clearly informed when a card is created, inactive, activated, or funded—removing confusion around why transactions might fail.</p>
-         </div>
-         <div>
-            <strong style="display:block; font-size: 18px; color: #fff; margin-bottom: 6px;">4. Secure PIN-Based Transactions</strong>
-            <p style="color: #bbb; margin:0; line-height: 1.6;">Every transaction requires a 4-digit PIN, adding an extra layer of security and increasing user confidence during payments.</p>
-         </div>
-      </div>
-    </div>
-
-    <div style="margin-top: 80px; margin-bottom: 80px;">
-        <h2 style="font-size: 32px; margin-bottom: 30px;">Research And Design Process</h2>
-        
-        <div style="background: linear-gradient(135deg, #5b3e96 0%, #8364d6 100%); padding: 60px 40px; border-radius: 24px; color: white;">
-            <h3 style="font-size: 28px; margin-top: 0;">Why This Process Worked</h3>
-            <p style="font-size: 16px; opacity: 0.9; margin-bottom: 50px; line-height: 1.6; max-width: 800px;">
-                This structured approach ensured that design decisions were rooted in real user problems while balancing business needs, security requirements, and scalability. The result was a seamless virtual card experience that feels intuitive, trustworthy, and easy to use.
-            </p>
-
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; border-top: 1px solid rgba(255,255,255,0.3); padding-top: 30px;">
-                <div>
-                    <strong style="display:block; margin-bottom: 10px; font-size: 18px;">Research</strong>
-                    <ul style="font-size: 13px; opacity: 0.9; line-height: 1.6; padding-left: 16px; margin: 0;">
-                        <li>Reviewed existing virtual card products and user feedback</li>
-                        <li>Identified common online payment and card usage challenges</li>
-                    </ul>
-                </div>
-                <div>
-                    <strong style="display:block; margin-bottom: 10px; font-size: 18px;">Analysis</strong>
-                    <ul style="font-size: 13px; opacity: 0.9; line-height: 1.6; padding-left: 16px; margin: 0;">
-                        <li>Synthesized findings into key pain points and opportunities</li>
-                        <li>Defined core problems around card reliability, control, and clarity</li>
-                    </ul>
-                </div>
-                <div>
-                    <strong style="display:block; margin-bottom: 10px; font-size: 18px;">Design</strong>
-                    <ul style="font-size: 13px; opacity: 0.9; line-height: 1.6; padding-left: 16px; margin: 0;">
-                        <li>Created user flows for onboarding, card creation, funding, and transactions</li>
-                        <li>Designed intuitive interfaces with clear status and feedback states</li>
-                    </ul>
-                </div>
-                <div>
-                    <strong style="display:block; margin-bottom: 10px; font-size: 18px;">Test</strong>
-                    <ul style="font-size: 13px; opacity: 0.9; line-height: 1.6; padding-left: 16px; margin: 0;">
-                        <li>Tested flows to identify usability issues and friction points</li>
-                        <li>Iterated designs based on feedback and observations</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div style="margin-bottom: 80px;">
-        <h2 style="font-size: 32px; margin-bottom: 40px;">User Personas</h2>
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 40px;">
-            
-            <div style="background: #1a1a1a; border-radius: 20px; overflow: hidden; border: 1px solid #333;">
-                <div style="height: 240px; background-color: #6a4cba; position: relative;">
-                    <div style="width:100%; height:100%; opacity:0.3; background: #000;"></div>
-                </div>
-                <div style="padding: 30px;">
-                    <h3 style="margin: 0; font-size: 24px;">Ada James - The Freelancer</h3>
-                    <p style="color: #888; margin-top: 8px; margin-bottom: 24px;">Age: 27 | Occupation: Freelance Graphic Designer | Tech Comfort: High</p>
-                    
-                    <strong style="color: var(--gold); font-size: 14px; text-transform: uppercase; letter-spacing: 1px; display:block; margin-bottom: 8px;">Goals</strong>
-                    <ul style="margin: 0 0 24px 0; padding-left: 18px; font-size: 15px; color: #ccc; line-height: 1.6;">
-                        <li>Make online payments quickly for subscriptions and tools</li>
-                        <li>Keep personal and work spending separate</li>
-                        <li>Avoid failed transactions during international payments</li>
-                    </ul>
-
-                    <strong style="color: var(--gold); font-size: 14px; text-transform: uppercase; letter-spacing: 1px; display:block; margin-bottom: 8px;">Frustrations & Painpoints</strong>
-                    <ul style="margin: 0; padding-left: 18px; font-size: 15px; color: #ccc; line-height: 1.6;">
-                        <li>Card declines on platforms like Adobe and Canva</li>
-                        <li>Difficulty tracking multiple payments</li>
-                        <li>Concerns about security when paying online</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div style="background: #1a1a1a; border-radius: 20px; overflow: hidden; border: 1px solid #333;">
-                <div style="height: 240px; background-color: #6a4cba; position: relative;">
-                     <div style="width:100%; height:100%; opacity:0.3; background: #000;"></div>
-                </div>
-                <div style="padding: 30px;">
-                    <h3 style="margin: 0; font-size: 24px;">Tunde - The Small Business Owner</h3>
-                    <p style="color: #888; margin-top: 8px; margin-bottom: 24px;">Age: 34 | Occupation: E-commerce Store Owner | Tech Comfort: Medium</p>
-                    
-                    <strong style="color: var(--gold); font-size: 14px; text-transform: uppercase; letter-spacing: 1px; display:block; margin-bottom: 8px;">Goals</strong>
-                    <ul style="margin: 0 0 24px 0; padding-left: 18px; font-size: 15px; color: #ccc; line-height: 1.6;">
-                        <li>Manage multiple online business payments efficiently</li>
-                        <li>Ensure team members can spend within set limits</li>
-                        <li>Access a secure and transparent way to handle virtual cards</li>
-                    </ul>
-
-                    <strong style="color: var(--gold); font-size: 14px; text-transform: uppercase; letter-spacing: 1px; display:block; margin-bottom: 8px;">Frustrations & Painpoints</strong>
-                    <ul style="margin: 0; padding-left: 18px; font-size: 15px; color: #ccc; line-height: 1.6;">
-                        <li>Lack of control over spending for employees</li>
-                        <li>Confusing card activation and funding flows</li>
-                        <li>Difficulty monitoring transactions across multiple cards</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div style="margin-bottom: 80px;">
-        <h2 style="font-size: 32px; margin-bottom: 16px;">A Usable Design System</h2>
-        <p style="font-size: 18px; color: #ccc; max-width: 900px; margin-bottom: 40px; line-height: 1.8;">
-            The Avcard design system was built around core components essential to the platform, serving as a central reference during developer handoff and enabling developers to reuse components efficiently throughout development.
+      <div class="process-card">
+        <h3>Why This Process Worked</h3>
+        <p class="process-intro">
+          This structured approach ensured that design decisions were rooted in real user problems while balancing
+          business needs, security requirements, and scalability. The result was a seamless virtual card experience
+          that feels intuitive, trustworthy, and easy to use.
         </p>
-        
-        <div style="margin-bottom: 40px; border-radius: 16px; overflow: hidden;">
-            <img src="{{ url_for('static', filename='screencapture-figma-proto-MT6mGQGpflyWSGlSix35qi-My-Portfolio-2026-01-17-08_41_18.png') }}" 
-                 alt="Typeface Montserrat" 
-                 style="width: 100%; height: auto; display: block;">
-        </div>
 
-        <div style="margin-bottom: 40px; border-radius: 16px; overflow: hidden;">
-            <img src="{{ url_for('static', filename='screencapture-figma-proto-MT6mGQGpflyWSGlSix35qi-My-Portfolio-2026-01-17-08_41_26.png') }}" 
-                 alt="Color Palette" 
-                 style="width: 100%; height: auto; display: block;">
-        </div>
-        
-        <div style="border-radius: 16px; overflow: hidden;">
-            <img src="{{ url_for('static', filename='screencapture-figma-proto-MT6mGQGpflyWSGlSix35qi-My-Portfolio-2026-01-17-08_49_00.png') }}" 
-                 alt="Components" 
-                 style="width: 100%; height: auto; display: block;">
-        </div>
-    </div>
+        <div class="process-steps">
+          <div>
+            <h4>Research</h4>
+            <ul>
+              <li>Reviewed existing virtual card products and feedback</li>
+              <li>Identified common online payment and card usage challenges</li>
+            </ul>
+          </div>
 
-    <div style="margin-bottom: 40px;">
-        <h2 style="font-size: 32px; margin-bottom: 16px;">Mobile Screens</h2>
-        <p style="font-size: 18px; color: #ccc; max-width: 900px; margin-bottom: 40px; line-height: 1.8;">
-            A mobile-friendly interface that presents virtual cards and transactions in a clear, card-based layout, allowing users to quickly view, manage, and interact with their cards. This intuitive design simplifies navigation, making it easy to create, fund, activate, and track cards on the go.
-        </p>
-        
-        <div style="width: 100%; border-radius: 24px; overflow: hidden;">
-            <img src="{{ url_for('static', filename='screencapture-figma-proto-MT6mGQGpflyWSGlSix35qi-My-Portfolio-2026-01-17-08_50_23.jpg') }}" 
-                 alt="Mobile Screens Preview" 
-                 style="width: 100%; height: auto; display: block;">
+          <div>
+            <h4>Analysis</h4>
+            <ul>
+              <li>Synthesized findings into key pain points and opportunities</li>
+              <li>Defined core problems around clarity and reliability</li>
+            </ul>
+          </div>
+
+          <div>
+            <h4>Design</h4>
+            <ul>
+              <li>Created flows for onboarding, creation, funding, transactions</li>
+              <li>Designed clear status and feedback states</li>
+            </ul>
+          </div>
+
+          <div>
+            <h4>Test</h4>
+            <ul>
+              <li>Tested flows to identify usability and friction points</li>
+              <li>Iterated designs based on feedback and observations</li>
+            </ul>
+          </div>
         </div>
-    </div>
+      </div>
+    </section>
+
+    <!-- ================= PERSONAS ================= -->
+    <section class="content-block reveal">
+      <h2>User Personas</h2>
+
+      <div class="persona">
+        <img src="{{ url_for('static', filename='img/ada.jpg') }}" alt="Ada James">
+        <div>
+          <h3>Ada James – The Freelancer</h3>
+          <p><strong>Age:</strong> 27</p>
+          <p><strong>Occupation:</strong> Freelance Graphic Designer</p>
+          <p><strong>Tech Comfort:</strong> High</p>
+
+          <h4>Goals</h4>
+          <ul class="bullets">
+            <li>Make online payments quickly for subscriptions and tools</li>
+            <li>Keep personal and work spending separate</li>
+            <li>Avoid failed transactions during international payments</li>
+          </ul>
+
+          <h4>Frustrations &amp; Painpoints</h4>
+          <ul class="bullets">
+            <li>Card declines on platforms like Adobe and Canva</li>
+            <li>Difficulty tracking multiple payments</li>
+            <li>Concerns about security when paying online</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="persona">
+        <img src="{{ url_for('static', filename='img/tunde.jpg') }}" alt="Tunde">
+        <div>
+          <h3>Tunde – The Small Business Owner</h3>
+          <p><strong>Age:</strong> 34</p>
+          <p><strong>Occupation:</strong> E-commerce Store Owner</p>
+          <p><strong>Tech Comfort:</strong> Medium</p>
+
+          <h4>Goals</h4>
+          <ul class="bullets">
+            <li>Manage multiple online business payments efficiently</li>
+            <li>Ensure team members can spend within set limits</li>
+            <li>Access a secure and transparent way to handle virtual cards</li>
+          </ul>
+
+          <h4>Frustrations &amp; Painpoints</h4>
+          <ul class="bullets">
+            <li>Lack of control over spending for employees</li>
+            <li>Confusing card activation and funding flows</li>
+            <li>Difficulty monitoring transactions across multiple cards</li>
+          </ul>
+        </div>
+      </div>
+      
+    </section>
+
+    <!-- ================= DESIGN SYSTEM ================= -->
+    <section class="content-block reveal">
+      <h2>A Scalable Design System</h2>
+      <p class="muted">
+        The Avcard design system was built around core components essential to the platform, serving as a central reference during developer
+        handoff and enabling developers to reuse components efficiently throughout development.
+      </p>
+    </section>
 
 
-    {# --- FALLBACK: DEFAULT LAYOUT FOR OTHER PROJECTS (p01, p03, etc) --- #}
-    {% else %}
     
-    <div class="wrap">
-        <h1>{{ project.title }}</h1>
-        <div class="shot" 
-             aria-label="{{ project.title }} hero"
-             style="background-image: url('{{ project.image }}'); background-size: cover; background-position: center;">
+    <!-- ================= TYPEFACE ================= -->
+    <section class="content-block background-gray reveal">
+      <h2>Typeface</h2>
+
+      <div class="type-card">
+        <div class="type-top">
+          <div class="type-brand">
+            <span class="aa">Aa</span>
+            <span class="font-name">Montserrat</span>
+          </div>
+
+          <div class="type-meta">
+            <div class="glyphs">AaBbCcDdEeFfGg</div>
+            <div class="glyphs">0123456789</div>
+            <div class="weights">Light <span>Medium</span> <strong>Semibold</strong></div>
+          </div>
         </div>
 
-        <h2>Overview</h2>
-        <p>{{ project.overview }}</p>
+        <div class="type-scale">
+          <div class="row">
+            <p class="heading">The Quick Brown Fox Jump Over The Lazy Fox</p>
+            <span>Heading 40px</span>
+          </div>
+          <div class="row">
+            <p class="subheading">The Quick Brown Fox Jump Over The Lazy Fox</p>
+            <span>Subheading 24px</span>
+          </div>
+          <div class="row">
+            <p class="body">The Quick Brown Fox Jump Over The Lazy Fox</p>
+            <span>Body 14px</span>
+          </div>
+        </div>
+      </div>
+    </section>
 
-        <h2>Deliverables</h2>
-        <ul>
-          {% for item in project.deliverables %}
-            <li>{{ item }}</li>
-          {% endfor %}
-        </ul>
-    </div>
+    <!-- ================= COLORS ================= -->
+    <section class="content-block background-gray reveal">
+      <h2>Colors</h2>
 
-    {% endif %}
+      <h3>Primary Shade</h3>
+      <p class="muted">
+        This is the brand color and is used for primary actions, like buttons and key elements. The primary color also highlights the main actions on the page.
+      </p>
+
+      <div class="swatch-grid">
+        <div class="swatch">
+          <div class="chip primary-100"></div>
+          <strong>100</strong>
+          <small>#065ECE</small>
+          <small class="sub">rgba(6, 94,206, 1)</small>
+        </div>
+        <div class="swatch">
+          <div class="chip primary-200"></div>
+          <strong>200</strong>
+          <small>#0653B7</small>
+          <small class="sub">rgba(6, 83, 183, 1)</small>
+        </div>
+        <div class="swatch">
+          <div class="chip primary-300"></div>
+          <strong>300</strong>
+          <small>#0549A0</small>
+          <small class="sub">rgba(5, 73, 160, 1)</small>
+        </div>
+        <div class="swatch">
+          <div class="chip primary-400"></div>
+          <strong>400</strong>
+          <small>#043E89</small>
+          <small class="sub">rgba(4, 62, 137, 1)</small>
+        </div>
+      </div>
+
+      <h3>Secondary Shade</h3>
+      <p class="muted">
+        This is the Secondary color it can be used for elements like buttons, it can also be used to emphasize the difference between app bars and other surfaces.
+      </p>
+
+      <div class="swatch-grid">
+        <div class="swatch">
+          <div class="chip secondary-100"></div>
+          <strong>100</strong>
+          <small>#E8F0FF</small>
+          <small class="sub">rgba(232, 240, 255, 1)</small>
+        </div>
+        <div class="swatch">
+          <div class="chip secondary-200"></div>
+          <strong>200</strong>
+          <small>#BFD3FF</small>
+          <small class="sub">rgba(191, 211, 255, 1)</small>
+        </div>
+        <div class="swatch">
+          <div class="chip secondary-300"></div>
+          <strong>300</strong>
+          <small>#76A8FF</small>
+          <small class="sub">rgba(118, 168, 255, 1)</small>
+        </div>
+        <div class="swatch">
+          <div class="chip secondary-400"></div>
+          <strong>400</strong>
+          <small>#0A4DAA</small>
+          <small class="sub">rgba(10, 77, 170, 1)</small>
+        </div>
+      </div>
+
+      <h3>Gray</h3>
+      <p class="muted">
+        Gray is a neutral color and can be used for text, borders, and icons. Most text should either be black/base or darker shades of Gray, with some additional
+        shades of dark gray for content hierarchy. Follow contrast accessibility requirements when considering anything but black or gray text on light/white
+        backgrounds.      </p>
+
+      <div class="swatch-grid">
+        <div class="swatch">
+          <div class="chip gray-100"></div>
+          <strong>100</strong>
+          <small>#FCFCFD</small>
+          <small class="sub">rgba(252, 252, 253, 1)</small>
+        </div>
+        <div class="swatch">
+          <div class="chip gray-200"></div>
+          <strong>200</strong>
+          <small>#F2F4F7</small>
+          <small class="sub">rgba(242, 244, 247, 1)</small>
+        </div>
+        <div class="swatch">
+          <div class="chip gray-300"></div>
+          <strong>300</strong>
+          <small>#E4E7EC</small>
+          <small class="sub">rgba(228, 231, 236, 1)</small>
+        </div>
+        <div class="swatch">
+          <div class="chip gray-400"></div>
+          <strong>400</strong>
+          <small>#D0D5DD</small>
+          <small class="sub">rgba(208, 213, 221, 1)</small>
+        </div>
+      </div>
+    </section>
+
+
+  
+        
+    <!-- ================= AvCard Platform================= -->
+    <section class="content-block  reveal">
+      <h2>AvCard Platform</h2>
+
+      <div class="mockup-placeholder">
+        <div class="mockup-overlay"></div>
+      </div>
+
+      <div class="mockup-placeholder">
+        <div class="mockup-overlay"></div>
+      </div>
+
+      <div class="mockup-placeholder">
+        <div class="mockup-overlay"></div>
+      </div>
+    </section>
+
+        <!-- ================= MOBILE SCREENS ================= -->
+    <section class="content-block reveal">
+      <h2>Mobile Screens</h2>
+
+      <p>
+        A mobile-friendly interface that presents virtual cards and transactions in a clear, card-based layout, allowing users to quickly view, manage,
+        and interact with their cards. This intuitive design simplifies navigation, making it easy to create, fund, activate, and track cards on the go
+      </p>
+
+      <div class="mockup-placeholder">
+        <div class="mockup-overlay"></div>
+      </div>
+    </section>
+
+    <!-- ================= LANDING PAGE (LIGHT) ================= -->
+    <section class="content-block reveal">
+      <h2>Landing Page</h2>
+
+      <div class="mockup-placeholder soft">
+        <div class="mockup-overlay"></div>
+      </div>
+    </section>
+
+        
+
   </div>
-</main>
+</section>
+
+<script>
+  const revealEls = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) entry.target.classList.add('active');
+    });
+  }, { threshold: 0.15 });
+
+  revealEls.forEach(el => observer.observe(el));
+</script>
+
 {% endblock %}
