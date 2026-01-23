@@ -19,7 +19,8 @@
       "category": "EdTech / Learning",
       "title": "Datafrik",
       "overview": "Shaping learning experiences and designing responsive landing pages to bridge the gap in data education.",
-      "image": "https://www.figma.com/design/aGcr2ZOrnIDvMuNllhZeQI/DatAfrik-v2-Responsive-Landing-Page-Design-2?node-id=5721-31721",
+      "image": "Landing page Redesign (1).png",
+      "color": "green",
       "deliverables": [
         "Responsive Landing Page",
         "Learning Experience Design",
@@ -32,7 +33,8 @@
       "category": "Fintech / Dashboard",
       "title": "AV Card",
       "overview": "A user-centric dashboard designed for managing virtual cards and financial transactions with clarity.",
-      "image": "https://www.figma.com/design/zpTBOdnshQOHQt4vsuONeK/AV-card-user-dashboard?node-id=570-4377",
+      "image": "DASHBOARD (1).png",
+      "color": "purple",
       "deliverables": [
         "User Dashboard",
         "Transaction Flows",
@@ -45,7 +47,8 @@
       "category": "Travel / Booking",
       "title": "Airxplora",
       "overview": "Simplifying complex travel workflows to help users feel confident while exploring and booking.",
-      "image": "https://www.figma.com/design/xQWoxWR0RXyjBzDiTSJmvd/Airxplora?node-id=1135-3313",
+      "image": "User Dashboard Flights.png",
+      "color": "pink",
       "deliverables": [
         "User Interface Design",
         "Workflow Optimization",
@@ -58,7 +61,8 @@
       "category": "Fintech / Admin Tool",
       "title": "Arcabill",
       "overview": "An admin dashboard and billing system designed to simplify complex payment workflows at Arca Payments.",
-      "image": "https://www.figma.com/design/kG8rYIIUpKYjtt3L5h3te1/Arca-bill-admin-dashboard?node-id=32-89",
+      "image": "Dashboard (2).png",
+      "color": "blue",
       "deliverables": [
         "Admin Dashboard",
         "Billing Logic Interface",
@@ -73,4 +77,3 @@
     "resumeUrl": "https://drive.google.com/file/d/1HLB3k1tlE0Q_y916alXVDHMYnXvonGEt/view?usp=drive_link"
   }
 }
-

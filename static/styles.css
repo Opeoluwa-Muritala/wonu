@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
 
 :root{
   --bg:#050505;
@@ -34,6 +35,7 @@ a:hover{opacity:.9}
   margin:0 auto;
 }
 
+/* --- NAVIGATION --- */
 .nav{
   position:fixed;
   top:0; left:0; right:0;
@@ -62,7 +64,7 @@ a:hover{opacity:.9}
 .menu a.active{color:var(--gold); opacity:1}
 .menu a:hover{color:var(--gold)}
 
-/* Background rings */
+/* --- BACKGROUND RINGS --- */
 .rings{
   position:fixed;
   inset:-20vh -10vw -20vh -10vw;
@@ -99,6 +101,7 @@ a:hover{opacity:.9}
   filter: blur(.3px);
 }
 
+/* --- HERO SECTION --- */
 .hero{
   min-height:100vh;
   display:flex;
@@ -138,11 +141,8 @@ a:hover{opacity:.9}
 }
 .heroTitle .stroke {
   font-family: var(--font); 
-  
   -webkit-text-stroke: 1.4px var(--gold);
-  
   color: transparent;
-  
   font-weight: 400; 
   font-style: italic;
   letter-spacing: -0.5px;
@@ -193,71 +193,145 @@ a:hover{opacity:.9}
   height:1px; background:var(--line);
   margin:30px 0 22px;
 }
-.projectsGrid{
-  display:grid;
+
+/* --- NEW PROJECT CARD (Full Color Style) --- */
+
+.projectsGrid {
+  display: grid;
   grid-template-columns: repeat(12, 1fr);
-  gap:22px;
+  gap: 30px; 
 }
-.projectCard{
+
+.projectCard {
   grid-column: span 6;
-  background: linear-gradient(180deg, rgba(16,16,21,.75), rgba(16,16,21,.55));
-  border:1px solid rgba(255,255,255,.10);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
-  overflow:hidden;
-  position:relative;
+  border-radius: 32px; 
+  overflow: hidden;
+  position: relative;
+  min-height: 480px; 
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end; /* Pushes text to bottom */
+  box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-decoration: none;
+  border: 1px solid rgba(255,255,255,0.1);
 }
-.projectCard .meta{
-  padding:40px; /* Increased padding to fix text hugging the edges */
+
+.projectCard:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 30px 60px rgba(0,0,0,0.5);
 }
-.pNo{
-  font-weight:800;
-  font-size:44px;
-  letter-spacing:-.5px;
+
+/* Background Image */
+.pThumb {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center top;
+  z-index: 0;
+  transition: transform 0.6s ease;
+}
+
+.projectCard:hover .pThumb {
+  transform: scale(1.05);
+}
+
+/* Color Overlay */
+.projectCard::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.9));
+  transition: opacity 0.3s ease;
+}
+
+/* Text Content */
+.meta {
+  position: relative;
+  z-index: 2;
+  padding: 40px;
+  width: 100%;
+}
+
+.pNo {
+  font-size: 60px;
+  font-weight: 800;
+  opacity: 0.5;
+  margin-bottom: 20px;
   line-height: 1;
 }
-.pTitle{
-  font-size:34px;
-  font-weight:800;
-  margin-top:10px;
-  letter-spacing:-.8px;
-}
-.pSub{
-  margin-top:14px;
-  font-size:14px;
-  color: rgba(255,255,255,.78);
-}
-.pLink{
-  display:inline-flex;
-  margin-top:16px;
-  font-size:13px;
-  color: rgba(255,255,255,.9);
-  border-bottom:1px solid rgba(255,255,255,.35);
-  padding-bottom:2px;
-}
-.pThumb{
-  height:260px;
-  background:
-    linear-gradient(90deg, rgba(255, 245, 100, 0.55), rgba(208,162,75,0) 55%),
-    radial-gradient(circle at 22% 30%, rgba(255,255,255,.16), rgba(255,255,255,0) 50%),
-    linear-gradient(180deg, rgba(0,0,0,.10), rgba(0,0,0,.35)),
-    url("https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=1400&q=60");
-  background-size: cover;
-  background-position:center;
-  filter:saturate(.9) contrast(1.05);
-  opacity:.92;
-}
-.projectCard.alt .pThumb{
-  background:
-    linear-gradient(90deg, rgba(208,162,75,.0), rgba(208,162,75,.55) 60%),
-    radial-gradient(circle at 80% 32%, rgba(255,255,255,.16), rgba(255,255,255,0) 50%),
-    linear-gradient(180deg, rgba(0,0,0,.10), rgba(0,0,0,.35)),
-    url("https://images.unsplash.com/photo-1545239351-1141bd82e8a6?auto=format&fit=crop&w=1400&q=60");
-  background-size: cover;
-  background-position:center;
-}
-.projectCard:hover{transform: translateY(-2px); transition:.2s ease}
 
+.pTitle {
+  font-size: 42px;
+  font-weight: 800;
+  margin: 0 0 10px;
+  line-height: 1.1;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+
+.pSub {
+  font-size: 16px;
+  font-weight: 500;
+  opacity: 0.9;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 24px;
+}
+
+.pLink {
+  display: inline-block;
+  padding: 12px 28px;
+  background: rgba(255,255,255,0.2);
+  border: 1px solid rgba(255,255,255,0.4);
+  backdrop-filter: blur(4px);
+  border-radius: 50px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #fff;
+  transition: background 0.3s;
+}
+
+.projectCard:hover .pLink {
+  background: #fff;
+  color: #000;
+}
+
+/* --- CARD THEMES (Gradients) --- */
+
+/* PINK (Airxplora) */
+.projectCard.pink::after {
+  background: linear-gradient(to bottom, 
+    rgba(233, 30, 99, 0.2) 0%, 
+    rgba(233, 30, 99, 0.8) 50%, 
+    rgba(160, 10, 60, 0.95) 100%);
+}
+
+/* BLUE (Arcabill) */
+.projectCard.blue::after {
+  background: linear-gradient(to bottom, 
+    rgba(6, 94, 206, 0.2) 0%, 
+    rgba(6, 94, 206, 0.8) 50%, 
+    rgba(4, 50, 120, 0.95) 100%);
+}
+
+/* PURPLE (AV Card) */
+.projectCard.purple::after {
+  background: linear-gradient(to bottom, 
+    rgba(108, 93, 211, 0.2) 0%, 
+    rgba(108, 93, 211, 0.8) 50%, 
+    rgba(60, 40, 140, 0.95) 100%);
+}
+
+/* GREEN (Datafrik) */
+.projectCard.green::after {
+  background: linear-gradient(to bottom, 
+    rgba(0, 191, 165, 0.2) 0%, 
+    rgba(0, 191, 165, 0.8) 50%, 
+    rgba(0, 100, 90, 0.95) 100%);
+}
+
+/* --- FOOTER & GENERAL PAGE --- */
 .footer{
   padding: 22px 0 34px;
 }
@@ -336,7 +410,7 @@ a:hover{opacity:.9}
 
 .centerBox{
   min-height: calc(100vh - 220px);
-  display:flex; /* Flex instead of grid for better text centering */
+  display:flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -356,6 +430,7 @@ a:hover{opacity:.9}
 }
 .centerBox a.gold{color:var(--gold);}
 
+/* --- LIGHT MODE UTILS --- */
 .light{
   background: #fafafa;
   color:#111;
@@ -411,7 +486,7 @@ a:hover{opacity:.9}
 }
 
 @media (max-width: 980px){
-  .projectCard{grid-column: span 12}
+  .projectCard{grid-column: span 12; min-height: 400px;}
   .imageRow{grid-template-columns:1fr; }
   .img{min-height:320px}
   .img.three{min-height:280px}
@@ -419,7 +494,7 @@ a:hover{opacity:.9}
   .menu{gap:18px}
 }
 
-/* --- STICKY STACKING SYSTEM --- */
+/* --- STICKY SLIDES (Home Page) --- */
 .main-scroller {
   position: relative;
   width: 100%;
@@ -479,12 +554,7 @@ a:hover{opacity:.9}
   position: absolute;
   inset: 0;
   z-index: 1;
-  background: linear-gradient(
-    to bottom,
-    rgba(229, 255, 0, 0.12), 
-    rgba(0, 0, 0, 0.5) 40%,
-    rgba(0, 0, 0, 0.95) 90%
-  );
+  background: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.9));
 }
 
 .slide-content {
@@ -534,19 +604,43 @@ a:hover{opacity:.9}
   backdrop-filter: blur(4px);
 }
 .slide-btn:hover {
-  background: var(--gold);
-  border-color: var(--gold);
-  color: #fff;
+  background: #fff;
+  border-color: #fff;
+  color: #000;
 }
 
 @keyframes fadeUp {
   to { opacity: 1; transform: translateY(0); }
-}/* ===========================
-   P02 / AV CARD CASE STUDY
-   Append at END of styles.css
-   =========================== */
+}
 
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+/* --- HOME PAGE SLIDE THEMES --- */
+/* PINK (Airxplora) */
+.project-slide.pink .slide-overlay {
+  background: linear-gradient(to bottom, rgba(233, 30, 99, 0.3), rgba(0,0,0,0.95));
+}
+.project-slide.pink .slide-number { color: #FF80AB; }
+
+/* BLUE (Arcabill) */
+.project-slide.blue .slide-overlay {
+  background: linear-gradient(to bottom, rgba(6, 94, 206, 0.3), rgba(0,0,0,0.95));
+}
+.project-slide.blue .slide-number { color: #82B1FF; }
+
+/* PURPLE (AV Card) */
+.project-slide.purple .slide-overlay {
+  background: linear-gradient(to bottom, rgba(108, 93, 211, 0.3), rgba(0,0,0,0.95));
+}
+.project-slide.purple .slide-number { color: #B388FF; }
+
+/* GREEN (Datafrik) */
+.project-slide.green .slide-overlay {
+  background: linear-gradient(to bottom, rgba(0, 191, 165, 0.3), rgba(0,0,0,0.95));
+}
+.project-slide.green .slide-number { color: #A7FFEB; }
+
+/* ===========================
+   P02 / AV CARD CASE STUDY (RESTORED)
+   =========================== */
 
 .case-study.p02 {
   background: #0e0e0e;
@@ -576,8 +670,6 @@ a:hover{opacity:.9}
   font-size: 16px;
   line-height: 1.9;
 }
-
-
 
 .case-study.p02 .persona,
 .case-study.p02 p {
@@ -638,8 +730,13 @@ a:hover{opacity:.9}
 
 .background-gray {
   color: rgb(238, 236, 236);
-  background: rgba(172, 53, 53,);
+  background: rgba(52, 86, 155, 0.37);
+  padding: 30px;
+  margin: 40px -106px;
+}
 
+.background-gray.content-block {
+  margin-top: 0;
 }
 
 .case-study.p02 .content-block h4 {
@@ -892,19 +989,131 @@ a:hover{opacity:.9}
   transform: translateY(0);
 }
 
-/* ================= GRAY BACKGROUND SECTIONS ================= */
-.background-gray {
-  background:rgba(52, 86, 155, 0.37);        /* Figma-like neutral gray */
-  padding: 30px;              /* inner spacing */
-  margin: 40px -106px;        /* break out of container padding */
+/* ================= PROCESS TIMELINE ================= */
+.process-timeline {
+  position: relative;
+  margin-top: 56px;
+  padding-top: 28px;
 }
 
-/* Remove extra top spacing caused by content-block */
-.background-gray.content-block {
-  margin-top: 0;
+.process-timeline::before {
+  content: "";
+  position: absolute;
+  top: 14px;
+  left: 48px;
+  right: 48px;
+  height: 1.5px;
+  background: rgba(255, 255, 255, 0.45);
+}
+
+.timeline-dots {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  position: relative;
+  z-index: 1;
+  padding: 0 48px;
+}
+
+.timeline-dots .dot {
+  width: 12px;
+  height: 12px;
+  margin: 0 auto;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.95);
+}
+
+.reveal.active .timeline-dots .dot {
+  box-shadow: 0 0 0 6px rgba(255, 255, 255, 0.18);
 }
 
 
+/* =========================================
+   LIGHT MODE OVERRIDES (For Project View)
+   ========================================= */
+
+/* 1. Body & Page Background */
+body.light-mode {
+  background: #ffffff;
+  color: #111111;
+}
+
+/* 2. Navigation Bar (White) */
+.light-mode .nav {
+  background: rgba(255, 255, 255, 0.95);
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.02);
+}
+.light-mode .brand { color: #000; }
+.light-mode .menu a { color: #333; }
+.light-mode .menu a:hover, .light-mode .menu a.active { color: #000; opacity: 1; }
+
+/* 3. Footer (White) */
+.light-mode .footer {
+  background: #ffffff;
+  border-top: 1px solid rgba(0,0,0,0.06);
+}
+.light-mode .footerInner { color: #555; }
+.light-mode .footerInner a { color: #111; font-weight: 600; }
+.light-mode .footerLine { background: rgba(0,0,0,0.1); }
+
+/* 4. Case Study Content (White bg, Black text) */
+.light-mode .case-study.p02 {
+  background: #ffffff;
+}
+
+.light-mode .case-study.p02 .case-container {
+  background: #ffffff;
+  color: #222;
+}
+
+/* Headings */
+.light-mode .case-study.p02 h1,
+.light-mode .case-study.p02 h2,
+.light-mode .case-study.p02 h3,
+.light-mode .case-study.p02 h4 {
+  color: #000000;
+}
+
+/* Body Text */
+.light-mode .case-study.p02 p,
+.light-mode .case-study.p02 li {
+  color: #333333;
+}
+
+/* Subtitles & Meta Data */
+.light-mode .case-study.p02 .subtitle { color: #555; }
+.light-mode .case-study.p02 .muted { color: #666; }
+.light-mode .case-study.p02 .meta { border-top-color: rgba(0,0,0,0.1); }
+.light-mode .case-study.p02 .meta span { color: #777; }
+.light-mode .case-study.p02 .meta .info { color: #333; }
+
+/* 5. Components Adjustments */
+
+/* Gray Section Background */
+.light-mode .background-gray {
+  background: #F2F4F7; /* Light gray instead of dark gray */
+  color: #111;
+}
+
+/* Process Card (Keep it purple, but ensure text is white inside) */
+.light-mode .process-card {
+  color: #fff;
+}
+.light-mode .process-card p,
+.light-mode .process-card li,
+.light-mode .process-card h3,
+.light-mode .process-card h4 {
+  color: #fff !important;
+}
+.light-mode .process-timeline::before {
+  background: rgba(255,255,255,0.3);
+}
+
+/* Problem/Solution Lists */
+.light-mode .problem-list strong,
+.light-mode .solution-list strong {
+  color: #000;
+}
 
 /* ================= RESPONSIVE ================= */
 @media (max-width: 980px) {
@@ -920,4 +1129,3 @@ a:hover{opacity:.9}
   .case-study.p02 .swatch-grid { grid-template-columns: 1fr; }
   .case-study.p02 .process-steps { grid-template-columns: 1fr; }
 }
-

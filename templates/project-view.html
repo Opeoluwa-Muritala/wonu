@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% block body_class %}light-mode{% endblock %}
 {% block content %}
 
 <section class="case-study p02">
@@ -151,50 +152,66 @@
     <!-- ================= RESEARCH & DESIGN PROCESS (PURPLE PLACEHOLDER CARD) ================= -->
     <section class="content-block reveal">
       <h2>Research And Design Process</h2>
-
+    
       <div class="process-card">
+    
         <h3>Why This Process Worked</h3>
         <p class="process-intro">
           This structured approach ensured that design decisions were rooted in real user problems while balancing
           business needs, security requirements, and scalability. The result was a seamless virtual card experience
           that feels intuitive, trustworthy, and easy to use.
         </p>
-
-        <div class="process-steps">
-          <div>
-            <h4>Research</h4>
-            <ul>
-              <li>Reviewed existing virtual card products and feedback</li>
-              <li>Identified common online payment and card usage challenges</li>
-            </ul>
+    
+        <!-- TIMELINE -->
+        <div class="process-timeline">
+    
+          <!-- Dots row -->
+          <div class="timeline-dots">
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
           </div>
-
-          <div>
-            <h4>Analysis</h4>
-            <ul>
-              <li>Synthesized findings into key pain points and opportunities</li>
-              <li>Defined core problems around clarity and reliability</li>
-            </ul>
+    
+          <!-- Content row -->
+          <div class="process-steps">
+            <div class="step">
+              <h4>Research</h4>
+              <ul>
+                <li>Reviewed existing virtual card products and feedback</li>
+                <li>Identified common online payment and card usage challenges</li>
+              </ul>
+            </div>
+    
+            <div class="step">
+              <h4>Analysis</h4>
+              <ul>
+                <li>Synthesized findings into key pain points and opportunities</li>
+                <li>Defined core problems around clarity and reliability</li>
+              </ul>
+            </div>
+    
+            <div class="step">
+              <h4>Design</h4>
+              <ul>
+                <li>Created flows for onboarding, creation, funding, transactions</li>
+                <li>Designed clear status and feedback states</li>
+              </ul>
+            </div>
+    
+            <div class="step">
+              <h4>Test</h4>
+              <ul>
+                <li>Tested flows to identify usability and friction points</li>
+                <li>Iterated designs based on feedback and observations</li>
+              </ul>
+            </div>
           </div>
-
-          <div>
-            <h4>Design</h4>
-            <ul>
-              <li>Created flows for onboarding, creation, funding, transactions</li>
-              <li>Designed clear status and feedback states</li>
-            </ul>
-          </div>
-
-          <div>
-            <h4>Test</h4>
-            <ul>
-              <li>Tested flows to identify usability and friction points</li>
-              <li>Iterated designs based on feedback and observations</li>
-            </ul>
-          </div>
+    
         </div>
       </div>
     </section>
+    
 
     <!-- ================= PERSONAS ================= -->
     <section class="content-block reveal">

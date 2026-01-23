@@ -11,30 +11,67 @@ app.secret_key = os.getenv('SECRET_KEY', 'default_secret_key')
 DATA_FILE = 'content.json'
 
 # --- 1. Load/Save Logic ---
+# In app.py - Replace the default return in load_content() or the content.json structure
+
 def load_content():
     if not os.path.exists(DATA_FILE):
-        # Default Structure matching your provided JSON
         return {
             "site": { "brand": "Wonuola Ogundana", "badgeYear": "2026" },
             "hero": {
                 "firstName": "Wonuola", 
-                "lastName": "Ogundana Oyinkansola",
-                "subtitle": "A UI/UX designer..."
+                "lastName": "Ogundana",
+                "subtitle": "A UI/UX designer passionate about designing meaningful products."
             },
             "social": {
                 "email": "Wonuolaogundana@gmail.com",
-                "linkedin": "#",
-                "behance": "#",
-                "resumeUrl": "#" 
+                "linkedin": "#", "behance": "#", "resumeUrl": "#" 
             },
-            "projects": []
+            # DATA FED FROM HERE
+            "projects": [
+                {
+                    "id": "p01",
+                    "number": "01",
+                    "title": "Airxplora",
+                    "category": "Travel Booking Platform",
+                    "overview": "A seamless travel planning platform for flights and hotels.",
+                    # Note: We use 'filename' for static images
+                    "image": "User Dashboard Flights.jpg",
+                    "color": "pink" 
+                },
+                {
+                    "id": "p02",
+                    "number": "02",
+                    "title": "Arcabill",
+                    "category": "Utility Payment Dashboard",
+                    "overview": "Manage electricity, airtime, and subscriptions in one place.",
+                    "image": "Dashboard (2).png",
+                    "color": "blue"
+                },
+                {
+                    "id": "p03",
+                    "number": "03",
+                    "title": "AV Card",
+                    "category": "Virtual Banking App",
+                    "overview": "Smarter virtual cards for online payments.",
+                    "image": "DASHBOARD (1).jpg",
+                    "color": "purple"
+                },
+                {
+                    "id": "p04",
+                    "number": "04",
+                    "title": "Datafrik",
+                    "category": "Tech Analytics Landing",
+                    "overview": "Empowering businesses with data-driven insights.",
+                    "image": "Landing page Redesign (1).jpg",
+                    "color": "green"
+                }
+            ]
         }
     try:
         with open(DATA_FILE, 'r') as f:
             return json.load(f)
     except Exception:
         return {}
-
 
 
 def save_content(data):
