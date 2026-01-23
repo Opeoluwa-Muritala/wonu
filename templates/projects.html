@@ -16,18 +16,18 @@
 
     <div class="projectsGrid">
       {% for project in content.projects %}
-      <a class="projectCard {{ 'alt' if loop.index % 2 == 0 else '' }}" 
+      <a class="projectCard {{ project.color }}" 
          href="{{ url_for('project_view_id', projectid=project.id) }}">
+        
         <div class="meta">
           <div class="pNo">{{ project.number }}</div>
           <div class="pTitle">{{ project.title }}</div>
           <div class="pSub">{{ project.category }}</div>
           <span class="pLink">view project</span>
         </div>
+        
         <div class="pThumb" 
-             style="background-image: url('{{ project.image }}');"
-             role="img" 
-             aria-label="{{ project.title }} preview">
+             style="background-image: url('{{ url_for('static', filename=project.image) }}');">
         </div>
       </a>
       {% endfor %}

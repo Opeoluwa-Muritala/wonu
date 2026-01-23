@@ -8,31 +8,27 @@
 
   <section class="hero sticky-section" style="z-index: 1;">
     <div class="container stack">
-      <div class="kicker">
-        <span class="tiny">portfolio</span>
-      </div>
-
-      <div class="heroTitle" aria-label="Wonuola Ogundana">
+      <div class="kicker"><span class="tiny">portfolio</span></div>
+      <div class="heroTitle">
         <span class="fill">Wonuola</span>
         <span class="stroke">Ogundana</span>
         <span class="badgeYear">2026</span>
       </div>
-
       <p class="subtitle">
         Hey! I'm a UI/UX designer passionate about<br/>
         designing meaningful products.
       </p>
-
-      <div class="scrollHint" aria-hidden="true"><span>ˇ</span></div>
+      <div class="scrollHint"><span>ˇ</span></div>
     </div>
   </section>
 
   {% for project in projects %}
-  <article class="project-slide sticky-section" style="z-index: {{ loop.index + 1 }};">
+  <article class="project-slide sticky-section {{ project.color }}" style="z-index: {{ loop.index + 1 }};">
     
     <div class="glass-edge"></div>
 
-    <img src="{{ project.image }}" class="slide-bg-image" alt="{{ project.title }}">
+    <img src="{{ url_for('static', filename=project.image) }}" class="slide-bg-image" alt="{{ project.title }}">
+    
     <div class="slide-overlay"></div>
 
     <div class="slide-content">
@@ -45,5 +41,4 @@
   {% endfor %}
 
 </div>
-
 {% endblock %}
