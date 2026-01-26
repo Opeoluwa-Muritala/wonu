@@ -297,6 +297,12 @@ a:hover{opacity:.9}
   color: #000;
 }
 
+.pLink:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 2px;
+  background: #fff;
+  color: #000;
+}
 /* --- CARD THEMES (Gradients) --- */
 
 /* PINK (Airxplora) */
@@ -592,6 +598,14 @@ a:hover{opacity:.9}
   line-height: 1.7;
 }
 
+.slide-btn:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 2px;
+  background: #fff;
+  border-color: #fff;
+  color: #000;
+}
+
 .slide-btn {
   display: inline-block;
   padding: 14px 36px;
@@ -766,7 +780,7 @@ a:hover{opacity:.9}
   margin-bottom: 6px;
 }
 
-/* ================= PURPLE PLACEHOLDER ================= */
+/* ================= Mock-Up PLACEHOLDER ================= */
 .case-study.p02 .mockup-placeholder {
   position: relative;
   height: 420px;
@@ -781,6 +795,57 @@ a:hover{opacity:.9}
   overflow: hidden;
   border: 1px solid rgba(0,0,0,.18);
 }
+
+/* PINK (Airxplora) */
+.case-study.p02 .mockup-placeholder.pink {
+  position: relative;
+  height: 420px;
+  margin: 28px 0 0;
+  border-radius: 24px;
+  background: linear-gradient(
+    rgba(233, 30, 99, 0.2) 0%, 
+    rgba(233, 30, 99, 0.8) 50%, 
+    rgba(160, 10, 60, 0.95) 100%);
+}
+
+/* BLUE (Arcabill) */
+.case-study.p02 .mockup-placeholder.blue {
+  position: relative;
+  height: 420px;
+  margin: 28px 0 0;
+  border-radius: 24px;
+  background: linear-gradient( 
+    rgba(6, 94, 206, 0.2) 0%, 
+    rgba(6, 94, 206, 0.8) 50%, 
+    rgba(4, 50, 120, 0.95) 100%);
+}
+
+/* PURPLE (AV Card) */
+.case-study.p02 .mockup-placeholder.purple{
+  position: relative;
+  height: 420px;
+  margin: 28px 0 0;
+  border-radius: 24px;
+  background: linear-gradient( 
+    rgba(108, 93, 211, 0.2) 0%, 
+    rgba(108, 93, 211, 0.8) 50%, 
+    rgba(60, 40, 140, 0.95) 100%);
+}
+
+/* GREEN (Datafrik) */
+.case-study.p02 .mockup-placeholder.green {
+  position: relative;
+  height: 420px;
+  margin: 28px 0 0;
+  border-radius: 24px;
+  background: linear-gradient(
+    rgba(0, 191, 165, 0.2) 0%, 
+    rgba(0, 191, 165, 0.8) 50%, 
+    rgba(0, 100, 90, 0.95) 100%);
+}
+
+
+
 
 .case-study.p02 .mockup-overlay {
   position: absolute;
@@ -800,6 +865,42 @@ a:hover{opacity:.9}
   border-radius: 24px;
   color: #fff;
   background: linear-gradient(135deg, #5b3cc4, #c7b9ef);
+  overflow: hidden;
+}
+
+.case-study.p02 .process-card.purple{
+  margin-top: 28px;
+  padding: 64px;
+  border-radius: 24px;
+  color: #fff;
+  background: linear-gradient(135deg, #5b3cc4, #c7b9ef);
+  overflow: hidden;
+}
+
+.case-study.p02 .process-card.green {
+  margin-top: 28px;
+  padding: 64px;
+  border-radius: 24px;
+  color: #fff;
+  background: linear-gradient(135deg,rgb(60, 196, 89),rgb(185, 239, 198));
+  overflow: hidden;
+}
+
+.case-study.p02 .process-card.blue {
+  margin-top: 28px;
+  padding: 64px;
+  border-radius: 24px;
+  color: #fff;
+  background: linear-gradient(135deg,rgb(58, 10, 216),rgb(185, 199, 239));
+  overflow: hidden;
+}
+
+.case-study.p02 .process-card.pink{
+  margin-top: 28px;
+  padding: 64px;
+  border-radius: 24px;
+  color: #fff;
+  background: linear-gradient(135deg,rgb(196, 60, 185),rgb(237, 185, 239));
   overflow: hidden;
 }
 

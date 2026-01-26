@@ -7,14 +7,12 @@
 
     <!-- ================= HERO ================= -->
     <header class="case-hero reveal">
-      <h1>AV Card</h1>
+      <h1>{{project.title}}</h1>
       <p class="subtitle">Smarter virtual cards for online payments</p>
 
       <div class="meta">
         <div class = "info">
-          <span>Role</span>
-          UI/UX Design
-        </div>
+          <span>Role</span>{{project.role}}      </div>
         <div class = "info">
           <span>Year</span>
           Feb 2025 – August 2025
@@ -24,8 +22,8 @@
 
     <!-- ================= AV CARD PLATFORM (PURPLE PLACEHOLDER) ================= -->
     <section class="content-block reveal">
-      <h2>AV Card Platform</h2>
-      <div class="mockup-placeholder">
+      <h2>{{project.title}} Platform</h2>
+      <div class="mockup-placeholder {{project.color}}">
         <div class="mockup-overlay"></div>
       </div>
     </section>
@@ -34,55 +32,30 @@
     <section class="content-block reveal">
       <h2>Overview</h2>
       <p>
-        Avcard is a virtual card product that allows users to instantly create, fund, and manage digital cards
-        for online payments, subscriptions, and global transactions. The platform focuses on speed, security,
-        and user control—eliminating common issues like card limits and payment failures.
+        {{project.overview}}
       </p>
     </section>
 
     <!-- ================= WHAT WASN'T WORKING ================= -->
     <section class="content-block reveal">
       <h2>What Wasn’t Working?</h2>
-
+{% for challenge in project.challenges %}
       <ol class="problem-list">
         <li>
-          <strong>Frequent Card Declines for Online Payments</strong>
+          <strong>{{challenge.title}}</strong>
           <p>
-            Users experienced failed transactions when paying for international services, subscriptions,
-            and online purchases—leading to frustration and loss of trust.
-          </p>
-        </li>
-
-        <li>
-          <strong>Limited Control Over Spending</strong>
-          <p>
-            Fixed card limits, unclear balances, and poor transaction visibility made spending management difficult.
-          </p>
-        </li>
-
-        <li>
-          <strong>Complex Card Setup and Activation</strong>
-          <p>
-            Existing solutions required too many steps before users could create, fund, and use cards.
-          </p>
-        </li>
-
-        <li>
-          <strong>Low Trust in Card Security</strong>
-          <p>
-            Unclear PIN flows and limited transparency caused hesitation around online card usage.
+            {{challenge.text}}
           </p>
         </li>
       </ol>
+      {% endfor %}
     </section>
 
     <!-- ================= HOW WE SOLVED IT ================= -->
     <section class="content-block reveal">
       <h2>How We Solved It</h2>
       <p>
-        Avcard was designed to give users full control over their online payments through fast virtual card
-        creation, flexible spending controls, and secure transaction flows. By simplifying onboarding,
-        improving transparency, and prioritizing security, the product removes common payment pain points.
+       {{project.solution_text}}
       </p>
     </section>
 
@@ -91,30 +64,16 @@
         <h2>Key Solutions Implemented</h2>
   
         <ol class="solution-list">
-          <li>
-            <strong>Instant Virtual Card Creation</strong>
-            <p>Users can create new virtual cards in seconds without complex verification steps.</p>
-          </li>
-          <li>
-            <strong>Custom Card Controls</strong>
-            <p>Each card can be named, funded individually, and assigned spending limits.</p>
-          </li>
-          <li>
-            <strong>Clear Activation & Status Feedback</strong>
-            <p>Users are clearly informed when a card is created, inactive, activated, or funded.</p>
-          </li>
-          <li>
-            <strong>Secure PIN-Based Transactions</strong>
-            <p>Every transaction requires a 4-digit PIN, increasing user confidence.</p>
-          </li>
-          <li>
-            <strong>Tier-Based Access with Clear Value</strong>
-            <p>Account tiers are clearly communicated with features available at each level.</p>
-          </li>
-          <li>
-            <strong>Transparent Transaction History</strong>
-            <p>Users can view transaction details in a clean, organized layout.</p>
-          </li>
+          {% for solution in project.key_solutions %}
+          <ol class="problem-list">
+            <li>
+              <strong>{{solution.title}}</strong>
+              <p>
+                {{solution.text}}
+              </p>
+            </li>
+          </ol>
+          {% endfor %}
         </ol>
       </section>
   
@@ -123,8 +82,7 @@
     <section class="content-block reveal">
       <h2>Target Users</h2>
       <p>
-        Freelancers, remote workers, online shoppers, and small business owners who frequently make online and
-        international payments and need a reliable, flexible alternative to traditional bank cards.
+       {{project.target_users}}
       </p>
     </section>
 
@@ -153,7 +111,7 @@
     <section class="content-block reveal">
       <h2>Research And Design Process</h2>
     
-      <div class="process-card">
+      <div class="process-card {{project.color}}">
     
         <h3>Why This Process Worked</h3>
         <p class="process-intro">
@@ -218,52 +176,34 @@
       <h2>User Personas</h2>
 
       <div class="persona">
-        <img src="{{ url_for('static', filename='img/ada.jpg') }}" alt="Ada James">
+        {% for persona in project.personas%}
+
+        <img src="{{ url_for('static', filename='persona.image') }}" alt="persona.name">
         <div>
-          <h3>Ada James – The Freelancer</h3>
-          <p><strong>Age:</strong> 27</p>
-          <p><strong>Occupation:</strong> Freelance Graphic Designer</p>
+          <h3>{{persona.name}} – {{persona.role}}</h3>
+          <p><strong>Age:</strong> {{persona.age}}</p>
+          <p><strong>Occupation:</strong> {{persona.role}}</p>
           <p><strong>Tech Comfort:</strong> High</p>
 
           <h4>Goals</h4>
           <ul class="bullets">
-            <li>Make online payments quickly for subscriptions and tools</li>
-            <li>Keep personal and work spending separate</li>
-            <li>Avoid failed transactions during international payments</li>
+            {% for goal in persona.goals%}
+            <li>{{goal}}</li>
+            {% endfor %}
           </ul>
 
           <h4>Frustrations &amp; Painpoints</h4>
           <ul class="bullets">
-            <li>Card declines on platforms like Adobe and Canva</li>
-            <li>Difficulty tracking multiple payments</li>
-            <li>Concerns about security when paying online</li>
+            {% for frustration in persona.frustrations %}
+            <li>{{frustration}}</li>
+            {% endfor %}
           </ul>
+          {% endfor %}
+
         </div>
       </div>
 
-      <div class="persona">
-        <img src="{{ url_for('static', filename='img/tunde.jpg') }}" alt="Tunde">
-        <div>
-          <h3>Tunde – The Small Business Owner</h3>
-          <p><strong>Age:</strong> 34</p>
-          <p><strong>Occupation:</strong> E-commerce Store Owner</p>
-          <p><strong>Tech Comfort:</strong> Medium</p>
-
-          <h4>Goals</h4>
-          <ul class="bullets">
-            <li>Manage multiple online business payments efficiently</li>
-            <li>Ensure team members can spend within set limits</li>
-            <li>Access a secure and transparent way to handle virtual cards</li>
-          </ul>
-
-          <h4>Frustrations &amp; Painpoints</h4>
-          <ul class="bullets">
-            <li>Lack of control over spending for employees</li>
-            <li>Confusing card activation and funding flows</li>
-            <li>Difficulty monitoring transactions across multiple cards</li>
-          </ul>
-        </div>
-      </div>
+      
       
     </section>
 
@@ -422,15 +362,15 @@
     <section class="content-block  reveal">
       <h2>AvCard Platform</h2>
 
-      <div class="mockup-placeholder">
+      <div class="mockup-placeholder {{project.color}}">
         <div class="mockup-overlay"></div>
       </div>
 
-      <div class="mockup-placeholder">
+      <div class="mockup-placeholder {{project.color}}">
         <div class="mockup-overlay"></div>
       </div>
 
-      <div class="mockup-placeholder">
+      <div class="mockup-placeholder {{project.color}}">
         <div class="mockup-overlay"></div>
       </div>
     </section>
@@ -444,7 +384,7 @@
         and interact with their cards. This intuitive design simplifies navigation, making it easy to create, fund, activate, and track cards on the go
       </p>
 
-      <div class="mockup-placeholder">
+      <div class="mockup-placeholder {{project.color}}">
         <div class="mockup-overlay"></div>
       </div>
     </section>
@@ -453,7 +393,7 @@
     <section class="content-block reveal">
       <h2>Landing Page</h2>
 
-      <div class="mockup-placeholder soft">
+      <div class="mockup-placeholder {{project.color}} soft">
         <div class="mockup-overlay"></div>
       </div>
     </section>
