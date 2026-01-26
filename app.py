@@ -35,7 +35,7 @@ def load_content():
                     "category": "Travel Booking Platform",
                     "overview": "A seamless travel planning platform for flights and hotels.",
                     # Note: We use 'filename' for static images
-                    "image": "User Dashboard Flights.jpg",
+                    "image": "User Dashboard Flights.png",
                     "color": "pink" 
                 },
                 {
@@ -53,7 +53,7 @@ def load_content():
                     "title": "AV Card",
                     "category": "Virtual Banking App",
                     "overview": "Smarter virtual cards for online payments.",
-                    "image": "DASHBOARD (1).jpg",
+                    "image": "DASHBOARD (1).png",
                     "color": "purple"
                 },
                 {
@@ -62,7 +62,7 @@ def load_content():
                     "title": "Datafrik",
                     "category": "Tech Analytics Landing",
                     "overview": "Empowering businesses with data-driven insights.",
-                    "image": "Landing page Redesign (1).jpg",
+                    "image": "Landing page Redesign (1).png",
                     "color": "green"
                 }
             ]
