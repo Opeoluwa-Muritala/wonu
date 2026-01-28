@@ -1,22 +1,381 @@
+{# templates/about.html (or any page) #}
 {% extends "base.html" %}
-
-{% block title %}About — {{ content.site.brand }}{% endblock %}
-
+{% block body_class %}{% endblock %}
 {% block content %}
-<main class="page">
+<style>
+  
+  /* ====== HERO ====== */
+  .hero {
+    display:grid;
+    grid-template-columns: 1.05fr .95fr;
+    gap: 26px;
+    align-items:start;
+    padding-bottom: 18px;
+  }
+
+  .hero h1{
+    margin: 0 0 10px;
+    font-size: 20px;
+    font-weight: 600;
+  }
+
+  .hero p{
+    margin: 0 0 10px;
+    font-size: 20px;
+    line-height: 1.6;
+    color: var(--muted);
+    max-width: 46ch;
+  }
+
+  .hero .mini-title{
+    margin-top: 14px;
+    font-size: 20px;
+    color: var(--muted);
+  }
+
+  .list{
+    margin: 8px 0 0;
+    padding-left: 0;
+    list-style:none;
+    display:grid;
+    gap: 8px;
+    font-size:18px;
+    color: var(--muted);
+  }
+  .list li{
+    display:flex;
+    gap:10px;
+    align-items:flex-start;
+  }
+  .dot{
+    width:18px; height:18px;
+    border-radius:6px;
+    background: rgba(255,255,255,.06);
+    border:1px solid rgba(255,255,255,.10);
+    display:grid;
+    place-items:center;
+    color: var(--accent-2);
+    font-size:12px;
+    line-height:1;
+    flex:0 0 auto;
+    margin-top:1px;
+  }
+
+  .hero-card{
+    border-radius: 14px;
+    overflow:hidden;
+    border:1px solid rgba(255,255,255,.10);
+    background: rgba(255,255,255,.03);
+    box-shadow: 0 18px 46px rgba(0,0,0,.55);
+    position:relative;
+    max-width: 400px;
+    margin-left:auto;
+  }
+
+  .hero-card:after{
+    content:"";
+    position:absolute; inset:0;
+    background:
+      linear-gradient(to bottom, rgba(0,0,0,.12), rgba(0,0,0,.30));
+    pointer-events:none;
+  }
+
+  .hero-card img{
+    display:block;
+    width:200%;
+    height: 460px;
+    object-fit:fill;
+  }
+
+  /* ====== DIVIDERS ====== */
+  .divider{
+    height:1px;
+    background: rgba(255,255,255,.10);
+  }
+
+  /* ====== SECTION HEADERS ====== */
+  .section-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-end;
+    gap:6px;
+    margin: 4px ;
+  }
+  .section-head h2{
+    margin:0;
+    font-size:18px;
+    color: rgba(255,255,255,.72);
+    font-weight:600;
+    letter-spacing:.2px;
+  }
+  .section-head a{
+    font-size:11px;
+    color: var(--muted-2);
+    text-decoration:none;
+  }
+  .section-head a:hover{ color: var(--accent-2); }
+
+  /* ====== SKILLS & EDUCATION ====== */
+  .two-col{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+  }
+
+  .card{
+    border:1px solid rgba(255,255,255,.10);
+    background: rgba(255,255,255,.03);
+    border-radius: 14px;
+    padding: 14px 14px;
+  }
+
+  .chips{
+    display:flex;
+    flex-wrap:wrap;
+    gap: 8px;
+    margin:0;
+    padding:0;
+    list-style:none;
+  }
+  .chips li{
+    font-size:14px;
+    color: var(--muted);
+    padding: 7px 10px;
+    border-radius: 999px;
+    background: rgba(255,255,255,.04);
+    border:1px solid rgba(255,255,255,.08);
+  }
+
+  .edu-row{
+    display:flex;
+    justify-content:space-between;
+    gap:12px;
+    font-size:18px;
+    color: var(--muted);
+    margin-bottom:10px;
+  }
+  .edu-row strong{ color: rgba(255,255,255,.78); font-weight:600; }
+  .edu-note{
+    font-size:11px;
+    color: var(--muted-2);
+    line-height: 1.55;
+  }
+
+  /* ====== FUN FACTS ====== */
+  .facts{
+    list-style:none;
+    padding:0;
+    margin:0;
+    display:grid;
+    gap: 10px;
+    font-size:18px;
+    color: var(--muted);
+  }
+  .facts li{
+    display:flex;
+    gap:10px;
+    align-items:flex-start;
+  }
+  .emoji{
+    width:16px; text-align:center;
+    color: var(--accent-2);
+    margin-top:1px;
+    flex:0 0 auto;
+  }
+
+  /* ====== ABOUT + GALLERY ====== */
+  .about-text{
+    font-size:18px;
+    color: var(--muted);
+    line-height: 1.65;
+    max-width: 92ch;
+    margin: 9px 0 14px;
+  }
+
+  .gallery{
+    display:grid;
+    grid-template-columns: 1.1fr 1.1fr .9fr;
+    gap: 18px;
+    align-items:start;
+    margin-top: 10px;
+  }
+
+  .photo{
+    border-radius: 14px;
+    overflow:hidden;
+    border:1px solid rgba(255,255,255,.10);
+    background: rgba(255,255,255,.03);
+    box-shadow: 0 18px 40px rgba(0,0,0,.45);
+  }
+
+  .photo img{
+    width:100%;
+    height: 240px;
+    object-fit:cover;
+    display:block;
+  }
+
+  /* third image smaller like screenshot */
+  .photo.small img{ height: 170px; }
+
+ 
+
+  /* ====== RIGHT FLOAT BUTTONS (like scroll controls) ====== */
+  .float-ui{
+    position: fixed;
+    right: 18px;
+    top: 55%;
+    transform: translateY(-50%);
+    display:grid;
+    gap: 10px;
+    z-index: 10;
+  }
+  .float-ui a{
+    width: 34px;
+    height: 34px;
+    border-radius: 99px;
+    border: 1px solid rgba(255,255,255,.10);
+    background: rgba(255,255,255,.03);
+    display:grid;
+    place-items:center;
+    color: rgba(255,255,255,.62);
+    text-decoration:none;
+    font-size: 14px;
+  }
+  .float-ui a:hover{
+    color: var(--accent-2);
+    border-color: rgba(215,161,26,.25);
+    background: rgba(215,161,26,.08);
+  }
+
+  @media (max-width: 860px){
+    .hero{ grid-template-columns: 1fr; }
+    .hero-card{ margin-left:0; max-width: 100%; }
+    .two-col{ grid-template-columns: 1fr; }
+    .gallery{ grid-template-columns: 1fr; }
+    .photo img{ height: 240px; }
+    .photo.small img{ height: 240px; }
+    .float-ui{ display:none; }
+  }
+</style>
+
+<div class="about-wrap">
   <div class="container">
-    <h1 class="pageTitle">Get to know me</h1>
 
-    <div class="rich" style="max-width:980px;">
-      <p>{{ content.hero.subtitle }}</p>
-      <p style="margin-top: 20px;">{{ content.resume.summary }}</p>
-    </div>
 
-    <div class="imageRow">
-      <div class="img one"></div>
-      <div class="img two"></div>
-      <div class="img three"></div>
-    </div>
+    <!-- HERO -->
+    <section class="hero" id="about">
+      <div>
+        <h1>Oh hey there! ✨</h1>
+
+        <p>{{ content.hero.subtitle }}</p>
+        <p>{{ content.resume.summary }}</p>
+
+        <div class="mini-title">Two truths and a lie 😄</div>
+        <ul class="list">
+          <li><span class="dot">1</span><span>Currently designing products at <strong style="color:rgba(255,255,255,.78)">Arca Payments</strong>.</span></li>
+          <li><span class="dot">2</span><span>Leading design at <strong style="color:rgba(255,255,255,.78)">Datafrik</strong>.</span></li>
+          <li><span class="dot">3</span><span>I specialize in <strong style="color:rgba(255,255,255,.78)">fintech, education, and travel</strong>.</span></li>
+        </ul>
+
+        <p style="margin-top:12px;">
+          Schedule a chat with me to find out 😉
+        </p>
+      </div>
+
+      <div class="hero-card">
+        {# Use a project image as the hero photo, like the screenshot #}
+        <img
+          src=" ./static/image.jpeg"
+          alt="{{ content.projects[0].title }}"
+        />
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- SKILLS & EDUCATION -->
+    <section>
+      <div class="section-head">
+        <h2>Skills &amp; Education</h2>
+        <a href="{{ url_for('resume_view') }}">View more</a>
+      </div>
+
+      <div class="two-col">
+        <div class="card">
+          <ul class="chips">
+            {# derive “skills-like” tags from your project categories and roles #}
+            {% for p in content.projects %}
+              <li>{{ p.category }}</li>
+            {% endfor %}
+            {% for p in content.projects %}
+              <li>{{ p.role }}</li>
+            {% endfor %}
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="edu-row">
+            <strong>Computer Science</strong>
+            <span>{{ content.site.badgeYear }}</span>
+          </div>
+          <div class="edu-note">
+                      </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- FUN FACTS -->
+    <section>
+      <div class="section-head">
+        <h2>Some fun facts 🥳</h2>
+        <span></span>
+      </div>
+
+      <ul class="facts">
+        <li><span class="emoji">✨</span><span>I’ve designed products across {{ content.projects|length }} case studies spanning fintech, education, and travel.</span></li>
+        <li><span class="emoji">🧠</span><span>I enjoy turning messy ideas into clear, thoughtful, and meaningful digital experiences.</span></li>
+        <li><span class="emoji">🎯</span><span>My work focuses on clarity, usability, and outcomes — not just pretty screens.</span></li>
+        <li><span class="emoji">🧩</span><span>I love structured systems: dashboards, flows, and decision-heavy products.</span></li>
+        <li><span class="emoji">📌</span><span>I’m always iterating — research, design, test, repeat.</span></li>
+      </ul>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- ABOUT + JPEGs -->
+    <section>
+      <div class="section-head">
+        <h2>More about me &amp; some JPEGs 📸</h2>
+        <span></span>
+      </div>
+
+      <p class="about-text">
+        {{ content.hero.subtitle }}
+      </p>
+
+      <div class="gallery">
+        {# Use screens/images from the JSON to fill the 3-photo layout #}
+        <div class="photo">
+          <img src="{{ url_for('static', filename=content.projects[0].screens[0]) }}" alt="Gallery 1">
+        </div>
+        <div class="photo">
+          <img src="{{ url_for('static', filename=content.projects[0].screens[1]) }}" alt="Gallery 2">
+        </div>
+        <div class="photo small">
+          <img src="{{ url_for('static', filename=content.projects[1].image) }}" alt="Gallery 3">
+        </div>
+      </div>
+    </section>
   </div>
-</main>
+
+  <!-- right floating controls (visual only, like screenshot) -->
+  <div class="float-ui">
+    <a href="#about" title="Top">↑</a>
+    <a href="#about" title="Section">•</a>
+  </div>
+</div>
+
 {% endblock %}

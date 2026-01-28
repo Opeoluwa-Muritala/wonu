@@ -167,7 +167,7 @@ def add_project():
 @app.route('/projects')
 def project_view(): return render_template('projects.html', projects=load_content().get('projects', []))
 @app.route('/about')
-def about_view(): return render_template('about.html')
+def about_view(): return render_template('about.html', content = load_content())
 @app.route('/contact')
 def contact_view(): return render_template('contact.html')
 @app.route('/resume')

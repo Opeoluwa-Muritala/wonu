@@ -2,20 +2,39 @@
 {% block body_class %}light-mode{% endblock %}
 {% block content %}
 
+<style>
+  /* 1. Set the Dynamic Font Family */
+  :root {
+    --dynamic-font: {{ project.font_config.family | safe }};
+  }
+
+  /* 2. Apply it to the Typeface Section classes */
+  .type-card .aa,
+  .type-card .font-name,
+  .type-card .type-meta,
+  .type-card .type-scale .heading,
+  .type-card .type-scale .subheading,
+  .type-card .type-scale .body,
+  .type-card .type-scale span {
+    font-family: var(--dynamic-font) !important;
+  }
+</style>
+
 <section class="case-study p02">
   <div class="case-container">
 
     <!-- ================= HERO ================= -->
     <header class="case-hero reveal">
       <h1>{{project.title}}</h1>
-      <p class="subtitle">Smarter virtual cards for online payments</p>
+      <p class="subtitle">{{project.category}}</p>
 
       <div class="meta">
-        <div class = "info">
-          <span>Role</span>{{project.role}}      </div>
-        <div class = "info">
+        <div class="info">
+          <span>Role</span>{{project.role}}
+        </div>
+        <div class="info">
           <span>Year</span>
-          Feb 2025 – August 2025
+          {{ project.year }}
         </div>
       </div>
     </header>
@@ -39,7 +58,7 @@
     <!-- ================= WHAT WASN'T WORKING ================= -->
     <section class="content-block reveal">
       <h2>What Wasn’t Working?</h2>
-{% for challenge in project.challenges %}
+      {% for challenge in project.challenges %}
       <ol class="problem-list">
         <li>
           <strong>{{challenge.title}}</strong>
@@ -55,35 +74,40 @@
     <section class="content-block reveal">
       <h2>How We Solved It</h2>
       <p>
-       {{project.solution_text}}
+        {{project.solution_text}}
       </p>
     </section>
 
-      <!-- ================= KEY SOLUTIONS IMPLEMENTED ================= -->
-      <section class="content-block reveal">
-        <h2>Key Solutions Implemented</h2>
-  
-        <ol class="solution-list">
-          {% for solution in project.key_solutions %}
-          <ol class="problem-list">
-            <li>
-              <strong>{{solution.title}}</strong>
-              <p>
-                {{solution.text}}
-              </p>
-            </li>
-          </ol>
-          {% endfor %}
+    <!-- ================= KEY SOLUTIONS IMPLEMENTED ================= -->
+    <section class="content-block reveal">
+      <h2>Key Solutions Implemented</h2>
+
+      <ol class="solution-list">
+        {% for solution in project.key_solutions %}
+        <ol class="problem-list">
+          <li>
+            <strong>{{solution.title}}</strong>
+            <p>
+              {{solution.text}}
+            </p>
+          </li>
         </ol>
-      </section>
-  
+        {% endfor %}
+      </ol>
+    </section>
 
     <!-- ================= TARGET USERS ================= -->
     <section class="content-block reveal">
       <h2>Target Users</h2>
-      <p>
-       {{project.target_users}}
-      </p>
+      {% for target in project.target_users %}
+      <ol class="problem-list">
+        <li>
+          <p>
+            {{ target }}
+          </p>
+        </li>
+      </ol>
+      {% endfor %}
     </section>
 
     <!-- ================= USER RESEARCH ================= -->
@@ -105,24 +129,22 @@
       </ul>
     </section>
 
-     
-  
     <!-- ================= RESEARCH & DESIGN PROCESS (PURPLE PLACEHOLDER CARD) ================= -->
     <section class="content-block reveal">
       <h2>Research And Design Process</h2>
-    
+
       <div class="process-card {{project.color}}">
-    
+
         <h3>Why This Process Worked</h3>
         <p class="process-intro">
           This structured approach ensured that design decisions were rooted in real user problems while balancing
           business needs, security requirements, and scalability. The result was a seamless virtual card experience
           that feels intuitive, trustworthy, and easy to use.
         </p>
-    
+
         <!-- TIMELINE -->
         <div class="process-timeline">
-    
+
           <!-- Dots row -->
           <div class="timeline-dots">
             <span class="dot"></span>
@@ -130,64 +152,67 @@
             <span class="dot"></span>
             <span class="dot"></span>
           </div>
-    
+
           <!-- Content row -->
           <div class="process-steps">
             <div class="step">
               <h4>Research</h4>
               <ul>
-                <li>Reviewed existing virtual card products and feedback</li>
-                <li>Identified common online payment and card usage challenges</li>
+                {% for item in project.process.steps.research %}
+                <li>{{ item }}</li>
+                {% endfor %}
               </ul>
             </div>
-    
+
             <div class="step">
               <h4>Analysis</h4>
               <ul>
-                <li>Synthesized findings into key pain points and opportunities</li>
-                <li>Defined core problems around clarity and reliability</li>
+                {% for item in project.process.steps.analysis %}
+                <li>{{ item }}</li>
+                {% endfor %}
               </ul>
             </div>
-    
+
             <div class="step">
               <h4>Design</h4>
               <ul>
-                <li>Created flows for onboarding, creation, funding, transactions</li>
-                <li>Designed clear status and feedback states</li>
+                {% for item in project.process.steps.design %}
+                <li>{{ item }}</li>
+                {% endfor %}
               </ul>
             </div>
-    
+
             <div class="step">
               <h4>Test</h4>
               <ul>
-                <li>Tested flows to identify usability and friction points</li>
-                <li>Iterated designs based on feedback and observations</li>
+                {% for item in project.process.steps.test %}
+                <li>{{ item }}</li>
+                {% endfor %}
               </ul>
             </div>
           </div>
-    
+
         </div>
       </div>
     </section>
-    
 
     <!-- ================= PERSONAS ================= -->
     <section class="content-block reveal">
       <h2>User Personas</h2>
 
       <div class="persona">
-        {% for persona in project.personas%}
+        {% for persona in project.personas %}
 
-        <img src="{{ url_for('static', filename='persona.image') }}" alt="persona.name">
+        <img src="{{ url_for('static', filename=persona.image) }}" alt="{{ persona.name }}">
         <div>
           <h3>{{persona.name}} – {{persona.role}}</h3>
           <p><strong>Age:</strong> {{persona.age}}</p>
-          <p><strong>Occupation:</strong> {{persona.role}}</p>
-          <p><strong>Tech Comfort:</strong> High</p>
+          <p><strong>Occupation:</strong> {{persona.occupation}}</p>
+          <p><strong>Tech Comfort:</strong> {{ persona.tech_comfort }}</p>
 
           <h4>Goals</h4>
           <ul class="bullets">
-            {% for goal in persona.goals%}
+            {% for goal in persona.goals %}
             <li>{{goal}}</li>
             {% endfor %}
           </ul>
@@ -198,13 +223,11 @@
             <li>{{frustration}}</li>
             {% endfor %}
           </ul>
-          {% endfor %}
 
         </div>
+        {% endfor %}
       </div>
 
-      
-      
     </section>
 
     <!-- ================= DESIGN SYSTEM ================= -->
@@ -216,8 +239,6 @@
       </p>
     </section>
 
-
-    
     <!-- ================= TYPEFACE ================= -->
     <section class="content-block background-gray reveal">
       <h2>Typeface</h2>
@@ -226,7 +247,7 @@
         <div class="type-top">
           <div class="type-brand">
             <span class="aa">Aa</span>
-            <span class="font-name">Montserrat</span>
+            <span class="font-name">{{ project.font_config.name }}</span>
           </div>
 
           <div class="type-meta">
@@ -263,30 +284,14 @@
       </p>
 
       <div class="swatch-grid">
+        {% for c in project.colors.primary %}
         <div class="swatch">
-          <div class="chip primary-100"></div>
-          <strong>100</strong>
-          <small>#065ECE</small>
-          <small class="sub">rgba(6, 94,206, 1)</small>
+          <div class="chip" style="background: {{ c.hex }}"></div>
+          <strong>{{ c.shade }}</strong>
+          <small>{{ c.hex }}</small>
+          <small class="sub">{{ c.rgba }}</small>
         </div>
-        <div class="swatch">
-          <div class="chip primary-200"></div>
-          <strong>200</strong>
-          <small>#0653B7</small>
-          <small class="sub">rgba(6, 83, 183, 1)</small>
-        </div>
-        <div class="swatch">
-          <div class="chip primary-300"></div>
-          <strong>300</strong>
-          <small>#0549A0</small>
-          <small class="sub">rgba(5, 73, 160, 1)</small>
-        </div>
-        <div class="swatch">
-          <div class="chip primary-400"></div>
-          <strong>400</strong>
-          <small>#043E89</small>
-          <small class="sub">rgba(4, 62, 137, 1)</small>
-        </div>
+        {% endfor %}
       </div>
 
       <h3>Secondary Shade</h3>
@@ -295,72 +300,38 @@
       </p>
 
       <div class="swatch-grid">
+        {% for c in project.colors.secondary %}
         <div class="swatch">
-          <div class="chip secondary-100"></div>
-          <strong>100</strong>
-          <small>#E8F0FF</small>
-          <small class="sub">rgba(232, 240, 255, 1)</small>
+          <div class="chip" style="background: {{ c.hex }}"></div>
+          <strong>{{ c.shade }}</strong>
+          <small>{{ c.hex }}</small>
+          <small class="sub">{{ c.rgba }}</small>
         </div>
-        <div class="swatch">
-          <div class="chip secondary-200"></div>
-          <strong>200</strong>
-          <small>#BFD3FF</small>
-          <small class="sub">rgba(191, 211, 255, 1)</small>
-        </div>
-        <div class="swatch">
-          <div class="chip secondary-300"></div>
-          <strong>300</strong>
-          <small>#76A8FF</small>
-          <small class="sub">rgba(118, 168, 255, 1)</small>
-        </div>
-        <div class="swatch">
-          <div class="chip secondary-400"></div>
-          <strong>400</strong>
-          <small>#0A4DAA</small>
-          <small class="sub">rgba(10, 77, 170, 1)</small>
-        </div>
+        {% endfor %}
       </div>
 
       <h3>Gray</h3>
       <p class="muted">
         Gray is a neutral color and can be used for text, borders, and icons. Most text should either be black/base or darker shades of Gray, with some additional
         shades of dark gray for content hierarchy. Follow contrast accessibility requirements when considering anything but black or gray text on light/white
-        backgrounds.      </p>
+        backgrounds.
+      </p>
 
       <div class="swatch-grid">
+        {% for c in project.colors.gray %}
         <div class="swatch">
-          <div class="chip gray-100"></div>
-          <strong>100</strong>
-          <small>#FCFCFD</small>
-          <small class="sub">rgba(252, 252, 253, 1)</small>
+          <div class="chip" style="background: {{ c.hex }}"></div>
+          <strong>{{ c.shade }}</strong>
+          <small>{{ c.hex }}</small>
+          <small class="sub">{{ c.rgba }}</small>
         </div>
-        <div class="swatch">
-          <div class="chip gray-200"></div>
-          <strong>200</strong>
-          <small>#F2F4F7</small>
-          <small class="sub">rgba(242, 244, 247, 1)</small>
-        </div>
-        <div class="swatch">
-          <div class="chip gray-300"></div>
-          <strong>300</strong>
-          <small>#E4E7EC</small>
-          <small class="sub">rgba(228, 231, 236, 1)</small>
-        </div>
-        <div class="swatch">
-          <div class="chip gray-400"></div>
-          <strong>400</strong>
-          <small>#D0D5DD</small>
-          <small class="sub">rgba(208, 213, 221, 1)</small>
-        </div>
+        {% endfor %}
       </div>
     </section>
 
-
-  
-        
     <!-- ================= AvCard Platform================= -->
     <section class="content-block  reveal">
-      <h2>AvCard Platform</h2>
+      <h2>{{ project.title }} Platform</h2>
 
       <div class="mockup-placeholder {{project.color}}">
         <div class="mockup-overlay"></div>
@@ -375,13 +346,12 @@
       </div>
     </section>
 
-        <!-- ================= MOBILE SCREENS ================= -->
+    <!-- ================= MOBILE SCREENS ================= -->
     <section class="content-block reveal">
       <h2>Mobile Screens</h2>
 
       <p>
-        A mobile-friendly interface that presents virtual cards and transactions in a clear, card-based layout, allowing users to quickly view, manage,
-        and interact with their cards. This intuitive design simplifies navigation, making it easy to create, fund, activate, and track cards on the go
+        {{ project.mobile_description }}
       </p>
 
       <div class="mockup-placeholder {{project.color}}">
@@ -397,8 +367,6 @@
         <div class="mockup-overlay"></div>
       </div>
     </section>
-
-        
 
   </div>
 </section>
