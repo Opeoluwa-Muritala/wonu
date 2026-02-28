@@ -3,8 +3,6 @@
 {% block title %}About — {{ content.site.brand }}{% endblock %}
 
 {% block content %}
-<<<<<<< HEAD
-<style>
   
   /* ====== HERO ====== */
   .hero {
@@ -269,9 +267,8 @@
 </style>
 
 <div class="about-wrap">
-=======
+
 <main class="page">
->>>>>>> parent of d86ee7c (About screen and project-view update)
   <div class="container">
     <h1 class="pageTitle">Get to know me</h1>
 
@@ -373,7 +370,7 @@
       <p class="about-text">
         {{ content.hero.subtitle }}
       </p>
-
+<!-- 
       <div class="gallery">
         {# Use screens/images from the JSON to fill the 3-photo layout #}
         <div class="photo">
@@ -385,15 +382,14 @@
         <div class="photo small">
           <img src="{{ url_for('static', filename=content.projects[1].image) }}" alt="Gallery 3">
         </div>
-      </div>
+      </div> -->
     </section>
-=======
+
     <div class="imageRow">
       <div class="img one"></div>
       <div class="img two"></div>
       <div class="img three"></div>
     </div>
->>>>>>> parent of d86ee7c (About screen and project-view update)
   </div>
 </main>
 {% endblock %}
