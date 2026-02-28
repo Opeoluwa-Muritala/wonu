@@ -21,7 +21,7 @@
       "category": "EdTech / Learning",
       "role": "Lead Product Designer",
       "year": "Aug 2024 - Feb 2025",
-      "image": "images/Landing page Redesign (1).png",
+      "image": "https://res.cloudinary.com/ddezxlqjr/image/upload/v1772297068/Landing_page_Redesign_1_1__053949_aan7mp.png",
       "otherimages": [
         {
           "header": "images/nothing.png"
@@ -98,7 +98,7 @@
       "category": "Fintech / Dashboard",
       "role": "UI/UX Designer",
       "year": "Feb 2025 - August 2025",
-      "image": "images/DASHBOARD (1).png",
+      "image": "https://res.cloudinary.com/ddezxlqjr/image/upload/v1772297068/DASHBOARD_1__054602_hxtfcp.png",
       "headerimage": "images/iMockup - iPhone 15 Pro Max.png",
       "font_config": {
         "name": "Plus Jakarta Sans",
@@ -145,7 +145,7 @@
       "category": "Travel / Booking",
       "role": "Product Designer",
       "year": "Aug 2024 - Feb 2025",
-      "image": "images/User Dashboard Flights.png",
+      "image": "https://res.cloudinary.com/ddezxlqjr/image/upload/v1772297084/User_Dashboard_Flights_054318_w0nbvz.png",
       "overview": "Airxplora is a travel platform designed to help users discover, book, and manage their travel experiences seamlessly. It offers international flight bookings, hotel reservations, and visa applications.",
       "solution_text": "We centralized the travel experience by creating a unified booking flow. Features like the centralized dashboard and support for end-to-end travel needs (visa, insurance) were embedded directly into the workflow.",
       "challenges": [
@@ -175,7 +175,7 @@
       "category": "Fintech / Admin Tool",
       "role": "UI/UX Designer",
       "year": "2024",
-      "image": "images/Dashboard (2).png",
+      "image": "https://res.cloudinary.com/ddezxlqjr/image/upload/v1772297065/Dashboard_2__054615_haldp8.png",
       "overview": "Arcabill is an internal billing tool used by operations teams to create, track, and manage bills at scale. The product supports day-to-day billing operations, payment monitoring, and issue resolution.",
       "solution_text": "We redesigned Arcabill with a strong focus on operational clarity, speed, and context. Every design decision was guided by how the ops team actually works on a daily basis.",
       "challenges": [
