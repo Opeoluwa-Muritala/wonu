@@ -293,7 +293,7 @@
       <div class="hero-card">
         {# Use a project image as the hero photo, like the screenshot #}
         <img
-          src=" ./static/image.jpeg"
+          src="{{ url_for('static', filename='images/image.jpeg') }}"
           alt="{{ content.projects[0].title }}"
         />
       </div>

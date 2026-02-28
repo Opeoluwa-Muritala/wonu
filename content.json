@@ -21,10 +21,10 @@
       "category": "EdTech / Learning",
       "role": "Lead Product Designer",
       "year": "Aug 2024 - Feb 2025",
-      "image": "Landing page Redesign (1).png",
+      "image": "images/Landing page Redesign (1).png",
       "otherimages":[
         {
-          "header": "nothing.png"
+          "header": "images/nothing.png"
         }
       ],
       "font_config": {
@@ -182,7 +182,7 @@
             "Unclear expectations on projects",
             "Lack of practical, real-world examples"
           ],
-          "image": "1000581218.png"
+          "image": "images/1000581218.png"
         },
         {
           "name": "Paul",
@@ -200,12 +200,12 @@
             "Frustration with abstract or purely theoretical content",
             "Uncertainty about skill relevance to the job market"
           ],
-          "image": "1000581219.png"
+          "image": "images/1000581219.png"
         }
       ],
       "screens": [
-        "1000581221.png",
-        "1000581222.png"
+        "images/1000581221.png",
+        "images/1000581222.png"
       ]
     },
     {
@@ -216,8 +216,8 @@
       "category": "Fintech / Dashboard",
       "role": "UI/UX Designer",
       "year": "Feb 2025 - August 2025",
-      "image": "DASHBOARD (1).png",
-      "headerimage":"iMockup - iPhone 15 Pro Max.png",
+      "image": "images/DASHBOARD (1).png",
+      "headerimage":"images/iMockup - iPhone 15 Pro Max.png",
       "font_config": {
         "name": "Plus Jakarta Sans",
         "family": "'Plus Jakarta Sans', sans-serif"
@@ -372,7 +372,7 @@
             "Difficulty tracking multiple payments",
             "Concerns about security"
           ],
-          "image": "avcard2persona.png"
+          "image": "images/avcard2persona.png"
         },
         {
           "name": "Tunde",
@@ -390,11 +390,11 @@
             "Confusing funding flows",
             "Difficulty monitoring transactions"
           ],
-          "image": "avcard1persona.png"
+          "image": "images/avcard1persona.png"
         }
       ],
       "screens": [
-        "iMockup - iPhone 15 Pro Max.png"
+        "images/iMockup - iPhone 15 Pro Max.png"
       ]
     },
     {
@@ -405,7 +405,7 @@
       "category": "Travel / Booking",
       "role": "Product Designer",
       "year": "Aug 2024 - Feb 2025",
-      "image": "User Dashboard Flights.png",
+      "image": "images/User Dashboard Flights.png",
       "font_config": {
         "name": "Plus Jakarta Sans",
         "family": "'Plus Jakarta Sans', sans-serif"
@@ -562,7 +562,7 @@
             "Lack of clarity on total trip cost",
             "Fragmented access to travel documents (visa, insurance, etc.)"
           ],
-          "image": "airxplora2persona.png"
+          "image": "images/airxplora2persona.png"
         },
         {
           "name": "Tobe",
@@ -579,12 +579,12 @@
             "Difficulty managing multiple trips simultaneously",
             "Missing or hard-to-access travel documents"
           ],
-          "image": "airxplora1persona.png"
+          "image": "images/airxplora1persona.png"
         }
       ],
       "screens": [
-        "Landing page (1).png",
-        "1000581210.png"
+        "images/Landing page (1).png",
+        "images/1000581210.png"
       ]
     },
     {
@@ -595,7 +595,7 @@
       "category": "Fintech / Admin Tool",
       "role": "UI/UX Designer",
       "year": "2024",
-      "image": "Dashboard (2).png",
+      "image": "images/Dashboard (2).png",
       "font_config": {
         "name": "Montserrat",
         "family": "'Montserrat', sans-serif"
@@ -754,14 +754,14 @@
             "Time wasted searching for bill details",
             "High volume of bills during peak periods"
           ],
-          "image": "1000581224.png"
+          "image": "images/1000581224.png"
         },
         {
           "name": "Joshua",
           "role": "Finance / Reconciliation Officer",
           "age": "32",
           "occupation": "Finance and Reconciliation Officer",
-          "tech_comfort": "Medium",
+          "tech_comfort": "Medium",.
           "goals": [
             "Verify completed payments",
             "Reconcile bills accurately",
@@ -772,12 +772,12 @@
             "Difficulty matching bills to payments",
             "Delays caused by missing references"
           ],
-          "image": "1000581224.png"
+          "image": "images/1000581224.png"
         }
       ],
       "screens": [
-        "1000581226.png",
-        "1000581223.png"
+        "images/1000581226.png",
+        "images/1000581223.png"
       ]
     }
   ],
