@@ -43,7 +43,9 @@
     <section class="content-block reveal">
       <h2>{{project.title}} Platform</h2>
       <div class="mockup-placeholder {{project.color}}">
-        <div class="mockup-overlay"></div>
+        <div >
+          <img class="mockup-overlay" src="{{ url_for('static', filename=project.headerimage) }}" alt="{{ project.name }}">
+        </div>
       </div>
     </section>
 
@@ -334,7 +336,8 @@
       <h2>{{ project.title }} Platform</h2>
 
       <div class="mockup-placeholder {{project.color}}">
-        <div class="mockup-overlay"></div>
+        <div class="mockup-overlay">
+        </div>
       </div>
 
       <div class="mockup-placeholder {{project.color}}">

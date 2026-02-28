@@ -814,6 +814,7 @@ a:hover{opacity:.9}
 }
 
 .case-study.p02 .mockup-overlay {
+  size: 50px,80px;
   position: absolute;
   inset: 0;
   background: linear-gradient(
@@ -821,6 +822,7 @@ a:hover{opacity:.9}
     rgba(255,255,255,0.18),
     rgba(255,255,255,0)
   );
+  
   clip-path: polygon(0 0, 60% 0, 40% 100%, 0% 100%);
 }
 

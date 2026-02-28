@@ -22,6 +22,11 @@
       "role": "Lead Product Designer",
       "year": "Aug 2024 - Feb 2025",
       "image": "Landing page Redesign (1).png",
+      "otherimages":[
+        {
+          "header": "nothing.png"
+        }
+      ],
       "font_config": {
         "name": "Poppins",
         "family": "'Poppins', sans-serif"
@@ -71,6 +76,7 @@
             "rgba": "rgba(168, 143, 46, 1)"
           }
         ],
+        
         "gray": [
           {
             "shade": "100",
@@ -209,8 +215,9 @@
       "title": "AV Card",
       "category": "Fintech / Dashboard",
       "role": "UI/UX Designer",
-      "year": "Feb 2025 – August 2025",
+      "year": "Feb 2025 - August 2025",
       "image": "DASHBOARD (1).png",
+      "headerimage":"iMockup - iPhone 15 Pro Max.png",
       "font_config": {
         "name": "Plus Jakarta Sans",
         "family": "'Plus Jakarta Sans', sans-serif"
@@ -365,7 +372,7 @@
             "Difficulty tracking multiple payments",
             "Concerns about security"
           ],
-          "image": "1000581204.png"
+          "image": "avcard2persona.png"
         },
         {
           "name": "Tunde",
@@ -383,7 +390,7 @@
             "Confusing funding flows",
             "Difficulty monitoring transactions"
           ],
-          "image": "1000581205.png"
+          "image": "avcard1persona.png"
         }
       ],
       "screens": [
@@ -555,7 +562,7 @@
             "Lack of clarity on total trip cost",
             "Fragmented access to travel documents (visa, insurance, etc.)"
           ],
-          "image": "1000581212.png"
+          "image": "airxplora2persona.png"
         },
         {
           "name": "Tobe",
@@ -572,7 +579,7 @@
             "Difficulty managing multiple trips simultaneously",
             "Missing or hard-to-access travel documents"
           ],
-          "image": "1000581212.png"
+          "image": "airxplora1persona.png"
         }
       ],
       "screens": [
