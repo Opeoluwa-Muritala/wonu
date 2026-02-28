@@ -21,6 +21,7 @@
       "category": "EdTech / Learning",
       "role": "Lead Product Designer",
       "year": "Aug 2024 - Feb 2025",
+<<<<<<< HEAD
       "image": "images/Landing page Redesign (1).png",
       "otherimages":[
         {
@@ -101,75 +102,32 @@
         ]
       },
       "overview": "Datafrik is an online learning platform that helps learners acquire practical data skills through hands-on projects and portfolio-building exercises. The platform supports structured learning paths, project-based skill application, and real-world problem solving to prepare users for data careers. The platform is designed for learners of all levels, from beginners to working professionals seeking to upskill, and includes mentorship and guidance features to ensure practical understanding.",
+=======
+      "image": "Landing page Redesign (1).png",
+      "overview": "Datafrik is an online learning platform that helps learners acquire practical data skills through hands-on projects and portfolio-building exercises. The platform supports structured learning paths, project-based skill application, and real-world problem solving to prepare users for data careers.",
+>>>>>>> parent of d86ee7c (About screen and project-view update)
       "solution_text": "The redesign focused on clarity, engagement, and practical skill application. We implemented structured learning paths, project-based learning modules, and progress tracking dashboards to improve student retention.",
-      "mobile_description": "A mobile-friendly learning experience that supports browsing learning paths, tracking progress, and working through projects on the go.",
+      "font_name": "Poppins",
+      "palette": ["#00D09C", "#005244", "#CCF5EB"],
       "challenges": [
-        {
-          "title": "Disorganized learning paths",
-          "text": "Learners struggled to navigate courses and projects in a logical, progressive manner."
-        },
-        {
-          "title": "Lack of practical application",
-          "text": "Courses were often theoretical, leaving learners unsure how to apply concepts to real-world problems."
-        },
-        {
-          "title": "Difficulty tracking progress",
-          "text": "Users couldn't easily monitor completed modules or project submissions."
-        },
-        {
-          "title": "Limited feedback and mentorship",
-          "text": "Learners lacked structured guidance, making it hard to understand mistakes or improve."
-        }
+        { "title": "Disorganized Learning Paths", "text": "Learners struggled to navigate courses and projects in a logical, progressive manner." },
+        { "title": "Lack of Practical Application", "text": "Courses were often theoretical, leaving learners unsure how to apply concepts to real-world problems." },
+        { "title": "Difficulty Tracking Progress", "text": "Users couldn't easily monitor completed modules or project submissions." },
+        { "title": "Limited Feedback", "text": "Learners lacked structured guidance, making it hard to understand mistakes or improve." }
       ],
       "key_solutions": [
-        {
-          "title": "Structured learning paths",
-          "text": "Courses and projects were organized logically with clear prerequisites and milestones."
-        },
-        {
-          "title": "Project-based learning",
-          "text": "Assignments were designed to produce portfolio-ready outputs, ensuring practical application."
-        },
-        {
-          "title": "Progress tracking dashboards",
-          "text": "Learners can monitor their completion status, project progress, and skill development."
-        },
-        {
-          "title": "Mentorship and feedback integration",
-          "text": "Mentors can provide contextual feedback directly on submitted projects, helping learners iterate quickly."
-        }
+        { "title": "Structured Learning Paths", "text": "Courses and projects were organized logically with clear prerequisites and milestones." },
+        { "title": "Project-Based Learning", "text": "Assignments were designed to produce portfolio-ready outputs, ensuring practical application." },
+        { "title": "Progress Tracking Dashboards", "text": "Learners can monitor their completion status, project progress, and skill development." },
+        { "title": "Mentorship Integration", "text": "Mentors can provide contextual feedback directly on submitted projects." }
       ],
-      "process": {
-        "intro": "This structured approach ensured that design decisions were grounded in real learner needs while balancing business goals, scalability, and ease of use. Continuous validation with learners and mentors ensured a platform that feels intuitive, engaging, and effective for skill acquisition.",
-        "steps": {
-          "research": [
-            "Reviewed existing online data learning platforms and user feedback",
-            "Observed learner workflows and engagement patterns"
-          ],
-          "analysis": [
-            "Synthesized findings into core problems around progression clarity, practical application, and mentorship support",
-            "Prioritized features that would improve learning outcomes"
-          ],
-          "design": [
-            "Redesigned dashboards for course navigation, progress tracking, and project management",
-            "Developed project-focused flows to make outputs portfolio-ready"
-          ],
-          "test": [
-            "Conducted usability sessions with learners and mentors",
-            "Gathered feedback on navigation, clarity, and engagement"
-          ]
-        }
-      },
-      "target_users": [
-        "Aspiring Data Professional: Build practical data skills to advance their career.",
-        "Working Professional / Career Switcher: Learn advanced data concepts without disrupting work.",
-        "Course Mentor / Instructor: Track learner progress, guide project completion, ensure correct application of concepts."
-      ],
+      "target_users": "Aspiring data professionals, career switchers, and students seeking practical technical skills.",
       "personas": [
         {
           "name": "Boluwatife",
-          "role": "Learner/Student",
+          "role": "Learner / Student",
           "age": "23",
+<<<<<<< HEAD
           "occupation": "Aspiring Data Professional",
           "tech_comfort": "Mid",
           "goals": [
@@ -183,11 +141,17 @@
             "Lack of practical, real-world examples"
           ],
           "image": "images/1000581218.png"
+=======
+          "goals": ["Build practical data skills", "Complete portfolio-worthy projects", "Learn at own pace"],
+          "frustrations": ["Difficulty finding structured paths", "Unclear expectations", "Lack of real-world examples"],
+          "image": "1000581218.png"
+>>>>>>> parent of d86ee7c (About screen and project-view update)
         },
         {
           "name": "Paul",
-          "role": "Working Professional / Career Switcher",
+          "role": "Working Professional",
           "age": "32",
+<<<<<<< HEAD
           "occupation": "Career-changer or upskilling professional",
           "tech_comfort": "Medium",
           "goals": [
@@ -207,6 +171,14 @@
         "images/1000581221.png",
         "images/1000581222.png"
       ]
+=======
+          "goals": ["Learn advanced concepts without disrupting work", "Gain marketable skills", "Validate learning"],
+          "frustrations": ["Limited time to study", "Frustration with abstract content", "Uncertainty about relevance"],
+          "image": "1000581219.png"
+        }
+      ],
+      "screens": ["1000581221.png", "1000581222.png"]
+>>>>>>> parent of d86ee7c (About screen and project-view update)
     },
     {
       "id": "p02",
@@ -215,6 +187,7 @@
       "title": "AV Card",
       "category": "Fintech / Dashboard",
       "role": "UI/UX Designer",
+<<<<<<< HEAD
       "year": "Feb 2025 - August 2025",
       "image": "images/DASHBOARD (1).png",
       "headerimage":"images/iMockup - iPhone 15 Pro Max.png",
@@ -290,76 +263,33 @@
           }
         ]
       },
+=======
+      "year": "Feb 2025 – August 2025",
+      "image": "DASHBOARD (1).png",
+>>>>>>> parent of d86ee7c (About screen and project-view update)
       "overview": "Avcard is a virtual card product that allows users to instantly create, fund, and manage digital cards for online payments. The platform focuses on speed, security, and user control.",
       "solution_text": "We designed a seamless dashboard that allows instant virtual card creation and custom spending controls. The new flow prioritizes transparency, giving users clear visibility into their transactions and card status.",
-      "mobile_description": "A mobile-friendly interface that presents virtual cards and transactions in a clear, card-based layout, allowing users to quickly view, manage, and interact with their cards. This intuitive design simplifies navigation, making it easy to create, fund, activate, and track cards on the go.",
+      "font_name": "Montserrat",
+      "palette": ["#6C5DD3", "#1F1D2B", "#CBB2FE"],
       "challenges": [
-        {
-          "title": "Frequent Card Declines",
-          "text": "Users experienced failed transactions when paying for international services like Netflix and Apple Pay."
-        },
-        {
-          "title": "Limited Control",
-          "text": "Fixed card limits and unclear balances made spending management difficult for power users."
-        },
-        {
-          "title": "Complex Onboarding",
-          "text": "Existing solutions required too many verification steps before users could create their first card."
-        },
-        {
-          "title": "Low Trust",
-          "text": "Unclear PIN flows and limited transparency caused hesitation around online card usage."
-        }
+        { "title": "Frequent Card Declines", "text": "Users experienced failed transactions when paying for international services like Netflix and Apple Pay." },
+        { "title": "Limited Control", "text": "Fixed card limits and unclear balances made spending management difficult for power users." },
+        { "title": "Complex Onboarding", "text": "Existing solutions required too many verification steps before users could create their first card." },
+        { "title": "Low Trust", "text": "Unclear PIN flows and limited transparency caused hesitation around online card usage." }
       ],
       "key_solutions": [
-        {
-          "title": "Instant Virtual Card Creation",
-          "text": "Users can create new virtual cards in seconds without complex verification steps."
-        },
-        {
-          "title": "Custom Card Controls",
-          "text": "Each card can be named, funded individually, and assigned spending limits."
-        },
-        {
-          "title": "Clear Activation Feedback",
-          "text": "Users are clearly informed when a card is created, inactive, activated, or funded."
-        },
-        {
-          "title": "Secure PIN Transactions",
-          "text": "Every transaction requires a 4-digit PIN, increasing user confidence."
-        }
+        { "title": "Instant Virtual Card Creation", "text": "Users can create new virtual cards in seconds without complex verification steps." },
+        { "title": "Custom Card Controls", "text": "Each card can be named, funded individually, and assigned spending limits." },
+        { "title": "Clear Activation Feedback", "text": "Users are clearly informed when a card is created, inactive, activated, or funded." },
+        { "title": "Secure PIN Transactions", "text": "Every transaction requires a 4-digit PIN, increasing user confidence." }
       ],
-      "process": {
-        "intro": "This structured approach ensured that design decisions were grounded in real user problems while balancing business needs, security requirements, and scalability. The result was a seamless virtual card experience that feels intuitive, trustworthy, and easy to use.",
-        "steps": {
-          "research": [
-            "Reviewed existing virtual card products and feedback",
-            "Identified common online payment and card usage challenges"
-          ],
-          "analysis": [
-            "Synthesized findings into key pain points and opportunities",
-            "Defined core problems around clarity and reliability"
-          ],
-          "design": [
-            "Created flows for onboarding, creation, funding, transactions",
-            "Designed clear status and feedback states"
-          ],
-          "test": [
-            "Tested flows to identify usability and friction points",
-            "Iterated designs based on feedback and observations"
-          ]
-        }
-      },
-      "target_users": [
-        "Freelancers",
-        "remote workers",
-        "online shoppers who need reliable payment methods."
-      ],
+      "target_users": "Freelancers, remote workers, and online shoppers who need reliable payment methods.",
       "personas": [
         {
           "name": "Ada James",
           "role": "Freelance Graphic Designer",
           "age": "27",
+<<<<<<< HEAD
           "occupation": "Freelancer",
           "tech_comfort": "High",
           "goals": [
@@ -373,11 +303,17 @@
             "Concerns about security"
           ],
           "image": "images/avcard2persona.png"
+=======
+          "goals": ["Make online payments quickly", "Keep personal and work spending separate", "Avoid failed transactions"],
+          "frustrations": ["Card declines on platforms", "Difficulty tracking multiple payments", "Concerns about security"],
+          "image": "1000581204.png"
+>>>>>>> parent of d86ee7c (About screen and project-view update)
         },
         {
           "name": "Tunde",
           "role": "E-commerce Store Owner",
           "age": "34",
+<<<<<<< HEAD
           "occupation": "Business Owner",
           "tech_comfort": "Medium",
           "goals": [
@@ -396,6 +332,14 @@
       "screens": [
         "images/iMockup - iPhone 15 Pro Max.png"
       ]
+=======
+          "goals": ["Manage multiple business payments", "Ensure team spending limits", "Secure virtual cards"],
+          "frustrations": ["Lack of control over employee spending", "Confusing funding flows", "Difficulty monitoring transactions"],
+          "image": "1000581205.png"
+        }
+      ],
+      "screens": ["iMockup - iPhone 15 Pro Max.png"]
+>>>>>>> parent of d86ee7c (About screen and project-view update)
     },
     {
       "id": "p03",
@@ -405,6 +349,7 @@
       "category": "Travel / Booking",
       "role": "Product Designer",
       "year": "Aug 2024 - Feb 2025",
+<<<<<<< HEAD
       "image": "images/User Dashboard Flights.png",
       "font_config": {
         "name": "Plus Jakarta Sans",
@@ -481,76 +426,32 @@
       "overview": "Airxplora is a travel platform designed to help users discover, book, and manage their travel experiences seamlessly. It offers international flight bookings, hotel reservations, visa applications, travel insurance, and local car hires—all in one platform. The platform targets both leisure and business travelers, providing a centralized solution that simplifies planning, booking, and managing trips while giving users confidence through clear information and trustworthy services.",
       "solution_text": "The redesign focused on streamlining and centralizing the travel experience. We prioritized a unified booking flow, simplified interactions through progressive disclosure, and a centralized dashboard for managing all aspects of a trip.",
       "mobile_description": "A mobile-friendly travel experience that helps users search, book, and manage trips with a centralized view of bookings, itineraries, and travel documents.",
+=======
+      "image": "User Dashboard Flights.png",
+      "overview": "Airxplora is a travel platform designed to help users discover, book, and manage their travel experiences seamlessly. It offers international flight bookings, hotel reservations, and visa applications.",
+      "solution_text": "We centralized the travel experience by creating a unified booking flow. Features like the centralized dashboard and support for end-to-end travel needs (visa, insurance) were embedded directly into the workflow.",
+      "font_name": "Plus Jakarta Sans",
+      "palette": ["#E91E63", "#4A148C", "#F8BBD0"],
+>>>>>>> parent of d86ee7c (About screen and project-view update)
       "challenges": [
-        {
-          "title": "Fragmented travel experience",
-          "text": "Users had to switch between multiple apps or websites to complete a single trip."
-        },
-        {
-          "title": "Complex booking processes",
-          "text": "Multi-step booking flows caused confusion and high drop-off rates."
-        },
-        {
-          "title": "Limited visibility of travel details",
-          "text": "Travelers lacked a centralized view of flights, hotels, and other bookings."
-        },
-        {
-          "title": "Difficulty managing travel documentation",
-          "text": "Visa applications, insurance, and other essentials were disconnected from the booking flow."
-        }
+        { "title": "Fragmented Experience", "text": "Users had to switch between multiple apps or websites to complete a single trip booking." },
+        { "title": "Complex Booking Processes", "text": "Multi-step booking flows caused confusion and high drop-off rates during checkout." },
+        { "title": "Limited Visibility", "text": "Travelers lacked a centralized view of their flights, hotels, and other bookings." },
+        { "title": "Difficulty Managing Docs", "text": "Visa applications and insurance were disconnected from the booking flow." }
       ],
       "key_solutions": [
-        {
-          "title": "Unified booking flow",
-          "text": "Flights, hotels, visas, insurance, and car hires integrated into a single, coherent flow."
-        },
-        {
-          "title": "Simplified interactions",
-          "text": "Multi-step processes were condensed and made intuitive with progressive disclosure and clear guidance."
-        },
-        {
-          "title": "Centralized travel dashboard",
-          "text": "Users can view all their bookings, itineraries, and documentation in one place."
-        },
-        {
-          "title": "Support for end-to-end travel needs",
-          "text": "Key travel services like visa applications and insurance were embedded in the workflow, reducing friction."
-        }
+        { "title": "Unified Booking Flow", "text": "Flights, hotels, visas, and car hires integrated into a single, coherent flow." },
+        { "title": "Simplified Interactions", "text": "Multi-step processes were condensed and made intuitive with progressive disclosure." },
+        { "title": "Centralized Dashboard", "text": "Users can view all their bookings, itineraries, and documentation in one place." },
+        { "title": "Support for End-to-End Needs", "text": "Key travel services like visa applications are embedded in the workflow." }
       ],
-      "process": {
-        "intro": "This structured approach ensured that design decisions were grounded in real traveler and planner needs while balancing business goals, operational feasibility, and scalability. Continuous validation with users ensured a seamless, intuitive, and trustworthy travel booking experience.",
-        "steps": {
-          "research": [
-            "Reviewed competitor travel platforms and user feedback",
-            "Observed traveler booking behavior and pain points",
-            "Identified common issues in multi-step bookings and itineraries"
-          ],
-          "analysis": [
-            "Synthesized findings into core problems around complex flows and poor visibility",
-            "Prioritized features that improved usability and reduced friction in end-to-end travel"
-          ],
-          "design": [
-            "Streamlined booking flows for flights, hotels, visas, and insurance",
-            "Designed a centralized dashboard for travel management",
-            "Integrated support and guidance elements to increase user confidence"
-          ],
-          "test": [
-            "Conducted usability sessions with leisure and business travelers",
-            "Gathered feedback on booking speed, clarity, and overall experience",
-            "Iterated on designs based on observations and user suggestions"
-          ]
-        }
-      },
-      "target_users": [
-        "Leisure Traveler: Casual traveler planning vacations.",
-        "Business Traveler: Frequent traveler managing work trips.",
-        "Travel Planner / Admin: Corporate travel coordinator or family trip planner."
-      ],
+      "target_users": "Leisure travelers planning vacations and business travelers managing work trips.",
       "personas": [
         {
           "name": "Joy",
           "role": "Leisure Traveler",
           "age": "23",
+<<<<<<< HEAD
           "occupation": "Casual traveler planning vacations",
           "goals": [
             "Explore destinations and discover experiences",
@@ -563,11 +464,17 @@
             "Fragmented access to travel documents (visa, insurance, etc.)"
           ],
           "image": "images/airxplora2persona.png"
+=======
+          "goals": ["Explore destinations", "Book flights easily", "Keep details organized"],
+          "frustrations": ["Confusing booking flows", "Lack of clarity on total cost", "Fragmented access to docs"],
+          "image": "1000581212.png"
+>>>>>>> parent of d86ee7c (About screen and project-view update)
         },
         {
           "name": "Tobe",
           "role": "Business Traveler",
           "age": "32",
+<<<<<<< HEAD
           "occupation": "Frequent traveler managing work trips",
           "goals": [
             "Book trips quickly and reliably",
@@ -586,6 +493,14 @@
         "images/Landing page (1).png",
         "images/1000581210.png"
       ]
+=======
+          "goals": ["Book trips quickly", "Track itineraries", "Minimize time spent on logistics"],
+          "frustrations": ["Time-consuming bookings", "Difficulty managing multiple trips", "Missing travel documents"],
+          "image": "1000581212.png"
+        }
+      ],
+      "screens": ["Landing page (1).png", "1000581210.png"]
+>>>>>>> parent of d86ee7c (About screen and project-view update)
     },
     {
       "id": "p04",
@@ -595,6 +510,7 @@
       "category": "Fintech / Admin Tool",
       "role": "UI/UX Designer",
       "year": "2024",
+<<<<<<< HEAD
       "image": "images/Dashboard (2).png",
       "font_config": {
         "name": "Montserrat",
@@ -671,77 +587,32 @@
       "overview": "Arca Bill is an internal billing tool used by the operations team to create, track, and manage bills generated for merchants and customers. The product supports day-to-day billing operations, payment monitoring, and issue resolution, acting as a central place where bills are raised and followed through to completion. The tool is heavily used by internal teams, which means speed, clarity, and accuracy are critical. Any confusion in bill status, ownership, or history directly affects operations, customer communication, and payment resolution.",
       "solution_text": "We redesigned Arca Bill with a strong focus on operational clarity, speed, and control. Every design decision was guided by how the ops team actually works on a daily basis and the need to manage bills efficiently at scale.",
       "mobile_description": "A responsive operations interface that allows teams to monitor bill statuses, search records quickly, and resolve billing issues efficiently while away from their desks.",
+=======
+      "image": "Dashboard (2).png",
+      "overview": "Arcabill is an internal billing tool used by operations teams to create, track, and manage bills at scale. The product supports day-to-day billing operations, payment monitoring, and issue resolution.",
+      "solution_text": "We redesigned Arcabill with a strong focus on operational clarity, speed, and context. Every design decision was guided by how the ops team actually works on a daily basis.",
+      "font_name": "Plus Jakarta Sans",
+      "palette": ["#065ECE", "#0A2540", "#E8F0FF"],
+>>>>>>> parent of d86ee7c (About screen and project-view update)
       "challenges": [
-        {
-          "title": "Poor visibility into bill status",
-          "text": "It was hard to quickly tell which bills were pending, paid, failed, or required follow-up, leading to delays and repeated checks."
-        },
-        {
-          "title": "Inefficient tracking and follow-ups",
-          "text": "Ops teams relied on manual processes to monitor bills, increasing the risk of missed payments and duplicated work."
-        },
-        {
-          "title": "Limited context on individual bills",
-          "text": "Bill details didn't provide enough history or clarity, making issue resolution slower when payments failed or disputes arose."
-        },
-        {
-          "title": "Scalability issues for daily operations",
-          "text": "As billing volume increased, the existing flow didn't support fast filtering, monitoring, or auditing of bills."
-        }
+        { "title": "Poor Visibility", "text": "It was hard to quickly tell which bills were pending, paid, or failed." },
+        { "title": "Inefficient Tracking", "text": "Ops teams relied on manual processes to monitor bills, increasing risk of errors." },
+        { "title": "Limited Context", "text": "Bill details didn't provide enough history or clarity for resolution." },
+        { "title": "Scalability Issues", "text": "As billing volumes increased, the existing tool didn't support fast filtering." }
       ],
       "key_solutions": [
-        {
-          "title": "Introduced clear bill states and visibility",
-          "text": "Bills were structured around clear, distinct statuses, making it easy to immediately understand what stage each bill was in and what action (if any) was required."
-        },
-        {
-          "title": "Centralized bill monitoring",
-          "text": "A single, well-organized bills view allowed the team to monitor all bills in one place, reducing the need for manual tracking and repeated status checks."
-        },
-        {
-          "title": "Improved bill detail context",
-          "text": "Each bill was redesigned to show all relevant information—status, amount, references, timestamps, and history—so issues could be investigated and resolved without switching tools."
-        },
-        {
-          "title": "Designed for operational speed",
-          "text": "Filtering, sorting, and search were prioritized to help the team quickly find bills, especially during high-volume periods."
-        },
-        {
-          "title": "Built with scale in mind",
-          "text": "The structure supports increasing bill volumes while maintaining consistency and clarity, ensuring the product remains usable as operations grow."
-        }
+        { "title": "Clear Bill Statuses", "text": "Bills were structured around distinct statuses, making it easy to understand what action was required." },
+        { "title": "Centralized Monitoring", "text": "A single, well-organized view allowed teams to monitor all bills in one place." },
+        { "title": "Improved Context", "text": "Each bill was redesigned to show all relevant info (status, amount, timestamps)." },
+        { "title": "Operational Speed", "text": "Filtering, sorting, and search were prioritized to help teams find bills quickly." }
       ],
-      "process": {
-        "intro": "This structured approach ensured that design decisions were grounded in real operational challenges while balancing business needs, accuracy, and scalability. By continuously validating assumptions with internal teams, we were able to deliver a billing tool that improved visibility, reduced manual effort, and supported efficient day-to-day operations.",
-        "steps": {
-          "research": [
-            "Reviewed the existing Arca Bill workflow and past internal feedback",
-            "Observed how the operations team created, tracked, and followed up on bills"
-          ],
-          "analysis": [
-            "Synthesized findings into clear operational pain points and improvement areas",
-            "Defined core problems around bill monitoring, context, and scalability"
-          ],
-          "design": [
-            "Redesigned key screens to surface bill status and critical information upfront",
-            "Simplified bill tracking and monitoring flows to reduce manual effort"
-          ],
-          "test": [
-            "Validated designs through internal reviews with ops and support teams",
-            "Gathered feedback on clarity, speed, and usability of redesigned flows"
-          ]
-        }
-      },
-      "target_users": [
-        "Internal Operations Team: Create bills, monitor payment status, handle exceptions.",
-        "Finance & Reconciliation Teams: Verify payments, track completed bills, support reconciliation.",
-        "Customer Support Team: Resolve merchant or customer payment issues."
-      ],
+      "target_users": "Internal operations teams, finance reconciliation teams, and customer support.",
       "personas": [
         {
           "name": "Dayo Lawal",
           "role": "Operations Manager",
           "age": "23",
+<<<<<<< HEAD
           "occupation": "Operations Manager",
           "tech_comfort": "High",
           "goals": [
@@ -755,11 +626,17 @@
             "High volume of bills during peak periods"
           ],
           "image": "images/1000581224.png"
+=======
+          "goals": ["Create and manage bills quickly", "Track status without follow-ups", "Resolve failed bills"],
+          "frustrations": ["Unclear bill statuses", "Time wasted searching details", "High volume during peak periods"],
+          "image": "1000581224.png"
+>>>>>>> parent of d86ee7c (About screen and project-view update)
         },
         {
           "name": "Joshua",
-          "role": "Finance / Reconciliation Officer",
+          "role": "Finance Officer",
           "age": "32",
+<<<<<<< HEAD
           "occupation": "Finance and Reconciliation Officer",
           "tech_comfort": "Medium",
           "goals": [
@@ -779,6 +656,14 @@
         "images/1000581226.png",
         "images/1000581223.png"
       ]
+=======
+          "goals": ["Verify completed payments", "Reconcile bills accurately", "Access reliable records"],
+          "frustrations": ["Inconsistent bill data", "Difficulty matching bills to payments", "Delays caused by missing references"],
+          "image": "1000581224.png"
+        }
+      ],
+      "screens": ["1000581226.png", "1000581223.png"]
+>>>>>>> parent of d86ee7c (About screen and project-view update)
     }
   ],
   "social": {

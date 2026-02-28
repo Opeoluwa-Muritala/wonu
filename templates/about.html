@@ -1,7 +1,9 @@
-{# templates/about.html (or any page) #}
 {% extends "base.html" %}
-{% block body_class %}{% endblock %}
+
+{% block title %}About — {{ content.site.brand }}{% endblock %}
+
 {% block content %}
+<<<<<<< HEAD
 <style>
   
   /* ====== HERO ====== */
@@ -267,9 +269,18 @@
 </style>
 
 <div class="about-wrap">
+=======
+<main class="page">
+>>>>>>> parent of d86ee7c (About screen and project-view update)
   <div class="container">
+    <h1 class="pageTitle">Get to know me</h1>
 
+    <div class="rich" style="max-width:980px;">
+      <p>{{ content.hero.subtitle }}</p>
+      <p style="margin-top: 20px;">{{ content.resume.summary }}</p>
+    </div>
 
+<<<<<<< HEAD
     <!-- HERO -->
     <section class="hero" id="about">
       <div>
@@ -376,13 +387,13 @@
         </div>
       </div>
     </section>
+=======
+    <div class="imageRow">
+      <div class="img one"></div>
+      <div class="img two"></div>
+      <div class="img three"></div>
+    </div>
+>>>>>>> parent of d86ee7c (About screen and project-view update)
   </div>
-
-  <!-- right floating controls (visual only, like screenshot) -->
-  <div class="float-ui">
-    <a href="#about" title="Top">↑</a>
-    <a href="#about" title="Section">•</a>
-  </div>
-</div>
-
+</main>
 {% endblock %}
