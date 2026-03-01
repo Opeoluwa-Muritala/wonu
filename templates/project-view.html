@@ -25,7 +25,7 @@
       <h2>{{project.title}} Platform</h2>
       <div class="mockup-placeholder {{project.color}}">
         <div >
-          <img class="mockup-overlay" src="{{ url_for('static', filename=project.headerimage) }}" alt="{{ project.name }}">
+          <img class="mockup-overlay" src="{{ project.headerimage }}" alt="{{ project.name }}">
         </div>
       </div>
     </section>
@@ -98,7 +98,7 @@
       </p>
 
       <h3>Pain Points</h3>
-      <ul class="bullets">
+      <ol class="bullets">
         <li>Frequent card declines when paying for international services or subscriptions.</li>
         <li>Limited control over spending and card limits across different use cases.</li>
         <li>Confusion around card activation, funding, and transaction status.</li>
@@ -180,7 +180,7 @@
       <div class="persona">
         {% for persona in project.personas%}
 
-        <img src="{{ url_for('static', filename='persona.image') }}" alt="persona.name">
+        <img src="{{ persona.image }}" alt="persona.name">
         <div>
           <h3>{{persona.name}} – {{persona.role}}</h3>
           <p><strong>Age:</strong> {{persona.age}}</p>

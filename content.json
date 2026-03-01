@@ -22,15 +22,13 @@
       "role": "Lead Product Designer",
       "year": "Aug 2024 - Feb 2025",
       "image": "https://res.cloudinary.com/ddezxlqjr/image/upload/v1772297068/Landing_page_Redesign_1_1__053949_aan7mp.png",
+      "font_name": "Poppins",
+      "palette": ["#00D09C", "#005244", "#CCF5EB"],
       "otherimages": [
         {
           "header": "images/nothing.png"
         }
       ],
-      "font_config": {
-        "name": "Poppins",
-        "family": "'Poppins', sans-serif"
-      },
       "colors": {
         "primary": [
           { "shade": "100", "hex": "#3EDFCF", "rgba": "rgba(62, 223, 207, 1)" },
@@ -106,23 +104,89 @@
       },
       "colors": {
         "primary": [
-          { "shade": "100", "hex": "#6C5DD3", "rgba": "rgba(108, 93, 211, 1)" },
-          { "shade": "400", "hex": "#392AA6", "rgba": "rgba(57, 42, 166, 1)" }
+          {
+            "shade": "100",
+            "hex": "#6C5DD3",
+            "rgba": "rgba(108, 93, 211, 1)"
+          },
+          {
+            "shade": "200",
+            "hex": "#5B4CC4",
+            "rgba": "rgba(91, 76, 196, 1)"
+          },
+          {
+            "shade": "300",
+            "hex": "#4A3BB5",
+            "rgba": "rgba(74, 59, 181, 1)"
+          },
+          {
+            "shade": "400",
+            "hex": "#392AA6",
+            "rgba": "rgba(57, 42, 166, 1)"
+          }
+        ],
+        "secondary": [
+          {
+            "shade": "100",
+            "hex": "#6C5DD3",
+            "rgba": "rgba(108, 93, 211, 1)"
+          },
+          {
+            "shade": "200",
+            "hex": "#5B4CC4",
+            "rgba": "rgba(91, 76, 196, 1)"
+          },
+          {
+            "shade": "300",
+            "hex": "#4A3BB5",
+            "rgba": "rgba(74, 59, 181, 1)"
+          },
+          {
+            "shade": "400",
+            "hex": "#392AA6",
+            "rgba": "rgba(57, 42, 166, 1)"
+          }
+
         ],
         "gray": [
-          { "shade": "100", "hex": "#FCFCFD", "rgba": "rgba(252, 252, 253, 1)" },
-          { "shade": "400", "hex": "#D0D5DD", "rgba": "rgba(208, 213, 221, 1)" }
+          {
+            "shade": "100",
+            "hex": "#FCFCFD",
+            "rgba": "rgba(252, 252, 253, 1)"
+          },
+          {
+            "shade": "200",
+            "hex": "#F2F4F7",
+            "rgba": "rgba(242, 244, 247, 1)"
+          },
+          {
+            "shade": "300",
+            "hex": "#E4E7EC",
+            "rgba": "rgba(228, 231, 236, 1)"
+          },
+          {
+            "shade": "400",
+            "hex": "#D0D5DD",
+            "rgba": "rgba(208, 213, 221, 1)"
+          }
+
         ]
       },
       "overview": "Avcard is a virtual card product that allows users to instantly create, fund, and manage digital cards for online payments. The platform focuses on speed, security, and user control.",
       "solution_text": "We designed a seamless dashboard that allows instant virtual card creation and custom spending controls. The new flow prioritizes transparency, giving users clear visibility into their transactions and card status.",
+      "font_name": "Montserrat",
+      "palette": ["#6C5DD3", "#1F1D2B", "#CBB2FE"],
       "challenges": [
         { "title": "Frequent Card Declines", "text": "Users experienced failed transactions when paying for international services like Netflix and Apple Pay." },
-        { "title": "Limited Control", "text": "Fixed card limits and unclear balances made spending management difficult for power users." }
+        { "title": "Limited Control", "text": "Fixed card limits and unclear balances made spending management difficult for power users." },
+        { "title": "Complex Onboarding", "text": "Existing solutions required too many verification steps before users could create their first card." },
+        { "title": "Low Trust", "text": "Unclear PIN flows and limited transparency caused hesitation around online card usage." }
       ],
       "key_solutions": [
         { "title": "Instant Virtual Card Creation", "text": "Users can create new virtual cards in seconds without complex verification steps." },
-        { "title": "Custom Card Controls", "text": "Each card can be named, funded individually, and assigned spending limits." }
+        { "title": "Custom Card Controls", "text": "Each card can be named, funded individually, and assigned spending limits." },
+        { "title": "Clear Activation Feedback", "text": "Users are clearly informed when a card is created, inactive, activated, or funded." },
+        { "title": "Secure PIN Transactions", "text": "Every transaction requires a 4-digit PIN, increasing user confidence." }
       ],
       "target_users": "Freelancers, remote workers, and online shoppers who need reliable payment methods.",
       "personas": [
@@ -130,12 +194,41 @@
           "name": "Ada James",
           "role": "Freelance Graphic Designer",
           "age": "27",
-          "goals": ["Make online payments quickly", "Keep personal and work spending separate"],
-          "frustrations": ["Card declines on platforms", "Concerns about security"],
+          "occupation": "Freelancer",
+          "tech_comfort": "High",
+          "goals": [
+            "Make online payments quickly",
+            "Keep personal and work spending separate",
+            "Avoid failed transactions"
+          ],
+          "frustrations": [
+            "Card declines on platforms",
+            "Difficulty tracking multiple payments",
+            "Concerns about security"
+          ],
           "image": "images/avcard2persona.png"
-        }
-      ],
-      "screens": ["images/iMockup - iPhone 15 Pro Max.png"]
+        },
+      {
+        "name": "Tunde",
+        "role": "E-commerce Store Owner",
+        "age": "34",
+        "occupation": "Business Owner",
+        "tech_comfort": "Medium",
+        "goals": [
+          "Manage multiple business payments",
+          "Ensure team spending limits",
+          "Secure virtual cards"
+        ],
+        "frustrations": [
+          "Lack of control over employee spending",
+          "Confusing funding flows",
+          "Difficulty monitoring transactions"
+        ],
+        "image": "images/avcard1persona.png"
+      }
+    ],
+    "screens": ["iMockup - iPhone 15 Pro Max.png"]
+
     },
     {
       "id": "p03",
@@ -146,13 +239,95 @@
       "role": "Product Designer",
       "year": "Aug 2024 - Feb 2025",
       "image": "https://res.cloudinary.com/ddezxlqjr/image/upload/v1772297084/User_Dashboard_Flights_054318_w0nbvz.png",
-      "overview": "Airxplora is a travel platform designed to help users discover, book, and manage their travel experiences seamlessly. It offers international flight bookings, hotel reservations, and visa applications.",
-      "solution_text": "We centralized the travel experience by creating a unified booking flow. Features like the centralized dashboard and support for end-to-end travel needs (visa, insurance) were embedded directly into the workflow.",
+      "font_config": {
+        "name": "Plus Jakarta Sans",
+        "family": "'Plus Jakarta Sans', sans-serif"
+      },
+      "colors": {
+        "primary": [
+          {
+            "shade": "100",
+            "hex": "#9D00FF",
+            "rgba": "rgba(157, 0, 255, 1)"
+          },
+          {
+            "shade": "200",
+            "hex": "#7D11E2",
+            "rgba": "rgba(125, 17, 226, 1)"
+          },
+          {
+            "shade": "300",
+            "hex": "#4A148C",
+            "rgba": "rgba(74, 20, 140, 1)"
+          },
+          {
+            "shade": "400",
+            "hex": "#F8BBD0",
+            "rgba": "rgba(248, 187, 208, 1)"
+          }
+        ],
+        "secondary": [
+          {
+            "shade": "100",
+            "hex": "#F8C1D4",
+            "rgba": "rgba(248, 193, 212, 1)"
+          },
+          {
+            "shade": "200",
+            "hex": "#F8BBD0",
+            "rgba": "rgba(248, 187, 208, 1)"
+          },
+          {
+            "shade": "300",
+            "hex": "#D39FAF",
+            "rgba": "rgba(211, 159, 175, 1)"
+          },
+          {
+            "shade": "400",
+            "hex": "#AD828E",
+            "rgba": "rgba(173, 130, 142, 1)"
+          }
+        ],
+        "gray": [
+          {
+            "shade": "100",
+            "hex": "#FCFCFD",
+            "rgba": "rgba(252, 252, 253, 1)"
+          },
+          {
+            "shade": "200",
+            "hex": "#F2F4F7",
+            "rgba": "rgba(242, 244, 247, 1)"
+          },
+          {
+            "shade": "300",
+            "hex": "#E4E7EC",
+            "rgba": "rgba(228, 231, 236, 1)"
+          },
+          {
+            "shade": "400",
+            "hex": "#D0D5DD",
+            "rgba": "rgba(208, 213, 221, 1)"
+          }
+        ]
+      },
+      "overview": "Airxplora is a travel platform designed to help users discover, book, and manage their travel experiences seamlessly. It offers international flight bookings, hotel reservations, visa applications, travel insurance, and local car hires—all in one platform. The platform targets both leisure and business travelers, providing a centralized solution that simplifies planning, booking, and managing trips while giving users confidence through clear information and trustworthy services.",
+      "solution_text": "The redesign focused on streamlining and centralizing the travel experience. We prioritized a unified booking flow, simplified interactions through progressive disclosure, and a centralized dashboard for managing all aspects of a trip.",
+      "font_name": "Plus Jakarta Sans",
+      "palette": ["#E91E63", "#4A148C", "#F8BBD0"],
+
+      "mobile_description": "A mobile-friendly travel experience that helps users search, book, and manage trips with a centralized view of bookings, itineraries, and travel documents.",
       "challenges": [
-        { "title": "Fragmented Experience", "text": "Users had to switch between multiple apps or websites to complete a single trip booking." }
+        { "title": "Fragmented Experience", "text": "Users had to switch between multiple apps or websites to complete a single trip booking." },
+        { "title": "Complex Booking Processes", "text": "Multi-step booking flows caused confusion and high drop-off rates during checkout." },
+        { "title": "Limited Visibility", "text": "Travelers lacked a centralized view of their flights, hotels, and other bookings." },
+        { "title": "Difficulty Managing Docs", "text": "Visa applications and insurance were disconnected from the booking flow." }
       ],
       "key_solutions": [
-        { "title": "Unified Booking Flow", "text": "Flights, hotels, visas, and car hires integrated into a single, coherent flow." }
+        { "title": "Unified Booking Flow", "text": "Flights, hotels, visas, and car hires integrated into a single, coherent flow." },
+        { "title": "Simplified Interactions", "text": "Multi-step processes were condensed and made intuitive with progressive disclosure." },
+        { "title": "Centralized Dashboard", "text": "Users can view all their bookings, itineraries, and documentation in one place." },
+        { "title": "Support for End-to-End Needs", "text": "Key travel services like visa applications are embedded in the workflow." }
       ],
       "target_users": "Leisure travelers planning vacations and business travelers managing work trips.",
       "personas": [
@@ -160,10 +335,37 @@
           "name": "Joy",
           "role": "Leisure Traveler",
           "age": "23",
-          "goals": ["Explore destinations", "Book flights easily", "Keep details organized"],
-          "frustrations": ["Confusing booking flows", "Fragmented access to docs"],
-          "image": "images/airxplora2persona.png"
-        }
+          "occupation": "Casual traveler planning vacations",
+          "goals": [
+            "Explore destinations and discover experiences",
+            "Book flights, hotels, and activities efficiently",
+            "Keep all travel details organized in one place"
+          ],
+          "frustrations": [
+            "Confusing multi-step booking flows",
+            "Lack of clarity on total trip cost",
+            "Fragmented access to travel documents (visa, insurance, etc.)"
+          ],
+          "image": "https://res.cloudinary.com/ddezxlqjr/image/upload/v1772297065/airxplora2persona_054357_iuq8qd.png"
+        },
+      {
+        "name": "Tobe",
+        "role": "Business Traveler",
+        "age": "32",
+        "occupation": "Frequent traveler managing work trips",
+        "goals": [
+          "Book trips quickly and reliably",
+          "Track itineraries and essential travel documents",
+          "Minimize time spent on travel logistics"
+        ],
+        "frustrations": [
+          "Time-consuming bookings",
+          "Difficulty managing multiple trips simultaneously",
+          "Missing or hard-to-access travel documents"
+        ],
+        "image": "images/airxplora1persona.png"
+      }
+
       ],
       "screens": ["images/Landing page (1).png", "images/1000581210.png"]
     },
@@ -176,13 +378,94 @@
       "role": "UI/UX Designer",
       "year": "2024",
       "image": "https://res.cloudinary.com/ddezxlqjr/image/upload/v1772297065/Dashboard_2__054615_haldp8.png",
-      "overview": "Arcabill is an internal billing tool used by operations teams to create, track, and manage bills at scale. The product supports day-to-day billing operations, payment monitoring, and issue resolution.",
-      "solution_text": "We redesigned Arcabill with a strong focus on operational clarity, speed, and context. Every design decision was guided by how the ops team actually works on a daily basis.",
+      "font_config": {
+        "name": "Montserrat",
+        "family": "'Montserrat', sans-serif"
+      },
+      "colors": {
+        "primary": [
+          {
+            "shade": "100",
+            "hex": "#065ECE",
+            "rgba": "rgba(6, 94, 206, 1)"
+          },
+          {
+            "shade": "200",
+            "hex": "#0653B7",
+            "rgba": "rgba(6, 83, 183, 1)"
+          },
+          {
+            "shade": "300",
+            "hex": "#0549A0",
+            "rgba": "rgba(5, 73, 160, 1)"
+          },
+          {
+            "shade": "400",
+            "hex": "#043E89",
+            "rgba": "rgba(4, 62, 137, 1)"
+          }
+        ],
+        "secondary": [
+          {
+            "shade": "100",
+            "hex": "#0E0B9D",
+            "rgba": "rgba(14, 11, 157, 1)"
+          },
+          {
+            "shade": "200",
+            "hex": "#0B0985",
+            "rgba": "rgba(11, 9, 133, 1)"
+          },
+          {
+            "shade": "300",
+            "hex": "#09066D",
+            "rgba": "rgba(9, 6, 109, 1)"
+          },
+          {
+            "shade": "400",
+            "hex": "#070456",
+            "rgba": "rgba(7, 4, 86, 1)"
+          }
+        ],
+        "gray": [
+          {
+            "shade": "100",
+            "hex": "#FCFCFD",
+            "rgba": "rgba(252, 252, 253, 1)"
+          },
+          {
+            "shade": "200",
+            "hex": "#F2F4F7",
+            "rgba": "rgba(242, 244, 247, 1)"
+          },
+          {
+            "shade": "300",
+            "hex": "#E4E7EC",
+            "rgba": "rgba(228, 231, 236, 1)"
+          },
+          {
+            "shade": "400",
+            "hex": "#D0D5DD",
+            "rgba": "rgba(208, 213, 221, 1)"
+          }
+        ]
+      },
+      "overview": "Arca Bill is an internal billing tool used by the operations team to create, track, and manage bills generated for merchants and customers. The product supports day-to-day billing operations, payment monitoring, and issue resolution, acting as a central place where bills are raised and followed through to completion. The tool is heavily used by internal teams, which means speed, clarity, and accuracy are critical. Any confusion in bill status, ownership, or history directly affects operations, customer communication, and payment resolution.",
+      "solution_text": "We redesigned Arca Bill with a strong focus on operational clarity, speed, and control. Every design decision was guided by how the ops team actually works on a daily basis and the need to manage bills efficiently at scale.",
+      "font_name": "Plus Jakarta Sans",
+      "palette": ["#065ECE", "#0A2540", "#E8F0FF"],
+      "mobile_description": "A responsive operations interface that allows teams to monitor bill statuses, search records quickly, and resolve billing issues efficiently while away from their desks.",
       "challenges": [
-        { "title": "Poor Visibility", "text": "It was hard to quickly tell which bills were pending, paid, or failed." }
+        { "title": "Poor Visibility", "text": "It was hard to quickly tell which bills were pending, paid, or failed." },
+        { "title": "Inefficient Tracking", "text": "Ops teams relied on manual processes to monitor bills, increasing risk of errors." },
+        { "title": "Limited Context", "text": "Bill details didn't provide enough history or clarity for resolution." },
+        { "title": "Scalability Issues", "text": "As billing volumes increased, the existing tool didn't support fast filtering." }
       ],
       "key_solutions": [
-        { "title": "Clear Bill Statuses", "text": "Bills were structured around distinct statuses, making it easy to understand what action was required." }
+        { "title": "Clear Bill Statuses", "text": "Bills were structured around distinct statuses, making it easy to understand what action was required." },
+        { "title": "Centralized Monitoring", "text": "A single, well-organized view allowed teams to monitor all bills in one place." },
+        { "title": "Improved Context", "text": "Each bill was redesigned to show all relevant info (status, amount, timestamps)." },
+        { "title": "Operational Speed", "text": "Filtering, sorting, and search were prioritized to help teams find bills quickly." }
       ],
       "target_users": "Internal operations teams, finance reconciliation teams, and customer support.",
       "personas": [
@@ -190,8 +473,37 @@
           "name": "Dayo Lawal",
           "role": "Operations Manager",
           "age": "23",
-          "goals": ["Create and manage bills quickly", "Track status without follow-ups"],
-          "frustrations": ["Unclear bill statuses", "Time wasted searching details"],
+          "occupation": "Operations Manager",
+          "tech_comfort": "High",
+          "goals": [
+            "Create and manage bills quickly",
+            "Track bill status without manual follow-ups",
+            "Resolve failed or pending bills efficiently"
+          ],
+          "frustrations": [
+            "Unclear bill statuses",
+            "Time wasted searching for bill details",
+            "High volume of bills during peak periods"
+          ],
+          "image": "images/1000581224.png"
+        },
+        {
+          "name": "Joshua",
+          "role": "Finance Officer",
+          "age": "32",
+          "occupation": "Finance and Reconciliation Officer",
+          "tech_comfort": "Medium",
+          "goals": [
+            "Verify completed payments",
+            "Reconcile bills accurately",
+            "Access reliable bill records"
+          ],
+          "frustrations": [
+            "Inconsistent or incomplete bill data",
+            "Difficulty matching bills to payments",
+            "Delays caused by missing references"
+          ],
+
           "image": "images/1000581224.png"
         }
       ],
