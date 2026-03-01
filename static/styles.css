@@ -685,12 +685,6 @@ a:hover{opacity:.9}
   line-height: 1.9;
 }
 
-.case-study.p02 .persona,
-.case-study.p02 p {
-  color: #ffffff;
-  font-size: 16px;
-  line-height: 1.9;
-}
 
 .case-study.p02 .muted {
   color: rgba(243, 241, 241, 0.65);
@@ -786,69 +780,22 @@ a:hover{opacity:.9}
   height: 420px;
   margin: 28px 0 0;
   border-radius: 24px;
-  background: linear-gradient(
-    135deg,
-    #4b2ea4 0%,
-    #6f5bd6 45%,
-    #c7b9ef 100%
-  );
   overflow: hidden;
   border: 1px solid rgba(0,0,0,.18);
-}
+  
+  /* DEFAULT FALLBACK (Purple) */
+  --base-color: #6c5dd3;
 
-/* PINK (Airxplora) */
-.case-study.p02 .mockup-placeholder.pink {
-  position: relative;
-  height: 420px;
-  margin: 28px 0 0;
-  border-radius: 24px;
+  /* DYNAMIC GRADIENT: 20% alpha -> 80% alpha -> 95% solid */
   background: linear-gradient(
-    rgba(233, 30, 99, 0.2) 0%, 
-    rgba(233, 30, 99, 0.8) 50%, 
-    rgba(160, 10, 60, 0.95) 100%);
+    180deg, 
+    rgb(from var(--base-color) r g b / 0.2) 0%, 
+    rgb(from var(--base-color) r g b / 0.8) 50%, 
+    rgb(from var(--base-color) r g b / 0.95) 100%
+  );
 }
-
-/* BLUE (Arcabill) */
-.case-study.p02 .mockup-placeholder.blue {
-  position: relative;
-  height: 420px;
-  margin: 28px 0 0;
-  border-radius: 24px;
-  background: linear-gradient( 
-    rgba(6, 94, 206, 0.2) 0%, 
-    rgba(6, 94, 206, 0.8) 50%, 
-    rgba(4, 50, 120, 0.95) 100%);
-}
-
-/* PURPLE (AV Card) */
-.case-study.p02 .mockup-placeholder.purple{
-  position: relative;
-  height: 420px;
-  margin: 28px 0 0;
-  border-radius: 24px;
-  background: linear-gradient( 
-    rgba(108, 93, 211, 0.2) 0%, 
-    rgba(108, 93, 211, 0.8) 50%, 
-    rgba(60, 40, 140, 0.95) 100%);
-}
-
-/* GREEN (Datafrik) */
-.case-study.p02 .mockup-placeholder.green {
-  position: relative;
-  height: 420px;
-  margin: 28px 0 0;
-  border-radius: 24px;
-  background: linear-gradient(
-    rgba(0, 191, 165, 0.2) 0%, 
-    rgba(0, 191, 165, 0.8) 50%, 
-    rgba(0, 100, 90, 0.95) 100%);
-}
-
-
-
 
 .case-study.p02 .mockup-overlay {
-  size: 50px,80px;
   position: absolute;
   inset: 0;
   background: linear-gradient(
@@ -856,73 +803,66 @@ a:hover{opacity:.9}
     rgba(255,255,255,0.18),
     rgba(255,255,255,0)
   );
-  
+  /* This creates that nice diagonal shine effect */
   clip-path: polygon(0 0, 60% 0, 40% 100%, 0% 100%);
 }
-
 /* ================= PROCESS CARD ================= */
 .case-study.p02 .process-card {
+  background: linear-gradient(
+    135deg, 
+    var(--base-color, #4b2ea4) 0%, 
+    color-mix(in srgb, var(--base-color, #4b2ea4), white 20%) 100%
+  );
+  
   margin-top: 28px;
   padding: 64px;
   border-radius: 24px;
   color: #fff;
-  background: linear-gradient(135deg, #5b3cc4, #c7b9ef);
   overflow: hidden;
-}
-
-.case-study.p02 .process-card.purple{
-  margin-top: 28px;
-  padding: 64px;
-  border-radius: 24px;
-  color: #fff;
-  background: linear-gradient(135deg, #5b3cc4, #c7b9ef);
-  overflow: hidden;
-}
-
-.case-study.p02 .process-card.green {
-  margin-top: 28px;
-  padding: 64px;
-  border-radius: 24px;
-  color: #fff;
-  background: linear-gradient(135deg,rgb(60, 196, 89),rgb(185, 239, 198));
-  overflow: hidden;
-}
-
-.case-study.p02 .process-card.blue {
-  margin-top: 28px;
-  padding: 64px;
-  border-radius: 24px;
-  color: #fff;
-  background: linear-gradient(135deg,rgb(58, 10, 216),rgb(185, 199, 239));
-  overflow: hidden;
-}
-
-.case-study.p02 .process-card.pink{
-  margin-top: 28px;
-  padding: 64px;
-  border-radius: 24px;
-  color: #fff;
-  background: linear-gradient(135deg,rgb(196, 60, 185),rgb(237, 185, 239));
-  overflow: hidden;
-}
-
-.case-study.p02 .process-card h3 {
-  color: #fff;
-  margin-top: 0;
 }
 
 .case-study.p02 .process-intro {
-  color: rgba(255,255,255,.92);
+  color: rgba(255, 255, 255, 0.92);
   max-width: 920px;
+  margin-bottom: 40px;
+}
+
+.case-study.p02 .process-timeline {
+  position: relative;
+  margin-top: 56px;
+}
+
+.case-study.p02 .process-timeline::before {
+  content: "";
+  position: absolute;
+  top: 6px; 
+  left: 0;
+  right: 0;
+  height: 1.5px;
+  background: rgba(255, 255, 255, 0.3);
+  z-index: 0;
+}
+
+.case-study.p02 .timeline-dots {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  position: relative;
+  z-index: 1;
+  margin-bottom: 24px;
+}
+
+.case-study.p02 .dot {
+  width: 12px;
+  height: 12px;
+  background: #fff;
+  border-radius: 50%;
+  margin: 0 auto;
 }
 
 .case-study.p02 .process-steps {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 32px;
-  margin-top: 36px;
-  border-top: 1px solid rgba(255,255,255,.28);
-  padding-top: 28px;
 }
 
 .case-study.p02 .process-steps h4 {
@@ -930,13 +870,9 @@ a:hover{opacity:.9}
   margin: 0 0 10px;
 }
 
-.case-study.p02 .process-steps ul {
-  margin: 0;
-  padding-left: 18px;
-}
-
 .case-study.p02 .process-steps li {
-  color: rgba(255,255,255,.92);
+  color: rgba(255, 255, 255, 0.92);
+  font-size: 14px;
 }
 
 /* ================= COLORS ================= */
@@ -961,7 +897,9 @@ a:hover{opacity:.9}
   border-radius: 12px;
   margin-top: 0px;
   margin-bottom: 12px;
+  border: 1px solid rgba(0,0,0,0.05); 
 }
+
 
 .case-study.p02 .swatch small {
   display: block;
@@ -973,26 +911,10 @@ a:hover{opacity:.9}
   color: rgba(0,0,0,.45);
 }
 
-/* Primary palette */
-.case-study.p02 .primary-100 { background: #065ECE; }
-.case-study.p02 .primary-200 { background:rgb(125, 17, 226); }
-.case-study.p02 .primary-300 { background:rgba(202, 170, 224, 0.99); }
-.case-study.p02 .primary-400 { background:rgb(255, 232, 255); }
-
-/* Secondary palette */
-.case-study.p02 .secondary-100 { background:#E8F0FF; }
-.case-study.p02 .secondary-200 { background:#BFD3FF; }
-.case-study.p02 .secondary-300 { background:#76A8FF; }
-.case-study.p02 .secondary-400 { background:#0A4DAA; }
-
-/* Gray palette */
-.case-study.p02 .gray-100 { background:#FCFCFD; }
-.case-study.p02 .gray-200 { background:#F2F4F7; }
-.case-study.p02 .gray-300 { background:#E4E7EC; }
-.case-study.p02 .gray-400 { background:#D0D5DD; }
 
 /* ================= TYPEFACE ================= */
 .case-study.p02 .type-card {
+  --project-font: 'Montserrat', sans-serif; /* Default */
   background: #fff;
   border: 1px solid rgba(0,0,0,.10);
   border-radius: 20px;
@@ -1008,7 +930,7 @@ a:hover{opacity:.9}
 }
 
 .case-study.p02 .type-brand {
-  background: #4b2ea4;
+  background: var(--brand-bg, #4b2ea4); 
   color: #fff;
   border-radius: 16px;
   padding: 22px;
@@ -1020,16 +942,16 @@ a:hover{opacity:.9}
 .case-study.p02 .type-brand .aa {
   font-size: 64px;
   font-weight: 800;
-  font-family: 'Montserrat', sans-serif;
+  font-family: var(--project-font); 
 }
 
 .case-study.p02 .type-brand .font-name {
   font-size: 34px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: var(--project-font);
 }
 
 .case-study.p02 .type-meta {
-  font-family: 'Montserrat', sans-serif;
+  font-family: var(--project-font);
   color: #111;
   display: grid;
   gap: 10px;
@@ -1055,29 +977,59 @@ a:hover{opacity:.9}
 
 .case-study.p02 .type-scale span {
   color: rgba(0,0,0,.55);
-  font-family: 'Montserrat', sans-serif;
+  font-family: var(--project-font);
   white-space: nowrap;
 }
 
-
-.case-study.p02 .heading { color: #0e0e0e; font-size: 40px; font-family: 'Montserrat', sans-serif; margin:0; }
-.case-study.p02 .subheading {color: #0e0e0e; font-size: 24px; font-family: 'Montserrat', sans-serif; margin:0; }
-.case-study.p02 .body {color: #0e0e0e; font-size: 14px; font-family: 'Montserrat', sans-serif; margin:0; }
-
+.case-study.p02 .heading { color: #0e0e0e; font-size: 40px; font-family: var(--project-font); margin:0; }
+.case-study.p02 .subheading {color: #0e0e0e; font-size: 24px; font-family: var(--project-font); margin:0; }
+.case-study.p02 .body {color: #0e0e0e; font-size: 14px; font-family: var(--project-font); margin:0; }
 /* ================= PERSONAS ================= */
-.case-study.p02 .persona {
+/* Container for each persona pair */
+.case-study.p02 .persona-item {
   display: grid;
-  grid-template-columns: 360px 1fr;
-  gap: 40px;
-  margin-top: 64px;
+  grid-template-columns: 360px 1fr; /* Image width vs Text width */
+  gap: 60px;
+  margin-bottom: 80px; /* Space between different personas */
   align-items: start;
 }
 
-.case-study.p02 .persona img {
-  width: 100%;
-  border-radius: 16px;
-  display: block;
+/* Image styling to match the purple box feel */
+.case-study.p02 .persona-image-wrapper img {
+  width: 100%; /* Fill the 360px column */
+  height: auto;
+  aspect-ratio: 4 / 3; /* Matches the rectangular feel of the purple boxes */
+  border-radius: 12px;
   object-fit: cover;
+  display: block;
+  /* background: #4b2ea4; Remove this if you want the photo only */
+}
+
+/* Typography alignment */
+.case-study.p02 .persona-details h3 {
+  margin-top: 0;
+  font-size: 28px;
+  margin-bottom: 16px;
+}
+
+.case-study.p02 .persona-details p,
+.case-study.p02 .persona-details ul {
+  color: #333; /* Change to #fff if your background is dark */
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 8px;
+}
+
+.case-study.p02 .persona-details h4 {
+  margin-top: 24px;
+  margin-bottom: 12px;
+  font-weight: 700;
+}
+
+/* Ensure bullets look clean */
+.case-study.p02 .bullets {
+  padding-left: 20px;
+  list-style: disc;
 }
 
 /* ================= REVEAL ================= */
@@ -1096,39 +1048,82 @@ a:hover{opacity:.9}
 .process-timeline {
   position: relative;
   margin-top: 56px;
-  padding-top: 28px;
+  /* padding-top: 0; Removing extra padding to keep line alignment simple */
 }
 
-.process-timeline::before {
+.case-study.p02 .process-timeline::before {
   content: "";
   position: absolute;
-  top: 14px;
-  left: 48px;
-  right: 48px;
+  top: 6px;
+  left: 0;
+  right: 0;
   height: 1.5px;
-  background: rgba(255, 255, 255, 0.45);
+  /* Using white with low alpha so it looks "etched" into the gradient */
+  background: rgba(255, 255, 255, 0.3); 
+  z-index: 0;
 }
 
 .timeline-dots {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   position: relative;
-  z-index: 1;
+  z-index: 1; /* Sits above the line */
   padding: 0 48px;
+  margin-bottom: 24px; /* Space between dots and text */
 }
 
 .timeline-dots .dot {
   width: 12px;
   height: 12px;
-  margin: 0 auto;
+  background: #ffffff;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.95);
+  display: block;
+  margin: 0 auto; /* Keeps dot centered in its 1fr column */
+  transition: box-shadow 0.4s ease;
 }
 
+/* Active state animation */
 .reveal.active .timeline-dots .dot {
-  box-shadow: 0 0 0 6px rgba(255, 255, 255, 0.18);
+  box-shadow: 0 0 0 6px rgba(255, 255, 255, 0.25);
 }
 
+/* Step Content Layout */
+.process-steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  padding: 0 20px;
+}
+
+.process-steps .step h4 {
+  color: #fff;
+  font-size: 18px;
+  margin-bottom: 12px;
+  text-align: center;
+}
+
+.process-steps .step ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.process-steps .step li {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 14px;
+  line-height: 1.5;
+  margin-bottom: 8px;
+  position: relative;
+  padding-left: 15px;
+}
+
+/* Custom bullet for the list items */
+.process-steps .step li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #fff;
+}
 
 /* =========================================
    LIGHT MODE OVERRIDES (For Project View)
@@ -1169,7 +1164,6 @@ body.light-mode {
   color: #222;
 }
 
-/* Headings */
 .light-mode .case-study.p02 h1,
 .light-mode .case-study.p02 h2,
 .light-mode .case-study.p02 h3,
@@ -1177,28 +1171,23 @@ body.light-mode {
   color: #000000;
 }
 
-/* Body Text */
 .light-mode .case-study.p02 p,
 .light-mode .case-study.p02 li {
   color: #333333;
 }
 
-/* Subtitles & Meta Data */
 .light-mode .case-study.p02 .subtitle { color: #555; }
 .light-mode .case-study.p02 .muted { color: #666; }
 .light-mode .case-study.p02 .meta { border-top-color: rgba(0,0,0,0.1); }
 .light-mode .case-study.p02 .meta span { color: #777; }
 .light-mode .case-study.p02 .meta .info { color: #333; }
 
-/* 5. Components Adjustments */
 
-/* Gray Section Background */
 .light-mode .background-gray {
-  background: #F2F4F7; /* Light gray instead of dark gray */
+  background: #F2F4F7; 
   color: #111;
 }
 
-/* Process Card (Keep it purple, but ensure text is white inside) */
 .light-mode .process-card {
   color: #fff;
 }
@@ -1212,7 +1201,6 @@ body.light-mode {
   background: rgba(255,255,255,0.3);
 }
 
-/* Problem/Solution Lists */
 .light-mode .problem-list strong,
 .light-mode .solution-list strong {
   color: #000;
