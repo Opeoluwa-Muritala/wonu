@@ -206,7 +206,7 @@
             "Difficulty tracking multiple payments",
             "Concerns about security"
           ],
-          "image": "images/avcard2persona.png"
+          "image": "https://res.cloudinary.com/ddezxlqjr/image/upload/v1772297067/avcard2persona_054540_mra4v1.png"
         },
       {
         "name": "Tunde",
@@ -224,7 +224,7 @@
           "Confusing funding flows",
           "Difficulty monitoring transactions"
         ],
-        "image": "images/avcard1persona.png"
+        "image": "https://res.cloudinary.com/ddezxlqjr/image/upload/v1772297067/avcard1persona_054412_ki7vq7.png"
       }
     ],
     "screens": ["iMockup - iPhone 15 Pro Max.png"]
@@ -363,7 +363,7 @@
           "Difficulty managing multiple trips simultaneously",
           "Missing or hard-to-access travel documents"
         ],
-        "image": "images/airxplora1persona.png"
+        "image": "https://res.cloudinary.com/ddezxlqjr/image/upload/v1772297065/airxplora1persona_054339_yaijgp.png"
       }
 
       ],

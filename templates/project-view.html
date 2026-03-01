@@ -23,10 +23,8 @@
     <!-- ================= AV CARD PLATFORM (PURPLE PLACEHOLDER) ================= -->
     <section class="content-block reveal">
       <h2>{{project.title}} Platform</h2>
-      <div class="mockup-placeholder {{project.color}}">
-        <div >
-          <img class="mockup-overlay" src="{{ project.headerimage }}" alt="{{ project.name }}">
-        </div>
+      <div class="mockup-placeholder" style="--base-color: {{project.color}};">
+        <div class="mockup-overlay"></div>
       </div>
     </section>
 
@@ -41,16 +39,18 @@
     <!-- ================= WHAT WASN'T WORKING ================= -->
     <section class="content-block reveal">
       <h2>What Wasn’t Working?</h2>
-{% for challenge in project.challenges %}
+
       <ol class="problem-list">
+        {% for challenge in project.challenges %}
         <li>
           <strong>{{challenge.title}}</strong>
           <p>
             {{challenge.text}}
           </p>
         </li>
+        {% endfor %}
       </ol>
-      {% endfor %}
+      
     </section>
 
     <!-- ================= HOW WE SOLVED IT ================= -->
@@ -66,16 +66,16 @@
         <h2>Key Solutions Implemented</h2>
   
         <ol class="solution-list">
-          {% for solution in project.key_solutions %}
           <ol class="problem-list">
+            {% for solution in project.key_solutions %}
             <li>
               <strong>{{solution.title}}</strong>
               <p>
                 {{solution.text}}
               </p>
             </li>
+            {% endfor %}
           </ol>
-          {% endfor %}
         </ol>
       </section>
   
@@ -113,7 +113,7 @@
     <section class="content-block reveal">
       <h2>Research And Design Process</h2>
     
-      <div class="process-card {{project.color}}">
+      <div class="process-card" style="--base-color: {{project.color}} ;">
     
         <h3>Why This Process Worked</h3>
         <p class="process-intro">
@@ -174,46 +174,43 @@
     
 
     <!-- ================= PERSONAS ================= -->
-    <section class="content-block reveal">
+    <section class="content-block reveal case-study p02">
       <h2>User Personas</h2>
-
-      <div class="persona">
-        {% for persona in project.personas%}
-
-        <img src="{{ persona.image }}" alt="persona.name">
-        <div>
+    
+      {% for persona in project.personas %}
+      <div class="persona-item"> <div class="persona-image-wrapper">
+          <img src="{{ persona.image }}" alt="{{ persona.name }}">
+        </div>
+        
+        <div class="persona-details">
           <h3>{{persona.name}} – {{persona.role}}</h3>
           <p><strong>Age:</strong> {{persona.age}}</p>
           <p><strong>Occupation:</strong> {{persona.role}}</p>
           <p><strong>Tech Comfort:</strong> High</p>
-
+    
           <h4>Goals</h4>
           <ul class="bullets">
-            {% for goal in persona.goals%}
+            {% for goal in persona.goals %}
             <li>{{goal}}</li>
             {% endfor %}
           </ul>
-
+    
           <h4>Frustrations &amp; Painpoints</h4>
           <ul class="bullets">
             {% for frustration in persona.frustrations %}
             <li>{{frustration}}</li>
             {% endfor %}
           </ul>
-          {% endfor %}
-
         </div>
-      </div>
-
-      
-      
+      </div> 
+      {% endfor %}
     </section>
 
     <!-- ================= DESIGN SYSTEM ================= -->
     <section class="content-block reveal">
       <h2>A Scalable Design System</h2>
       <p class="muted">
-        The Avcard design system was built around core components essential to the platform, serving as a central reference during developer
+        The {{project.title}} design system was built around core components essential to the platform, serving as a central reference during developer
         handoff and enabling developers to reuse components efficiently throughout development.
       </p>
     </section>
@@ -224,11 +221,11 @@
     <section class="content-block background-gray reveal">
       <h2>Typeface</h2>
 
-      <div class="type-card">
+      <div class="type-card" style="--project-font: '{{project.font_name}}', sans-serif; --brand-bg: {{project.color}};">
         <div class="type-top">
           <div class="type-brand">
             <span class="aa">Aa</span>
-            <span class="font-name">Montserrat</span>
+            <span class="font-name">{{project.font_name}}</span>
           </div>
 
           <div class="type-meta">
@@ -265,30 +262,14 @@
       </p>
 
       <div class="swatch-grid">
+        {% for color in project.colors.primary %}
         <div class="swatch">
-          <div class="chip primary-100"></div>
-          <strong>100</strong>
-          <small>#065ECE</small>
-          <small class="sub">rgba(6, 94,206, 1)</small>
+          <div class="chip" style="background: {{color.hex}}"></div>
+          <strong>{{color.shade}}</strong>
+          <small>{{color.hex}}</small>
+          <small class="sub">{{color.rgba}}</small>
         </div>
-        <div class="swatch">
-          <div class="chip primary-200"></div>
-          <strong>200</strong>
-          <small>#0653B7</small>
-          <small class="sub">rgba(6, 83, 183, 1)</small>
-        </div>
-        <div class="swatch">
-          <div class="chip primary-300"></div>
-          <strong>300</strong>
-          <small>#0549A0</small>
-          <small class="sub">rgba(5, 73, 160, 1)</small>
-        </div>
-        <div class="swatch">
-          <div class="chip primary-400"></div>
-          <strong>400</strong>
-          <small>#043E89</small>
-          <small class="sub">rgba(4, 62, 137, 1)</small>
-        </div>
+        {% endfor %}
       </div>
 
       <h3>Secondary Shade</h3>
@@ -297,30 +278,14 @@
       </p>
 
       <div class="swatch-grid">
+        {% for color in project.colors.secondary %}
         <div class="swatch">
-          <div class="chip secondary-100"></div>
-          <strong>100</strong>
-          <small>#E8F0FF</small>
-          <small class="sub">rgba(232, 240, 255, 1)</small>
+          <div class="chip" style="background: {{color.hex}}"></div>
+          <strong>{{color.shade}}</strong>
+          <small>{{color.hex}}</small>
+          <small class="sub">{{color.rgba}}</small>
         </div>
-        <div class="swatch">
-          <div class="chip secondary-200"></div>
-          <strong>200</strong>
-          <small>#BFD3FF</small>
-          <small class="sub">rgba(191, 211, 255, 1)</small>
-        </div>
-        <div class="swatch">
-          <div class="chip secondary-300"></div>
-          <strong>300</strong>
-          <small>#76A8FF</small>
-          <small class="sub">rgba(118, 168, 255, 1)</small>
-        </div>
-        <div class="swatch">
-          <div class="chip secondary-400"></div>
-          <strong>400</strong>
-          <small>#0A4DAA</small>
-          <small class="sub">rgba(10, 77, 170, 1)</small>
-        </div>
+        {% endfor %}
       </div>
 
       <h3>Gray</h3>
@@ -329,32 +294,16 @@
         shades of dark gray for content hierarchy. Follow contrast accessibility requirements when considering anything but black or gray text on light/white
         backgrounds.      </p>
 
-      <div class="swatch-grid">
-        <div class="swatch">
-          <div class="chip gray-100"></div>
-          <strong>100</strong>
-          <small>#FCFCFD</small>
-          <small class="sub">rgba(252, 252, 253, 1)</small>
+        <div class="swatch-grid">
+          {% for color in project.colors.gray %}
+          <div class="swatch">
+            <div class="chip" style="background: {{color.hex}}"></div>
+            <strong>{{color.shade}}</strong>
+            <small>{{color.hex}}</small>
+            <small class="sub">{{color.rgba}}</small>
+          </div>
+          {% endfor %}
         </div>
-        <div class="swatch">
-          <div class="chip gray-200"></div>
-          <strong>200</strong>
-          <small>#F2F4F7</small>
-          <small class="sub">rgba(242, 244, 247, 1)</small>
-        </div>
-        <div class="swatch">
-          <div class="chip gray-300"></div>
-          <strong>300</strong>
-          <small>#E4E7EC</small>
-          <small class="sub">rgba(228, 231, 236, 1)</small>
-        </div>
-        <div class="swatch">
-          <div class="chip gray-400"></div>
-          <strong>400</strong>
-          <small>#D0D5DD</small>
-          <small class="sub">rgba(208, 213, 221, 1)</small>
-        </div>
-      </div>
     </section>
 
 
@@ -362,18 +311,8 @@
         
     <!-- ================= AvCard Platform================= -->
     <section class="content-block  reveal">
-      <h2>AvCard Platform</h2>
-
-      <div class="mockup-placeholder {{project.color}}">
-        <div class="mockup-overlay">
-        </div>
-      </div>
-
-      <div class="mockup-placeholder {{project.color}}">
-        <div class="mockup-overlay"></div>
-      </div>
-
-      <div class="mockup-placeholder {{project.color}}">
+      <h2>{{project.title}} Platform</h2>
+      <div class="mockup-placeholder" style="--base-color: {{project.color}};">
         <div class="mockup-overlay"></div>
       </div>
     </section>
@@ -385,9 +324,8 @@
       <p>
         A mobile-friendly interface that presents virtual cards and transactions in a clear, card-based layout, allowing users to quickly view, manage,
         and interact with their cards. This intuitive design simplifies navigation, making it easy to create, fund, activate, and track cards on the go
-      </p>
-
-      <div class="mockup-placeholder {{project.color}}">
+      </p> 
+      <div class="mockup-placeholder" style="--base-color: {{project.color}};">
         <div class="mockup-overlay"></div>
       </div>
     </section>
@@ -395,8 +333,7 @@
     <!-- ================= LANDING PAGE (LIGHT) ================= -->
     <section class="content-block reveal">
       <h2>Landing Page</h2>
-
-      <div class="mockup-placeholder {{project.color}} soft">
+      <div class="mockup-placeholder" style="--base-color: {{project.color}};">
         <div class="mockup-overlay"></div>
       </div>
     </section>
