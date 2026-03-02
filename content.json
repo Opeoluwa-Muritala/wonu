@@ -73,7 +73,7 @@
           "tech_comfort": "Mid",
           "goals": ["Build practical data skills", "Complete portfolio-worthy projects", "Learn at own pace"],
           "frustrations": ["Difficulty finding structured paths", "Unclear expectations", "Lack of real-world examples"],
-          "image": "images/1000581218.png"
+          "image": "https://res.cloudinary.com/ddezxlqjr/image/upload/v1772297065/airxplora2persona_054357_iuq8qd.png"
         },
         {
           "name": "Paul",
@@ -83,7 +83,7 @@
           "tech_comfort": "Medium",
           "goals": ["Learn advanced concepts without disrupting work", "Gain marketable skills", "Validate learning"],
           "frustrations": ["Limited time to study", "Frustration with abstract content", "Uncertainty about relevance"],
-          "image": "images/1000581219.png"
+          "image": "https://res.cloudinary.com/ddezxlqjr/image/upload/v1772297065/airxplora1persona_054339_yaijgp.png"
         }
       ],
       "screens": ["images/1000581221.png", "images/1000581222.png"]
@@ -346,7 +346,7 @@
             "Lack of clarity on total trip cost",
             "Fragmented access to travel documents (visa, insurance, etc.)"
           ],
-          "image": "https://res.cloudinary.com/ddezxlqjr/image/upload/v1772297065/airxplora2persona_054357_iuq8qd.png"
+          "image": "https://res.cloudinary.com/ddezxlqjr/image/upload/v1772447409/airxplorapersona1_wi2fbz.png"
         },
       {
         "name": "Tobe",
@@ -363,7 +363,7 @@
           "Difficulty managing multiple trips simultaneously",
           "Missing or hard-to-access travel documents"
         ],
-        "image": "https://res.cloudinary.com/ddezxlqjr/image/upload/v1772297065/airxplora1persona_054339_yaijgp.png"
+        "image": "https://res.cloudinary.com/ddezxlqjr/image/upload/v1772447410/airxplorapersona2_aeeatc.png"
       }
 
       ],
@@ -485,7 +485,7 @@
             "Time wasted searching for bill details",
             "High volume of bills during peak periods"
           ],
-          "image": "images/1000581224.png"
+          "image": "https://res.cloudinary.com/ddezxlqjr/image/upload/v1772447133/arcabill2persona_r19des.png"
         },
         {
           "name": "Joshua",
@@ -504,7 +504,7 @@
             "Delays caused by missing references"
           ],
 
-          "image": "images/1000581224.png"
+          "image": "https://res.cloudinary.com/ddezxlqjr/image/upload/v1772447410/arcabill1persona_awluc9.png"
         }
       ],
       "screens": ["images/1000581226.png", "images/1000581223.png"]
