@@ -20,12 +20,13 @@
       </div>
     </header>
 
-    <!-- ================= AV CARD PLATFORM (PURPLE PLACEHOLDER) ================= -->
+    <!-- ================= CARD PLATFORM (PURPLE PLACEHOLDER) ================= -->
     <section class="content-block reveal">
       <h2>{{project.title}} Platform</h2>
       <div class="mockup-placeholder" style="--base-color: {{project.color}};">
-        <div class="mockup-overlay"></div>
-      </div>
+  <img src="{{project.headerimage}}" alt="Project Mockup" class="mockup-image">
+  <div class="mockup-overlay"></div>
+</div>
     </section>
 
     <!-- ================= OVERVIEW ================= -->
@@ -175,36 +176,39 @@
 
     <!-- ================= PERSONAS ================= -->
     <section class="content-block reveal case-study p02">
-      <h2>User Personas</h2>
-    
-      {% for persona in project.personas %}
-      <div class="persona-item"> <div class="persona-image-wrapper">
-          <img src="{{ persona.image }}" alt="{{ persona.name }}">
-        </div>
-        
-        <div class="persona-details">
-          <h3>{{persona.name}} – {{persona.role}}</h3>
-          <p><strong>Age:</strong> {{persona.age}}</p>
-          <p><strong>Occupation:</strong> {{persona.role}}</p>
-          <p><strong>Tech Comfort:</strong> High</p>
-    
-          <h4>Goals</h4>
-          <ul class="bullets">
-            {% for goal in persona.goals %}
-            <li>{{goal}}</li>
-            {% endfor %}
-          </ul>
-    
-          <h4>Frustrations &amp; Painpoints</h4>
-          <ul class="bullets">
-            {% for frustration in persona.frustrations %}
-            <li>{{frustration}}</li>
-            {% endfor %}
-          </ul>
-        </div>
-      </div> 
-      {% endfor %}
-    </section>
+  <h2>User Personas</h2>
+
+  {% for persona in project.personas %}
+  <div class="persona-item">
+    <div class="persona-image-column">
+      <div class="persona-image-wrapper">
+        <img src="{{ persona.image }}" alt="{{ persona.name }}">
+      </div>
+      <h3 class="persona-name">{{persona.name}} – {{persona.role}}</h3>
+    </div>
+
+    <div class="persona-details">
+      <p><strong>Age:</strong> {{persona.age}}</p>
+      <p><strong>Occupation:</strong> {{persona.role}}</p>
+      <p><strong>Tech Comfort:</strong> {{persona.tech_comfort}}</p>
+
+      <h4>Goals</h4>
+      <ul class="bullets">
+        {% for goal in persona.goals %}
+        <li>{{goal}}</li>
+        {% endfor %}
+      </ul>
+
+      <h4>Frustrations &amp; Painpoints</h4>
+      <ul class="bullets">
+        {% for frustration in persona.frustrations %}
+        <li>{{frustration}}</li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+  {% endfor %}
+</section>
 
     <!-- ================= DESIGN SYSTEM ================= -->
     <section class="content-block reveal">
