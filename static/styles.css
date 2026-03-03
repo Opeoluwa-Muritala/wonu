@@ -775,18 +775,18 @@ a:hover{opacity:.9}
 }
 
 /* ================= Mock-Up PLACEHOLDER ================= */
+/* Keep your existing .mockup-placeholder code exactly as it is */
 .case-study.p02 .mockup-placeholder {
   position: relative;
-  height: 420px;
+  display: flex; 
+  align-items: center; /* Centers the image if it doesn't take up full width */
+  
   margin: 28px 0 0;
   border-radius: 24px;
   overflow: hidden;
   border: 1px solid rgba(0,0,0,.18);
   
-  /* DEFAULT FALLBACK (Purple) */
   --base-color: #6c5dd3;
-
-  /* DYNAMIC GRADIENT: 20% alpha -> 80% alpha -> 95% solid */
   background: linear-gradient(
     180deg, 
     rgb(from var(--base-color) r g b / 0.2) 0%, 
@@ -795,6 +795,16 @@ a:hover{opacity:.9}
   );
 }
 
+/* NEW: Style the image to perfectly fill the container */
+.case-study.p02 .mockup-image {
+  display: block;
+  position: relative; 
+  z-index: 1;
+  width: 100%;
+  height: auto;
+}
+
+/* UPDATED: Just add a z-index so the shine stays on top */
 .case-study.p02 .mockup-overlay {
   position: absolute;
   inset: 0;
@@ -803,9 +813,12 @@ a:hover{opacity:.9}
     rgba(255,255,255,0.18),
     rgba(255,255,255,0)
   );
-  /* This creates that nice diagonal shine effect */
   clip-path: polygon(0 0, 60% 0, 40% 100%, 0% 100%);
+  z-index: 2; /* Forces the shine to sit above the image */
+  pointer-events: none; /* Optional: prevents the overlay from blocking right-clicks on the image */
 }
+
+
 /* ================= PROCESS CARD ================= */
 .case-study.p02 .process-card {
   background: linear-gradient(
@@ -984,52 +997,63 @@ a:hover{opacity:.9}
 .case-study.p02 .heading { color: #0e0e0e; font-size: 40px; font-family: var(--project-font); margin:0; }
 .case-study.p02 .subheading {color: #0e0e0e; font-size: 24px; font-family: var(--project-font); margin:0; }
 .case-study.p02 .body {color: #0e0e0e; font-size: 14px; font-family: var(--project-font); margin:0; }
+
 /* ================= PERSONAS ================= */
-/* Container for each persona pair */
 .case-study.p02 .persona-item {
   display: grid;
-  grid-template-columns: 360px 1fr; /* Image width vs Text width */
-  gap: 60px;
-  margin-bottom: 80px; /* Space between different personas */
-  align-items: start;
+  grid-template-columns: 360px 1fr; 
+  gap: 40px; 
+  margin-bottom: 80px; 
+  align-items: stretch; 
 }
 
-/* Image styling to match the purple box feel */
 .case-study.p02 .persona-image-wrapper img {
-  width: 100%; /* Fill the 360px column */
+  width: 100%;
   height: auto;
-  aspect-ratio: 4 / 3; /* Matches the rectangular feel of the purple boxes */
-  border-radius: 12px;
+  aspect-ratio: 1.4 / 1; 
+  border-radius: 8px; 
   object-fit: cover;
   display: block;
-  /* background: #4b2ea4; Remove this if you want the photo only */
 }
 
-/* Typography alignment */
-.case-study.p02 .persona-details h3 {
-  margin-top: 0;
-  font-size: 28px;
-  margin-bottom: 16px;
+.case-study.p02 .persona-name {
+  margin-top: 15px;
+  font-size: 22px;
+  font-weight: 700;
+  color: #000;
 }
 
-.case-study.p02 .persona-details p,
-.case-study.p02 .persona-details ul {
-  color: #333; /* Change to #fff if your background is dark */
-  font-size: 16px;
-  line-height: 1.6;
-  margin-bottom: 8px;
+.case-study.p02 .persona-details {
+  padding-top: 0; 
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.case-study.p02 .persona-details p {
+  font-size: 18px;
+    margin-top: 0;
 }
 
 .case-study.p02 .persona-details h4 {
-  margin-top: 24px;
-  margin-bottom: 12px;
+  font-size: 20px;
   font-weight: 700;
+    margin-top: 0;
 }
 
-/* Ensure bullets look clean */
-.case-study.p02 .bullets {
-  padding-left: 20px;
-  list-style: disc;
+.case-study.p02 .bullets li {
+  font-size: 18px;
+  line-height: 1.4;
+  list-style-type: disc;
+    margin-top: 0;
+}
+
+.case-study.p02 .persona-details > :first-child {
+  margin-top: 0;
+}
+
+.case-study.p02 .persona-details > :last-child {
+  margin-bottom: 0;
 }
 
 /* ================= REVEAL ================= */

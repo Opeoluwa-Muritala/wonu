@@ -24,9 +24,10 @@
       "image": "https://res.cloudinary.com/ddezxlqjr/image/upload/v1772297068/Landing_page_Redesign_1_1__053949_aan7mp.png",
       "font_name": "Poppins",
       "palette": ["#00D09C", "#005244", "#CCF5EB"],
+      "headerimage": "https://res.cloudinary.com/ddezxlqjr/image/upload/v1772525201/datafriktop_hxxpcv.png",
       "otherimages": [
         {
-          "header": "images/nothing.png"
+          "header": "https://res.cloudinary.com/ddezxlqjr/image/upload/v1772525201/datafriktop_hxxpcv.png"
         }
       ],
       "colors": {
@@ -97,7 +98,7 @@
       "role": "UI/UX Designer",
       "year": "Feb 2025 - August 2025",
       "image": "https://res.cloudinary.com/ddezxlqjr/image/upload/v1772297068/DASHBOARD_1__054602_hxtfcp.png",
-      "headerimage": "images/iMockup - iPhone 15 Pro Max.png",
+      "headerimage": "https://res.cloudinary.com/ddezxlqjr/image/upload/v1772525202/avcardtop_fuca9v.png",
       "font_config": {
         "name": "Plus Jakarta Sans",
         "family": "'Plus Jakarta Sans', sans-serif"
@@ -239,6 +240,7 @@
       "role": "Product Designer",
       "year": "Aug 2024 - Feb 2025",
       "image": "https://res.cloudinary.com/ddezxlqjr/image/upload/v1772297084/User_Dashboard_Flights_054318_w0nbvz.png",
+      "headerimage": "https://res.cloudinary.com/ddezxlqjr/image/upload/v1772525187/airxploratop_ijxugl.png",
       "font_config": {
         "name": "Plus Jakarta Sans",
         "family": "'Plus Jakarta Sans', sans-serif"
@@ -382,6 +384,7 @@
         "name": "Montserrat",
         "family": "'Montserrat', sans-serif"
       },
+      "headerimage": "https://res.cloudinary.com/ddezxlqjr/image/upload/v1772525185/arcabilltop_naszpc.png",
       "colors": {
         "primary": [
           {
