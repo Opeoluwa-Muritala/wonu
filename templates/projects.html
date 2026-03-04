@@ -15,7 +15,7 @@
     <div class="hr"></div>
 
     <div class="projectsGrid">
-      {% for project in content.projects %}
+      {% for project in content.projects|sort(attribute='id') %}
       <a class="projectCard {{ project.color }}" 
          href="{{ url_for('project_view_id', projectid=project.id) }}">
         
