@@ -320,10 +320,18 @@
   
         
     <!-- ================= AvCard Platform================= -->
-    {% if project.platformimages is not none %}
+    {% set imgs = (project.platformimages or [])
+      | map('string')
+      | map('trim')
+      | reject('equalto', '')
+      | reject('equalto', 'null')
+      | list
+    %}
+    
+    {% if imgs|length > 0 %}
     <section class="content-block  reveal">
       <h2>{{project.title}} Platform</h2>
-      {% for image in project.platformimages}
+      {% for image in project.platformimages %}
       <div class="mockup-placeholder" style="--base-color: {{project.color}};">
         <img src="{{image}}" alt="Project Mockup" class="mockup-image">
         <div class="mockup-overlay"></div>
@@ -333,7 +341,8 @@
     {% endif %}
 
         <!-- ================= MOBILE SCREENS ================= -->
-        {% if project.mobileimage is not none %}
+        {% set img = project.mobileimage %}
+{% if img and img|string|trim and img|string|lower != 'null' %}
     <section class="content-block reveal">
       <h2>Mobile Screens</h2>
 
