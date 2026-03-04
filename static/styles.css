@@ -633,22 +633,22 @@ a:hover{opacity:.9}
 /* --- HOME PAGE SLIDE THEMES --- */
 /* PINK (Airxplora) */
 .project-slide.pink .slide-overlay {
-  background: linear-gradient(to right, rgba(233, 30, 99, 0.1) 0%, rgba(233, 30, 99, 0) 40%);
+  background: linear-gradient(to right, rgba(233, 30, 99, 1) 0%, rgba(233, 30, 99, 0.9) 40%);
 }
 
 /* BLUE (Arcabill) */
 .project-slide.blue .slide-overlay {
-  background: linear-gradient(to right, rgba(6, 94, 206, 0.1) 0%, rgba(6, 94, 206, 0) 40%);
+  background: linear-gradient(to right, rgba(6, 94, 206, 1) 0%, rgba(6, 94, 206, 0.9) 40%);
 }
 
 /* PURPLE (AV Card) */
 .project-slide.purple .slide-overlay {
-  background: linear-gradient(to right, rgba(108, 93, 211, 0.1) 0%, rgba(108, 93, 211, 0) 40%);
+  background: linear-gradient(to right, rgba(108, 93, 211, 1) 0%, rgba(108, 93, 211, 0.9) 40%);
 }
 
 /* GREEN (Datafrik) */
 .project-slide.green .slide-overlay {
-  background: linear-gradient(to right, rgba(0, 191, 165, 0.1) 0%, rgba(0, 191, 165, 0) 40%);
+  background: linear-gradient(to right, rgba(0, 191, 165, 1) 0%, rgba(0, 191, 165, 0.9) 40%);
 }
 
 /* ===========================
