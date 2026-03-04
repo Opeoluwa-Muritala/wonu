@@ -33,7 +33,7 @@
     <div class="slide-content">
       <span class="slide-number">{{ project.number }} — {{ project.category }}</span>
       <h2 class="slide-title">{{ project.title }}</h2>
-      <p class="slide-desc">{{ project.overview }}</p>
+      <!-- <p class="slide-desc">{{ project.overview }}</p> -->
       <a href="{{ url_for('project_view_id', projectid=project.id) }}" class="slide-btn">View Case Study</a>
     </div>
   </article>

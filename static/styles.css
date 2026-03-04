@@ -554,47 +554,52 @@ a:hover{opacity:.9}
   will-change: transform;
 }
 
+.slide-content {
+  position: relative;
+  z-index: 2;
+  max-width: 700px;
+  margin: 0; 
+  padding-left: 8%; 
+  text-align: left; 
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeUp 0.8s ease forwards 0.3s;
+  font-size: 20px; 
+}
+
+.slide-desc {
+  font-size: 18px;
+  color: rgba(255,255,255,0.85);
+  margin: 0 0 36px 0; 
+  max-width: 580px;
+  line-height: 1.7;
+}
+
+
 .slide-overlay {
   position: absolute;
   inset: 0;
   z-index: 1;
-  background: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.9));
-}
-
-.slide-content {
-  position: relative;
-  z-index: 2;
-  max-width: 900px;
-  margin: 0 auto;
-  opacity: 0;
-  transform: translateY(30px);
-  animation: fadeUp 0.8s ease forwards 0.3s;
+  background: linear-gradient(to right, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0) 20%);
 }
 
 .slide-number {
   color: var(--gold);
   font-weight: 700;
   letter-spacing: 3px;
-  font-size: 14px;
+  font-size: 1.6rem;
   text-transform: uppercase;
   display: block;
   margin-bottom: 20px;
 }
 
 .slide-title {
-  font-size: clamp(42px, 5vw, 80px);
+  font-size: clamp(50px, 6.5vw, 100px);
   margin: 0 0 24px;
   line-height: 1.1;
   font-weight: 800;
 }
 
-.slide-desc {
-  font-size: 18px;
-  color: rgba(255,255,255,0.85);
-  margin: 0 auto 36px;
-  max-width: 580px;
-  line-height: 1.7;
-}
 
 .slide-btn:focus-visible {
   outline: 2px solid var(--gold);
@@ -628,27 +633,23 @@ a:hover{opacity:.9}
 /* --- HOME PAGE SLIDE THEMES --- */
 /* PINK (Airxplora) */
 .project-slide.pink .slide-overlay {
-  background: linear-gradient(to bottom, rgba(233, 30, 99, 0.3), rgba(0,0,0,0.95));
+  background: linear-gradient(to right, rgba(233, 30, 99, 0.9) 0%, rgba(233, 30, 99, 0) 40%);
 }
-.project-slide.pink .slide-number { color: #FF80AB; }
 
 /* BLUE (Arcabill) */
 .project-slide.blue .slide-overlay {
-  background: linear-gradient(to bottom, rgba(6, 94, 206, 0.3), rgba(0,0,0,0.95));
+  background: linear-gradient(to right, rgba(6, 94, 206, 0.9) 0%, rgba(6, 94, 206, 0) 40%);
 }
-.project-slide.blue .slide-number { color: #82B1FF; }
 
 /* PURPLE (AV Card) */
 .project-slide.purple .slide-overlay {
-  background: linear-gradient(to bottom, rgba(108, 93, 211, 0.3), rgba(0,0,0,0.95));
+  background: linear-gradient(to right, rgba(108, 93, 211, 0.9) 0%, rgba(108, 93, 211, 0) 40%);
 }
-.project-slide.purple .slide-number { color: #B388FF; }
 
 /* GREEN (Datafrik) */
 .project-slide.green .slide-overlay {
-  background: linear-gradient(to bottom, rgba(0, 191, 165, 0.3), rgba(0,0,0,0.95));
+  background: linear-gradient(to right, rgba(0, 191, 165, 0.9) 0%, rgba(0, 191, 165, 0) 40%);
 }
-.project-slide.green .slide-number { color: #A7FFEB; }
 
 /* ===========================
    P02 / AV CARD CASE STUDY
