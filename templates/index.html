@@ -21,7 +21,7 @@
       <div class="scrollHint" aria-hidden="true"><span>ˇ</span></div>    </div>
   </section>
 
-  {% for project in projects %}
+  {% for project in projects|sort(attribute='id') %}
   <article class="project-slide sticky-section {{ project.color }}" style="z-index: {{ loop.index + 1 }};">
     
     <div class="glass-edge"></div>
