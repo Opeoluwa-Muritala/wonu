@@ -1,0 +1,14 @@
+<article class="project-slide sticky-section {{ project.color }}" style="z-index: {{ loop.index + 1 }};">
+    
+    <img src="{{ project.image }}" class="slide-bg-image" alt="{{ project.title }}">
+    
+    <div class="slide-overlay"></div>
+
+    <div class="slide-content">
+      <span class="slide-number">{{ project.number }}</span>
+      <h2 class="slide-title">{{ project.title }}</h2>
+      <p class="slide-category">{{ project.category }}</p>
+      
+      <a href="{{ url_for('project_view_id', projectid=project.id) }}" class="slide-btn">view project</a>
+    </div>
+</article>
