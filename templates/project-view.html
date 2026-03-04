@@ -320,14 +320,20 @@
   
         
     <!-- ================= AvCard Platform================= -->
+    {% if project.platformimages is not none %}
     <section class="content-block  reveal">
       <h2>{{project.title}} Platform</h2>
+      {% for image in project.platformimages}
       <div class="mockup-placeholder" style="--base-color: {{project.color}};">
+        <img src="{{image}}" alt="Project Mockup" class="mockup-image">
         <div class="mockup-overlay"></div>
       </div>
+      {% endfor %}
     </section>
+    {% endif %}
 
         <!-- ================= MOBILE SCREENS ================= -->
+        {% if project.mobileimage is not none %}
     <section class="content-block reveal">
       <h2>Mobile Screens</h2>
 
@@ -336,14 +342,18 @@
         and interact with their cards. This intuitive design simplifies navigation, making it easy to create, fund, activate, and track cards on the go
       </p> 
       <div class="mockup-placeholder" style="--base-color: {{project.color}};">
+        <img src="{{project.mobileimage}}" alt="Project Mockup" class="mockup-image">
         <div class="mockup-overlay"></div>
       </div>
+      </div>
     </section>
+    {% endif %}
 
     <!-- ================= LANDING PAGE (LIGHT) ================= -->
     <section class="content-block reveal">
       <h2>Landing Page</h2>
       <div class="mockup-placeholder" style="--base-color: {{project.color}};">
+        <img src="{{project.landingpage}}" alt="Project Landing Page" class="mockup-image">
         <div class="mockup-overlay"></div>
       </div>
     </section>

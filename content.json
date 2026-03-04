@@ -25,7 +25,8 @@
       "font_name": "Poppins",
       "palette": ["#00D09C", "#005244", "#CCF5EB"],
       "headerimage": "https://res.cloudinary.com/ddezxlqjr/image/upload/v1772525201/datafriktop_hxxpcv.png",
-      "designsystem": "https://res.cloudinary.com/ddezxlqjr/image/upload/v1772527433/Frame_25_2_k8mmks.png",
+      "designsystem": "https://res.cloudinary.com/ddezxlqjr/image/upload/v1772527700/Frame_25_1_cfqdka.png",
+      "landingpage": "https://res.cloudinary.com/ddezxlqjr/image/upload/v1772621831/datafriklandingpage_uudvai.png",
       "colors": {
         "primary": [
           { "shade": "100", "hex": "#3EDFCF", "rgba": "rgba(62, 223, 207, 1)" },
@@ -95,7 +96,13 @@
       "year": "Feb 2025 - August 2025",
       "image": "https://res.cloudinary.com/ddezxlqjr/image/upload/v1772297068/DASHBOARD_1__054602_hxtfcp.png",
       "headerimage": "https://res.cloudinary.com/ddezxlqjr/image/upload/v1772525202/avcardtop_fuca9v.png",
-      "designsystem": "https://res.cloudinary.com/ddezxlqjr/image/upload/v1772527700/Frame_25_1_cfqdka.png",
+      "designsystem": "https://res.cloudinary.com/ddezxlqjr/image/upload/v1772527375/Frame_25_3_g1iayj.png",
+      "platformimages": [
+        "https://res.cloudinary.com/ddezxlqjr/image/upload/v1772621813/avcardplatform1_oaiwvj.png",      
+        "https://res.cloudinary.com/ddezxlqjr/image/upload/v1772621811/avcardplatform3_fbr3gm.png",
+        "https://res.cloudinary.com/ddezxlqjr/image/upload/v1772621808/avcardplatform2_lbnbxz.png" 
+        ],
+        "mobileimage": "https://res.cloudinary.com/ddezxlqjr/image/upload/v1772621816/avcardmobile_pwk0uz.png",
       "colors": {
         "primary": [
           {
@@ -235,6 +242,7 @@
       "image": "https://res.cloudinary.com/ddezxlqjr/image/upload/v1772297084/User_Dashboard_Flights_054318_w0nbvz.png",
       "headerimage": "https://res.cloudinary.com/ddezxlqjr/image/upload/v1772525187/airxploratop_ijxugl.png",
       "designsystem": "https://res.cloudinary.com/ddezxlqjr/image/upload/v1772527436/Frame_25_c7jjm0.png",
+      "landingpage": "https://res.cloudinary.com/ddezxlqjr/image/upload/v1772621814/airxploralandingpage_cpbw8k.png",
       "colors": {
         "primary": [
           {
@@ -371,7 +379,13 @@
       "year": "2024",
       "image": "https://res.cloudinary.com/ddezxlqjr/image/upload/v1772297065/Dashboard_2__054615_haldp8.png",
       "headerimage": "https://res.cloudinary.com/ddezxlqjr/image/upload/v1772525185/arcabilltop_naszpc.png",
-      "designsystem": "https://res.cloudinary.com/ddezxlqjr/image/upload/v1772527375/Frame_25_3_g1iayj.png",
+      "designsystem": "https://res.cloudinary.com/ddezxlqjr/image/upload/v1772527433/Frame_25_2_k8mmks.png",
+      "platformimages": [
+        "https://res.cloudinary.com/ddezxlqjr/image/upload/v1772621806/arcabillplatform3_wi4oml.png",
+        "https://res.cloudinary.com/ddezxlqjr/image/upload/v1772621806/arcabillplatform2_ksiryb.png",
+        "https://res.cloudinary.com/ddezxlqjr/image/upload/v1772621807/arcabillplatform1_hjsmgr.png"
+      ],
+      "landingpage":"https://res.cloudinary.com/ddezxlqjr/image/upload/v1772621826/arcabilllandingpage_qnqq68.png",
       "colors": {
         "primary": [
           {
