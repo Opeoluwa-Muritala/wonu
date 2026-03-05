@@ -65,11 +65,8 @@
 /* ====== HERO ====== */
   .hero {
     display: grid;
-    /* 1. Give text more width (1.8fr) and image less (1fr) */
     grid-template-columns: 1.1fr 0.9fr;
     gap: 26px;
-    /* 2. 'stretch' forces both columns to be the exact same height */
-    align-items: stretch; 
     padding-bottom: 18px;
   }
 
@@ -81,17 +78,12 @@
     box-shadow: 0 18px 46px rgba(0,0,0,.55);
     position: relative;
     margin-left: auto;
-    /* 3. Ensure the card fills the grid cell height */
-    height: 100%; 
-    width: 100%;
-  }
+   }
 
   .hero-card img {
     display: block;
-    /* 4. Fit the container width/height automatically */
     width: 100%;
-    height: 50%; 
-    /* 5. Use 'cover' so the image doesn't stretch/distort when resizing */
+    height: 30%; 
     object-fit: cover; 
   }
 
@@ -350,11 +342,11 @@
       </div>
 
       <ul class="facts">
-        <li><span class="emoji">✨</span><span>I’ve designed products across {{ content.projects|length }} case studies spanning fintech, education, and travel.</span></li>
-        <li><span class="emoji">🧠</span><span>I enjoy turning messy ideas into clear, thoughtful, and meaningful digital experiences.</span></li>
-        <li><span class="emoji">🎯</span><span>My work focuses on clarity, usability, and outcomes — not just pretty screens.</span></li>
-        <li><span class="emoji">🧩</span><span>I love structured systems: dashboards, flows, and decision-heavy products.</span></li>
-        <li><span class="emoji">📌</span><span>I’m always iterating — research, design, test, repeat.</span></li>
+        <li><span class="emoji">✨</span><span>I genuinely enjoy designing dashboards</span></li>
+        <li><span class="emoji">🧠</span><span>I can spend way too long refinning tiny details</span></li>
+        <li><span class="emoji">🎯</span><span>Accessability and usability matter a lot to me</span></li>
+        <li><span class="emoji">🧩</span><span>I enjoy projects that challenge how people think and interact</span></li>
+        <li><span class="emoji">📌</span><span>If it's clear, simple, and intentional i'm probably into it</span></li>
       </ul>
     </section>
 
